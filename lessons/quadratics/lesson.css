@@ -1,0 +1,37 @@
+/* ---- Algebra kit: stage layout, worked lines, graphs and typed algebra ---- */
+.sim { display: grid; gap: .8rem; min-width: 0; }
+.kit-main { display: grid; gap: .8rem; min-width: 0; }
+.kit.duo .kit-main { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+@container stage (max-width: 46rem) { .kit.duo .kit-main { grid-template-columns: minmax(0, 1fr); } }
+.kit-vis { display: grid; justify-items: center; gap: .4rem; min-width: 0; }
+.kit-vis > svg { width: 100%; height: auto; max-height: 22rem; display: block; }
+.kit-side { display: grid; gap: .5rem; min-width: 0; align-content: start; }
+.kit-side .mbig:empty { display: none; }
+.eq-work { min-height: 2rem; min-width: 0; }
+.kit-try { max-width: 40rem; width: 100%; justify-self: center; }
+.kit-try .chk-btns { justify-content: center; }
+.kit .work { justify-items: stretch; }
+.alg-prev { min-height: 1.6rem; margin: .2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+.alg-in { width: 14rem; }
+.g-lbl { font-size: 13px; font-weight: 750; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.g-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+.g-fill { fill: color-mix(in srgb, var(--scene) 22%, transparent); stroke: none; }
+.pt.c2 { fill: var(--c2); }
+.pt.hot { fill: var(--yellow, #F6C94C); stroke: var(--ink); }
+.seg-row { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
+/* ---- end of kit ---- */
+
+/* Quadratic equations: parabolas, area model and a rectangle problem */
+.qu-hero .qu-ax { stroke: rgb(255 255 255 / .6); stroke-width: 2; }
+.qu-hero .qu-c { stroke: #F6C94C; stroke-width: 4; fill: none; stroke-linecap: round; }
+.qu-hero .qu-r { fill: #fff; }
+
+[data-k="g"] { width: 100%; }
+.ab-ask { margin: 0; text-align: center; font-weight: 700; }
+.cs-sq { width: 100%; max-width: 20rem; height: auto; }
+.cs-x { fill: color-mix(in srgb, var(--scene) 30%, var(--surface)); stroke: var(--ink); stroke-width: 2; }
+.cs-b { fill: color-mix(in srgb, var(--c4) 25%, var(--surface)); stroke: var(--ink); stroke-width: 2; }
+.cs-c { fill: none; stroke: var(--bad); stroke-width: 2; stroke-dasharray: 6 4; transition: fill .4s; }
+.cs-c.on { fill: color-mix(in srgb, var(--yellow, #F6C94C) 55%, var(--surface)); stroke-dasharray: none; }
+.qc-rect { width: 100%; max-width: 22rem; height: auto; }
+.qc-r { fill: color-mix(in srgb, var(--scene) 20%, var(--surface)); stroke: var(--scene); stroke-width: 3; transition: all .3s; }

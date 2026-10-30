@@ -1,5 +1,8 @@
 /* ---- lesson kit: stage layout and SVG geometry ---- */
 .sim { display: grid; gap: .8rem; }
+/* engine's .chk-q is a flex row, so every <b>, <i> or KaTeX span becomes a flex item and long questions cannot wrap */
+.chk-q { display: block; }
+.chk-q .qn { margin-right: .55rem; vertical-align: .1em; }
 .dg { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 1rem; align-items: center; }
 .dg.stack { grid-template-columns: minmax(0, 1fr); }
 .dg-svg { width: 100%; height: auto; display: block; max-height: 48vh; }

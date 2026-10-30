@@ -1,0 +1,20 @@
+/* Compound interest and depreciation: bars year by year */
+.gd-hero .gd-b { fill: #F6C94C; }
+.gd-hero .gd-l { fill: #fff; font-size: 24px; font-weight: 800; text-anchor: middle; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 15rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+.yb-a { fill: color-mix(in srgb, var(--scene) 70%, var(--surface)); transition: all .5s; }
+.yb-b { fill: color-mix(in srgb, var(--c8) 55%, var(--surface)); transition: all .5s; }
+.yb-ax { stroke: var(--ink); stroke-width: 2; }
+.yb-t { font-size: 13px; fill: var(--muted); text-anchor: middle; font-weight: 600; }
+.yb-v { font-size: 12px; fill: var(--ink); text-anchor: middle; font-weight: 800; }
+.yb-key { font-size: 14px; font-weight: 700; fill: var(--ink); }

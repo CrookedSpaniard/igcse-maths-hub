@@ -86,7 +86,7 @@ FD.practice({
       { type: 'tf', q: 'Congruent shapes have equal corresponding angles.', a: true, why: 'Same shape and size means every side and every angle matches.' },
       { type: 'tf', q: 'A shape and an enlargement of it with scale factor 2 are congruent.', a: false, why: 'The enlargement is bigger, so it is similar, not congruent.' },
     ]),
-    () => { const s = [FD.rnd(3, 9), FD.rnd(4, 11), FD.rnd(5, 12)]; const k = FD.rnd(0, 2); return { type: 'num', q: `Triangles \\(ABC\\) and \\(PQR\\) are congruent, with \\(A\\) matching \\(P\\), \\(B\\) matching \\(Q\\) and \\(C\\) matching \\(R\\). \\(AB = ${s[0]}\\) cm, \\(BC = ${s[1]}\\) cm and \\(CA = ${s[2]}\\) cm. Find \\(${['PQ', 'QR', 'RP'][k]}\\).`, a: s[k], unit: 'cm', why: `\\(${['PQ', 'QR', 'RP'][k]}\\) corresponds to \\(${['AB', 'BC', 'CA'][k]}\\), and congruent shapes have equal corresponding sides: ${s[k]} cm.` }; },
+    () => { const s = [FD.rnd(3, 9), FD.rnd(4, 11), FD.rnd(5, 12)]; const k = FD.rnd(0, 2); return { type: 'num', q: `Triangles <i>ABC</i> and <i>PQR</i> are congruent (<i>A</i> matches <i>P</i>, <i>B</i> matches <i>Q</i>, <i>C</i> matches <i>R</i>). <i>AB</i> = ${s[0]} cm, <i>BC</i> = ${s[1]} cm and <i>CA</i> = ${s[2]} cm. Find <i>${['PQ', 'QR', 'RP'][k]}</i>.`, a: s[k], unit: 'cm', why: `\\(${['PQ', 'QR', 'RP'][k]}\\) corresponds to \\(${['AB', 'BC', 'CA'][k]}\\), and congruent shapes have equal corresponding sides: ${s[k]} cm.` }; },
     () => { const n = FD.pick([5, 6, 7, 8, 9, 10]); return { type: 'mcq', q: `What is the name of a polygon with ${n} sides?`, opts: [FD.PNAME[n], ...[5, 6, 7, 8, 9, 10].filter((m) => m !== n).slice(0, 3).map((m) => FD.PNAME[m])], why: 'Pentagon 5, hexagon 6, heptagon 7, octagon 8, nonagon 9, decagon 10.' }; },
   ],
 });

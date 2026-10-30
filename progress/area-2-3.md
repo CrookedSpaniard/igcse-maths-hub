@@ -13,3 +13,15 @@ Notes for resuming: the shared "algebra kit" (FD.mk, FD.walk, FD.graph, FD.poly,
 2026-10-30 14:38 · started  · covers for the 6 lessons above, then simultaneous
 2026-10-30 14:40 · done     · covers added to the six lessons above · coverage ✓ (audit re-run in progress)
 2026-10-30 14:40 · started  · simultaneous
+2026-10-30 15:00 · done     · algebra-basics · audit ✓ · coverage ✓
+2026-10-30 15:00 · done     · expand-factorise · audit ✓ · coverage ✓
+2026-10-30 15:00 · done     · algebraic-fractions · audit ✓ · coverage ✓
+2026-10-30 15:00 · done     · formulae · audit ✓ · coverage ✓
+2026-10-30 15:00 · done     · linear-equations · audit ✓ · coverage ✓
+2026-10-30 15:00 · done     · proportion · audit ✓ · coverage ✓
+2026-10-30 15:04 · done     · simultaneous · audit ✓ · coverage ✓
+2026-10-30 15:04 · started  · quadratics
+2026-10-30 15:16 · done     · quadratics · audit ✓ · coverage ✓
+2026-10-30 15:16 · started  · inequalities
+2026-10-30 15:27 · done     · inequalities · audit ✓ · coverage ✓
+2026-10-30 15:27 · started  · sequences

@@ -1,2 +1,2 @@
 // Written by tools/new-lesson.mjs: the lessons that exist. Do not edit by hand.
-window.MH_READY = ["algebra-basics","algebraic-fractions","angles","decimals","expand-factorise","factors-primes","formulae","fractions","linear-equations","measures-bearings","negatives-bidmas","polygons","powers-roots","proportion","symmetry"];
+window.MH_READY = ["algebra-basics","algebraic-fractions","angles","decimals","expand-factorise","factors-primes","formulae","fractions","growth-decay","inequalities","linear-equations","measures-bearings","negatives-bidmas","percentages","polygons","powers-roots","proportion","quadratics","ratio","sequences","sets","simultaneous","surds","symmetry"];

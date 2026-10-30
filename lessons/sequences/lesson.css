@@ -1,0 +1,45 @@
+/* ---- Algebra kit: stage layout, worked lines, graphs and typed algebra ---- */
+.sim { display: grid; gap: .8rem; min-width: 0; }
+.kit-main { display: grid; gap: .8rem; min-width: 0; }
+.kit.duo .kit-main { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+@container stage (max-width: 46rem) { .kit.duo .kit-main { grid-template-columns: minmax(0, 1fr); } }
+.kit-vis { display: grid; justify-items: center; gap: .4rem; min-width: 0; }
+.kit-vis > svg { width: 100%; height: auto; max-height: 22rem; display: block; }
+.kit-side { display: grid; gap: .5rem; min-width: 0; align-content: start; }
+.kit-side .mbig:empty { display: none; }
+.eq-work { min-height: 2rem; min-width: 0; }
+.kit-try { max-width: 40rem; width: 100%; justify-self: center; }
+.kit-try .chk-btns { justify-content: center; }
+.kit .work { justify-items: stretch; }
+.alg-prev { min-height: 1.6rem; margin: .2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+.alg-in { width: 14rem; }
+.g-lbl { font-size: 13px; font-weight: 750; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.g-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+.g-fill { fill: color-mix(in srgb, var(--scene) 22%, transparent); stroke: none; }
+.pt.c2 { fill: var(--c2); }
+.pt.hot { fill: var(--yellow, #F6C94C); stroke: var(--ink); }
+.seg-row { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
+/* ---- end of kit ---- */
+
+/* Sequences: term chips, matchstick patterns, a staircase for series */
+.sq-hero .sq-b { fill: #F6C94C; }
+.sq-hero .sq-t { fill: #fff; font-size: 15px; font-weight: 800; text-anchor: middle; }
+
+[data-k="g"] { width: 100%; }
+.sq-host { width: 100%; }
+.sq-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .35rem; }
+.sq-c { display: inline-grid; justify-items: center; min-width: 3rem; padding: .4rem .6rem; border-radius: 12px; border: 2px dashed var(--line); font-size: 1.25rem; font-weight: 800; color: var(--muted); }
+.sq-c.on { border-style: solid; border-color: var(--scene); color: var(--ink); background: color-mix(in srgb, var(--scene) 12%, var(--surface)); animation: sqIn .35s ease-out both; }
+.sq-c small { font-size: .7rem; font-weight: 600; color: var(--muted); }
+.sq-g { font-size: .85rem; font-weight: 800; color: var(--muted); opacity: .3; }
+.sq-g.on { color: var(--scene); opacity: 1; }
+@keyframes sqIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.sq-pats { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; align-items: end; }
+.sq-pats:empty { display: none; }
+.sq-p { display: grid; justify-items: center; gap: .2rem; }
+.sq-pat { height: 3.4rem; width: auto; max-width: 100%; }
+.sq-m { stroke: var(--scene); stroke-width: 4; stroke-linecap: round; }
+.sq-tt { stroke: var(--muted); stroke-width: 6; opacity: .35; }
+.sr-stair { width: 100%; max-width: 22rem; height: auto; }
+.sr-a { fill: color-mix(in srgb, var(--scene) 65%, var(--surface)); }
+.sr-b { fill: color-mix(in srgb, var(--yellow, #F6C94C) 55%, var(--surface)); }

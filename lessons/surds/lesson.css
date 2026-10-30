@@ -1,0 +1,32 @@
+/* Surds: squares with surd sides, square-factor chips, grid method */
+.su-hero .su-sq { fill: #F6C94C; }
+.su-hero .su-a { fill: #202D4A; font-size: 18px; font-weight: 800; text-anchor: middle; }
+.su-hero .su-l, .su-hero .su-b, .su-hero .su-c { fill: #fff; font-size: 18px; font-weight: 800; text-anchor: middle; }
+.su-hero .su-c { font-size: 15px; opacity: .85; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 15rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+.su-box { fill: color-mix(in srgb, var(--scene) 30%, var(--surface)); stroke: var(--scene); stroke-width: 2.5; transition: all .5s; }
+.su-t { font-size: 17px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+
+/* factor pairs with the square factor lit */
+.fp-list { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem; min-height: 3.2rem; }
+.fp-pair { padding: .4rem .7rem; border-radius: 10px; border: 2px solid var(--line); background: var(--surface); font-weight: 800; font-size: 1.15rem; transition: all .4s; }
+.fp-pair.sq { border-color: var(--c8); background: color-mix(in srgb, var(--c8) 15%, var(--surface)); }
+.fp-pair.best { border-color: var(--good); background: color-mix(in srgb, var(--good) 20%, var(--surface)); transform: translateY(-3px); }
+
+/* grid method */
+.gm { border-collapse: collapse; margin-inline: auto; font-size: 1.15rem; }
+.gm th, .gm td { border: 2px solid var(--line); padding: .45rem .9rem; text-align: center; min-width: 4.5rem; }
+.gm th { background: var(--surface-2); }
+.gm td { transition: background .4s; }
+.gm td.on { background: color-mix(in srgb, var(--scene) 18%, var(--surface)); }

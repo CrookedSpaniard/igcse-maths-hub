@@ -1,0 +1,31 @@
+/* Rounding and bounds: a zoomed number line */
+.ab-hero .ab-ax { stroke: #fff; stroke-width: 2; }
+.ab-hero .ab-in { fill: #F6C94C; opacity: .8; }
+.ab-hero .ab-c { fill: #fff; stroke: #fff; stroke-width: 2; }
+.ab-hero .ab-o { fill: #202D4A; stroke: #fff; stroke-width: 2.5; }
+.ab-hero .ab-t { fill: #fff; font-size: 15px; font-weight: 700; text-anchor: middle; }
+.ab-hero .ab-l { fill: #fff; font-size: 22px; font-weight: 800; text-anchor: middle; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 13rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+.rl-ax { stroke: var(--ink); stroke-width: 2; }
+.rl-tk { stroke: var(--ink); stroke-width: 1.2; }
+.rl-tk.big { stroke-width: 2.5; }
+.rl-t { font-size: 15px; font-weight: 700; fill: var(--ink); text-anchor: middle; }
+.rl-t.sm { font-size: 12px; fill: var(--muted); font-weight: 600; }
+.rl-mid { stroke: var(--c8); stroke-width: 2; stroke-dasharray: 5 4; }
+.rl-x { fill: var(--scene); }
+.rl-xl { font-size: 16px; font-weight: 800; fill: var(--scene); text-anchor: middle; }
+.rl-arr { stroke: var(--good); stroke-width: 3; fill: none; marker-end: none; }
+.rl-in { fill: color-mix(in srgb, var(--good) 30%, transparent); }
+.rl-cc { fill: var(--good); stroke: var(--good); stroke-width: 2.5; }
+.rl-oc { fill: var(--surface); stroke: var(--good); stroke-width: 2.5; }

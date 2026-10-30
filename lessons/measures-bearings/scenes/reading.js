@@ -35,7 +35,7 @@ FD.add({
         s += G.line([X(x), 90], [X(x), major ? 120 : 106], major ? 'g-ln' : 'g-thin');
         if (major) s += G.t([X(x), 136], FD.num(FD.round(x, 3)));
       }
-      if (hi) { const x = S.lo + S.major; s += G.line([X(S.lo), 70], [X(x), 70], 'g-hl') + G.t([(X(S.lo) + X(x)) / 2, 54], `${S.minor} divisions = ${S.major} ${S.unit}`, 'l'); }
+      if (hi) { const x = S.lo + S.major; s += G.line([X(S.lo), 70], [X(x), 70], 'g-hl') + G.t([X(S.lo), 54], `${S.minor} divisions = ${S.major} ${S.unit}`, 'l st'); }
       s += G.vec([X(v), 200], [X(v), 96], 'g-vec') + G.t([X(v), 220], FD.num(FD.round(v, 3)) + ' ' + S.unit, 'l');
       a.draw(s);
     };

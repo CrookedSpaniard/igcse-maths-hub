@@ -1,0 +1,25 @@
+/* Percentages: the percentage bar */
+.pc-hero .pc-base { fill: none; stroke: #fff; stroke-width: 2; }
+.pc-hero .pc-up { fill: #F6C94C; opacity: .9; }
+.pc-hero .pc-t { fill: #202D4A; font-size: 17px; font-weight: 800; text-anchor: middle; }
+.pc-hero .pc-l { fill: #fff; font-size: 20px; font-weight: 800; text-anchor: middle; }
+.pc-hero .pc-big { fill: #F6C94C; font-size: 34px; font-weight: 800; text-anchor: middle; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 13rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+.pb-cell { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+.pb-on { fill: color-mix(in srgb, var(--scene) 60%, var(--surface)); transition: width .6s ease; }
+.pb-over { fill: color-mix(in srgb, var(--c8) 55%, var(--surface)); transition: width .6s ease; }
+.pb-base { fill: none; stroke: var(--ink); stroke-width: 2.5; }
+.pb-t { font-size: 14px; fill: var(--muted); text-anchor: middle; font-weight: 600; }
+.pb-v { font-size: 16px; fill: var(--ink); text-anchor: middle; font-weight: 800; }
+.pb-mk { stroke: var(--ink); stroke-width: 2; stroke-dasharray: 4 3; }

@@ -1,0 +1,23 @@
+/* Ratio and proportion: bar models */
+.ra-hero .ra-a { fill: #F6C94C; }
+.ra-hero .ra-b { fill: #fff; }
+.ra-hero .ra-l { fill: #fff; font-size: 34px; font-weight: 800; text-anchor: middle; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 15rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+.bm-box { stroke: var(--surface); stroke-width: 3; transition: all .4s; }
+.bm-box.r0 { fill: color-mix(in srgb, var(--c4) 55%, var(--surface)); }
+.bm-box.r1 { fill: color-mix(in srgb, var(--c8) 55%, var(--surface)); }
+.bm-box.r2 { fill: color-mix(in srgb, var(--c7) 50%, var(--surface)); }
+.bm-name { font-size: 16px; font-weight: 800; fill: var(--ink); text-anchor: end; }
+.bm-v { font-size: 15px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.bm-tot { font-size: 15px; font-weight: 700; fill: var(--muted); text-anchor: start; }

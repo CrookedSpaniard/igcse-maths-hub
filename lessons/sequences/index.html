@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sequences · IGCSE Maths Hub</title>
+  <meta name="description" content="Interactive maths lesson on sequences: term-to-term and position-to-term rules, continuing patterns, the nth term of arithmetic sequences, and for Higher tier the first term a, common difference d, the formula a + (n − 1)d and the sum of an arithmetic series. Growing patterns, bar charts with sliders, random practice, checks and tests. Pearson Edexcel International GCSE Mathematics A (4MA1), specification 3.1.">
+  <link rel="icon" type="image/png" href="../../logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../engine/styles.css">
+  <link rel="stylesheet" href="../../engine/lesson.css">
+  <link rel="stylesheet" href="../../engine/scenes.css">
+  <link rel="stylesheet" href="../../engine/maths.css">
+  <link rel="stylesheet" href="lesson.css">
+</head>
+<body class="area-3">
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand">
+        <a class="logo" href="../../index.html" role="img" aria-label="British School Alzira · Xàtiva · Gandia · back to the IGCSE Maths Hub"></a>
+        <div class="titles">
+          <p class="kicker">IGCSE Maths · Area 3 · Sequences, functions and graphs</p>
+          <h1>Sequences</h1>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a class="chip-btn hub-link" href="../../index.html" title="All the maths lessons">⌂ Hub</a>
+        <button class="chip-btn prog-btn" id="btnProgress" title="See, copy and move your progress">📊 My progress <b id="progPct">0%</b></button>
+        <button class="chip-btn" id="btnHelp" title="How to use this website" aria-label="How to use this website">? Help</button>
+        <button class="chip-btn" id="btnProjector" aria-pressed="false" title="Bigger text for the classroom projector (P)">Projector mode</button>
+        <button class="chip-btn" id="btnFull" title="Full screen (F)">Full screen</button>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Scenes"></nav>
+  </header>
+
+  <main>
+    <section class="lab" id="lab">
+      <div class="card stage-card">
+        <div class="stage-head">
+          <span class="scene-ic" id="sceneIc"></span>
+          <h2 id="sceneTitle"></h2>
+          <span class="try" id="tryBadge" hidden>Interactive · try it</span>
+        </div>
+        <div class="stage" id="stage"></div>
+      </div>
+
+      <aside class="side">
+        <div class="card narration" id="narration" aria-live="polite">
+          <p class="step-count" id="stepCount"></p>
+          <h3 id="stepTitle"></h3>
+          <div class="step-text" id="stepText"></div>
+          <p class="tip" id="stepTip" hidden></p>
+        </div>
+        <div class="card vocab" id="vocab" hidden>
+          <h4>Key words</h4>
+          <dl id="vocabList"></dl>
+        </div>
+      </aside>
+    </section>
+
+    <section class="page" id="page" hidden></section>
+  </main>
+
+  <footer class="controls" id="controls">
+    <button class="btn ghost" id="btnReset" title="Restart this scene (R)">↺ <span>Restart</span></button>
+    <button class="btn ghost" id="btnBack" title="Back (←)">◀ <span>Back</span></button>
+    <button class="btn primary" id="btnPlay" title="Play / pause (Space)">▶ Play</button>
+    <button class="btn ghost" id="btnNext" title="Next (→)"><span>Next</span> ▶</button>
+    <label class="speed">Speed
+      <select id="speed">
+        <option value="0.5">0.5×</option>
+        <option value="1" selected>1×</option>
+        <option value="1.5">1.5×</option>
+        <option value="2">2×</option>
+      </select>
+    </label>
+    <div class="progress" aria-hidden="true"><div id="progressFill"></div></div>
+  </footer>
+
+  <script src="../../js/syllabus.js"></script>
+  <script src="lesson.js"></script>
+  <script src="../../engine/core.js"></script>
+  <script src="../../engine/check.js"></script>
+  <script src="../../engine/activity.js"></script>
+  <script src="../../engine/test.js"></script>
+  <script src="../../engine/maths.js"></script>
+  <script src="../../engine/code.js"></script>
+  <script src="../../engine/start.js"></script>
+  <script src="scenes/term-rules.js"></script>
+  <script src="scenes/nth-term.js"></script>
+  <script src="scenes/testA.js"></script>
+  <script src="scenes/arith-h.js"></script>
+  <script src="scenes/series.js"></script>
+  <script src="scenes/testB.js"></script>
+  <script src="../../engine/progress.js"></script>
+  <script src="../../engine/app.js"></script>
+</body>
+</html>
