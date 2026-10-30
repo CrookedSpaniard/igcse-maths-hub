@@ -1,0 +1,80 @@
+/* ======================================================================
+   IGCSE Maths Hub: maths-specific styles shared by every lesson
+   ====================================================================== */
+:root { --a1: #2D6687; --a2: #7048e8; --a3: #0c8f7e; --a4: #e8590c; --a5: #c2255c; --a6: #2f9e44; }
+@media (prefers-color-scheme: dark) { :root { --a1: #7fb6d8; --a2: #9b7cff; --a3: #2fc4ad; --a4: #ff8a3d; --a5: #f06595; --a6: #51cf66; } }
+
+/* Higher-tier badge */
+.hbadge { display: inline-grid; place-items: center; min-width: 1.15rem; height: 1.15rem; padding: 0 .25rem; border-radius: 5px; background: var(--yellow, #F6C94C); color: #202D4A; font: 800 .7rem/1 system-ui, sans-serif; font-style: normal; letter-spacing: 0; vertical-align: .1em; margin-left: .25rem; text-transform: none; }
+.tabs button .hbadge { margin-left: .15rem; }
+
+/* header: link back to the hub */
+.chip-btn.hub-link { text-decoration: none; display: inline-flex; align-items: center; gap: .3rem; }
+.chip-btn.hub-link .ic { width: 1rem; height: 1rem; }
+
+/* tier box on the Start page */
+.tier-box { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.tier-box > div { display: grid; gap: .15rem; min-width: 0; }
+.btn.on-dark { color: #fff; border-color: rgb(255 255 255 / .4); }
+
+/* KaTeX: a little bigger inside narration and checks, never overflowing */
+.katex { font-size: 1.08em; }
+.katex-display { margin: .5rem 0; overflow-x: auto; overflow-y: hidden; padding: .1rem 0; }
+.step-text .katex-display { text-align: left; }
+
+/* worked example: lines appear one by one */
+.work { display: grid; gap: .35rem; justify-items: start; }
+.wl { display: flex; align-items: baseline; gap: .9rem; flex-wrap: wrap; padding: .3rem .7rem; border-radius: 10px; opacity: 0; transform: translateY(6px); transition: opacity .45s, transform .45s, background .3s; max-width: 100%; }
+.wl.on { opacity: 1; transform: none; }
+.wl.now { background: color-mix(in srgb, var(--scene) 12%, var(--surface)); box-shadow: inset 3px 0 0 var(--scene); }
+.wl-m { font-size: 1.1rem; }
+.wl-n { font-size: .88rem; color: var(--muted); }
+.wl-n::before { content: "← "; color: var(--scene); }
+.work.big .wl-m { font-size: 1.55rem; }
+
+/* typed numeric answers */
+.num-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.num-f { display: inline-flex; align-items: center; gap: .4rem; font-weight: 650; }
+.num-in { width: 8.5rem; max-width: 100%; border: 2px solid var(--line); border-radius: 9px; background: var(--surface); color: var(--ink); padding: .45rem .6rem; font: 600 1.05rem/1.2 inherit; }
+.num-in:focus { outline: none; border-color: var(--accent); }
+.num-in.right { border-color: var(--good); background: color-mix(in srgb, var(--good) 12%, var(--surface)); }
+.num-in.wrong { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 10%, var(--surface)); }
+.num-f em { font-style: normal; color: var(--muted); }
+.num-want { color: var(--good); font-weight: 750; margin: .3rem 0 0; }
+.num-want:empty { display: none; }
+.num-want .katex, .method .katex, .chk-q .katex { font-size: 1.2em; }
+
+/* practice */
+.prac-card { display: grid; gap: .5rem; }
+.prac-card .chk-q { font-size: 1.12rem; }
+.method { margin-top: .45rem; padding: .6rem .8rem; border-radius: 10px; background: var(--surface-2); color: var(--ink); font-weight: 400; }
+.method .kick { display: block; margin-bottom: .2rem; }
+.page-prac.prac-done .chk-score { color: var(--good); }
+.prac-tab svg { color: var(--yellow, #F6C94C); }
+
+/* axes and graphs (FD.axes) */
+.graph { width: 100%; height: auto; display: block; max-height: 62vh; }
+.ax-grid line { stroke: var(--line); stroke-width: 1; }
+.ax-axes line { stroke: var(--ink); stroke-width: 1.6; }
+.ax-arr { fill: var(--ink); }
+.ax-lbl text { font-size: 11px; fill: var(--muted); text-anchor: middle; }
+.ax-lbl .ax-ly { text-anchor: end; }
+.ax-lbl .ax-name { font-style: italic; font-weight: 700; fill: var(--ink); font-size: 13px; }
+.curve { fill: none; stroke: var(--scene); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.curve.c2 { stroke: var(--c2); }
+.curve.c3 { stroke: var(--c3); }
+.pt { fill: var(--scene); stroke: var(--surface); stroke-width: 2; }
+.pt-lbl { font-size: 12px; font-weight: 700; fill: var(--ink); }
+
+/* sliders used by many "Try it" scenes */
+.ctrl { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .6rem; font-weight: 650; }
+.ctrl input[type="range"] { width: 100%; accent-color: var(--scene); }
+.ctrl output { min-width: 3.2rem; text-align: right; font-variant-numeric: tabular-nums; font-weight: 800; }
+.ctrls { display: grid; gap: .45rem; }
+
+/* a big formula / result card in a scene */
+.mbox { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: .7rem .9rem; }
+.mbox.hl { border-color: var(--scene); box-shadow: 0 0 0 3px color-mix(in srgb, var(--scene) 20%, transparent); }
+.mbig { font-size: 1.5rem; text-align: center; margin: .2rem 0; }
+.exam-ref { font-size: .85rem; color: var(--muted); }
+.exam-ref::before { content: "📝 "; }

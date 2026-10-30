@@ -1,0 +1,55 @@
+/* Fractions lesson: bars, pies, area model and counters */
+.fr-hero .fr-on { fill: #F6C94C; }
+.fr-hero .fr-off { fill: rgb(255 255 255 / .12); stroke: rgb(255 255 255 / .45); }
+.fr-hero .fr-lbl { fill: #fff; font-size: 16px; font-weight: 800; text-anchor: start; }
+
+.sim { display: grid; gap: .8rem; }
+.eq-top { display: grid; gap: .3rem; justify-items: center; }
+.fbar, .pies { width: 100%; height: auto; display: block; }
+.fb-frame { fill: none; stroke: var(--ink); stroke-width: 2.5; }
+.fb-p { fill: var(--surface-2); transition: fill .4s; }
+.fb-p.on { fill: color-mix(in srgb, var(--scene) 75%, var(--surface)); }
+.fb-cut { stroke: var(--ink); }
+.fb-cut.major { stroke-width: 2.5; }
+.fb-cut.minor { stroke-width: 1.2; stroke-dasharray: 5 4; opacity: .8; }
+.fb-cut.new { animation: cutIn .6s ease-out both; }
+@keyframes cutIn { from { opacity: 0; transform: translateY(-14px); } to { opacity: .8; transform: none; } }
+.eq-work { min-height: 2rem; }
+.eq-try { max-width: 36rem; width: 100%; justify-self: center; }
+
+.pie-p { fill: var(--surface-2); stroke: var(--ink); stroke-width: 1.2; transition: fill .3s; }
+.pie-p.on { fill: color-mix(in srgb, var(--scene) 75%, var(--surface)); }
+.pie-p.on.dim { fill: var(--surface-2); }
+.pie-rim { fill: none; stroke: var(--ink); stroke-width: 2.5; }
+.pie-lbl { font-size: 14px; font-weight: 700; fill: var(--muted); text-anchor: middle; }
+
+.as-bars { display: grid; gap: .3rem; }
+.as-row { display: grid; grid-template-columns: 9rem minmax(0, 1fr); align-items: center; gap: .6rem; }
+.as-l { text-align: right; font-size: 1.15rem; min-width: 0; }
+.as-sum { border-top: 2px solid var(--line); padding-top: .3rem; }
+.as-pick { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; }
+.as-pick label { display: inline-flex; align-items: center; gap: .4rem; font-weight: 650; }
+.as-pick select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+@container stage (max-width: 40rem) { .as-row { grid-template-columns: 6.5rem minmax(0, 1fr); } .as-l { font-size: 1rem; } }
+
+.md-grid { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 1rem; align-items: center; }
+.md-sq { width: 100%; height: auto; }
+.md-side { display: grid; gap: .5rem; min-width: 0; }
+.md-c { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; transition: fill .4s; }
+.md-c.col { fill: color-mix(in srgb, var(--c4) 28%, var(--surface)); }
+.md-c.row { fill: color-mix(in srgb, var(--yellow) 45%, var(--surface)); }
+.md-c.both { fill: color-mix(in srgb, var(--scene) 80%, var(--surface)); }
+@container stage (max-width: 40rem) { .md-grid { grid-template-columns: 1fr; } .md-sq { max-width: 15rem; justify-self: center; } }
+
+.am-groups { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; min-height: 5rem; }
+.am-g { display: grid; justify-items: center; gap: .2rem; padding: .45rem; border-radius: 12px; border: 2px dashed transparent; transition: all .4s; }
+.am-groups.split .am-g { border-color: var(--line); background: var(--surface); }
+.am-g.on { border-color: var(--scene) !important; border-style: solid !important; background: color-mix(in srgb, var(--scene) 14%, var(--surface)) !important; }
+.am-dots { display: flex; flex-wrap: wrap; gap: 4px; max-width: 26rem; justify-content: center; }
+.am-groups.split .am-dots { max-width: 5.6rem; }
+.am-dots i { width: 14px; height: 14px; border-radius: 50%; background: var(--muted); opacity: .55; }
+.am-g.on .am-dots i { background: var(--scene); opacity: 1; }
+.am-g b { font-size: .85rem; color: var(--muted); }
+.as-s .fbar { max-height: 4.2rem; }
+.as-over { text-align: right; margin: 0; }
+.as-s .eq-work .work { grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); justify-items: stretch; }
