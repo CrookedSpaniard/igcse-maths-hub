@@ -1,0 +1,47 @@
+/* ---- Algebra kit: stage layout, worked lines, graphs and typed algebra ---- */
+.sim { display: grid; gap: .8rem; min-width: 0; }
+.kit-main { display: grid; gap: .8rem; min-width: 0; }
+.kit.duo .kit-main { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+@container stage (max-width: 46rem) { .kit.duo .kit-main { grid-template-columns: minmax(0, 1fr); } }
+.kit-vis { display: grid; justify-items: center; gap: .4rem; min-width: 0; }
+.kit-vis > svg { width: 100%; height: auto; max-height: 22rem; display: block; }
+.kit-side { display: grid; gap: .5rem; min-width: 0; align-content: start; }
+.kit-side .mbig:empty { display: none; }
+.eq-work { min-height: 2rem; min-width: 0; }
+.kit-try { max-width: 40rem; width: 100%; justify-self: center; }
+.kit-try .chk-btns { justify-content: center; }
+.kit .work { justify-items: stretch; }
+.alg-prev { min-height: 1.6rem; margin: .2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+.alg-in { width: 14rem; }
+.g-lbl { font-size: 13px; font-weight: 750; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.g-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+.g-fill { fill: color-mix(in srgb, var(--scene) 22%, transparent); stroke: none; }
+.pt.c2 { fill: var(--c2); }
+.pt.hot { fill: var(--yellow, #F6C94C); stroke: var(--ink); }
+.seg-row { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
+/* ---- end of kit ---- */
+
+/* Formulae: value cards, pizza boxes and function machines */
+.fo-hero rect { fill: rgb(255 255 255 / .14); stroke: rgb(255 255 255 / .6); stroke-width: 1.5; }
+.fo-hero rect.op { fill: #F6C94C; stroke: none; }
+.fo-hero text { fill: #fff; font-size: 16px; font-weight: 800; text-anchor: middle; }
+.fo-hero rect.op + text { fill: #202D4A; }
+.fo-hero .fo-dot { fill: #F6C94C; }
+
+.fo-card { display: grid; gap: .4rem; justify-items: center; }
+.fo-vals { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
+.fo-v { padding: .3rem .7rem; border-radius: 999px; background: color-mix(in srgb, var(--scene) 14%, var(--surface)); border: 1px solid color-mix(in srgb, var(--scene) 45%, var(--line)); font-weight: 700; }
+
+.wr-taxi { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; align-items: center; min-height: 3.2rem; }
+.wr-b { font-size: 1.8rem; animation: wrIn .3s ease-out both; }
+.wr-d { padding: .3rem .7rem; border-radius: 10px; background: var(--surface-2); font-weight: 700; }
+@keyframes wrIn { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+
+.fm-host { width: 100%; display: grid; justify-items: center; }
+.fm-host:empty { display: none; }
+.fm { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .4rem; }
+.fm-io { padding: .35rem .8rem; border-radius: 10px; border: 2px solid var(--line); background: var(--surface); font-size: 1.2rem; }
+.fm-op { padding: .45rem .9rem; border-radius: 10px; background: color-mix(in srgb, var(--scene) 18%, var(--surface)); border: 2px solid color-mix(in srgb, var(--scene) 45%, var(--line)); font-weight: 800; transition: all .3s; }
+.fm-op.inv { background: color-mix(in srgb, var(--yellow, #F6C94C) 30%, var(--surface)); border-color: color-mix(in srgb, var(--yellow, #F6C94C) 70%, var(--line)); }
+.fm-op.on { box-shadow: 0 0 0 3px var(--scene); transform: translateY(-3px); }
+.fm-arr { color: var(--muted); font-weight: 800; }

@@ -1,0 +1,57 @@
+/* ---- Algebra kit: stage layout, worked lines, graphs and typed algebra ---- */
+.sim { display: grid; gap: .8rem; min-width: 0; }
+.kit-main { display: grid; gap: .8rem; min-width: 0; }
+.kit.duo .kit-main { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+@container stage (max-width: 46rem) { .kit.duo .kit-main { grid-template-columns: minmax(0, 1fr); } }
+.kit-vis { display: grid; justify-items: center; gap: .4rem; min-width: 0; }
+.kit-vis > svg { width: 100%; height: auto; max-height: 22rem; display: block; }
+.kit-side { display: grid; gap: .5rem; min-width: 0; align-content: start; }
+.kit-side .mbig:empty { display: none; }
+.eq-work { min-height: 2rem; min-width: 0; }
+.kit-try { max-width: 40rem; width: 100%; justify-self: center; }
+.kit-try .chk-btns { justify-content: center; }
+.kit .work { justify-items: stretch; }
+.alg-prev { min-height: 1.6rem; margin: .2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+.alg-in { width: 14rem; }
+.g-lbl { font-size: 13px; font-weight: 750; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.g-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+.g-fill { fill: color-mix(in srgb, var(--scene) 22%, transparent); stroke: none; }
+.pt.c2 { fill: var(--c2); }
+.pt.hot { fill: var(--yellow, #F6C94C); stroke: var(--ink); }
+.seg-row { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
+/* ---- end of kit ---- */
+
+/* Algebra basics: chips for terms and powers, the powers ladder */
+.ab-hero .ab-chip rect { fill: #F6C94C; }
+.ab-hero .ab-chip.y rect { fill: rgb(255 255 255 / .2); stroke: rgb(255 255 255 / .6); }
+.ab-hero .ab-chip text { fill: #202D4A; font-size: 20px; font-weight: 800; text-anchor: middle; font-style: italic; }
+.ab-hero .ab-chip.y text { fill: #fff; }
+.ab-hero .ab-lbl { fill: #fff; font-size: 17px; font-weight: 700; text-anchor: middle; }
+
+.ab-terms, .lt-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; min-height: 3.6rem; align-items: center; }
+.ab-t { padding: .45rem .9rem; border-radius: 12px; border: 2px solid var(--line); background: var(--surface); font-size: 1.35rem; transition: all .35s; }
+.ab-t.on { border-color: var(--scene); background: color-mix(in srgb, var(--scene) 16%, var(--surface)); transform: translateY(-4px); }
+.ab-ask { margin: 0; text-align: center; font-weight: 700; }
+.ab-kinds { justify-content: center; }
+
+.lt-c { padding: .4rem .8rem; border-radius: 12px; border: 2px solid; font-size: 1.3rem; animation: ltIn .4s ease-out both; }
+.lt-c.k0 { border-color: var(--c1); background: color-mix(in srgb, var(--c1) 14%, var(--surface)); }
+.lt-c.k1 { border-color: var(--c4); background: color-mix(in srgb, var(--c4) 14%, var(--surface)); }
+.lt-c.k2 { border-color: var(--c6); background: color-mix(in srgb, var(--c6) 14%, var(--surface)); }
+.lt-c.k3 { border-color: var(--c8); background: color-mix(in srgb, var(--c8) 14%, var(--surface)); }
+@keyframes ltIn { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+
+.il-chips { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .5rem; min-height: 3.4rem; }
+.il-g { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: .3rem; border-radius: 10px; border: 2px dashed var(--line); }
+.il-x { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 8px; background: color-mix(in srgb, var(--scene) 22%, var(--surface)); font-size: 1.05rem; transition: opacity .4s; animation: ltIn .35s ease-out both; }
+.il-x.gone { opacity: .3; text-decoration: line-through; background: var(--surface-2); }
+.il-frac { display: inline-grid; gap: .3rem; justify-items: center; }
+.il-frac > .il-g:first-child { border-bottom: 3px solid var(--ink); border-style: none none solid; border-radius: 0; padding-bottom: .45rem; }
+.il-chips > b { font-size: 1.4rem; }
+
+.nf-ladder { display: grid; gap: .25rem; width: 100%; max-width: 20rem; }
+.nf-r { display: grid; grid-template-columns: 4rem minmax(0, 1fr) 3rem; align-items: center; gap: .5rem; padding: .2rem .6rem; border-radius: 9px; border: 1px solid var(--line); background: var(--surface); opacity: .25; transition: all .4s; }
+.nf-r.on { opacity: 1; }
+.nf-r.hot { border-color: var(--scene); background: color-mix(in srgb, var(--scene) 16%, var(--surface)); }
+.nf-r b { text-align: center; }
+.nf-r i { font-size: .8rem; color: var(--muted); font-style: normal; }

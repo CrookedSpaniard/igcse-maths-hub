@@ -1,0 +1,39 @@
+/* Negative numbers and BIDMAS: number lines with jumps, the BIDMAS ladder */
+.nb-hero .nb-ax { stroke: #fff; stroke-width: 2; }
+.nb-hero .nb-t { fill: #fff; font-size: 12px; font-weight: 700; text-anchor: middle; }
+.nb-hero .nb-arc { fill: none; stroke: #F6C94C; stroke-width: 4; stroke-dasharray: 200; }
+.nb-hero .nb-dot { fill: #F6C94C; }
+.nb-hero .nb-l { fill: #fff; font-size: 20px; font-weight: 800; text-anchor: middle; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 16rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+.nl-ax { stroke: var(--ink); stroke-width: 2; }
+.nl-tk { stroke: var(--ink); stroke-width: 1.5; }
+.nl-t { font-size: 14px; fill: var(--muted); text-anchor: middle; font-weight: 600; }
+.nl-t.zero { fill: var(--ink); font-weight: 800; }
+.nl-up { fill: none; stroke: var(--good); stroke-width: 3; }
+.nl-dn { fill: none; stroke: var(--bad); stroke-width: 3; }
+.nl-jl { font-size: 15px; font-weight: 800; text-anchor: middle; }
+.nl-jl.up { fill: var(--good); } .nl-jl.dn { fill: var(--bad); }
+.nl-dot { fill: var(--scene); stroke: var(--surface); stroke-width: 2; }
+.nl-dot.b { fill: var(--c8); }
+.nl-pl { font-size: 15px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.nl-arc { stroke-dasharray: 600; animation: nlDraw .7s ease-out both; }
+@keyframes nlDraw { from { stroke-dashoffset: 600; } to { stroke-dashoffset: 0; } }
+
+.bm-ladder { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; max-width: 34rem; margin-inline: auto; }
+.bm-card { border: 2px solid var(--line); border-radius: 12px; padding: .45rem .3rem; text-align: center; background: var(--surface); transition: all .35s; min-width: 0; }
+.bm-card b { display: block; font-size: 1.5rem; line-height: 1.1; }
+.bm-card small { display: block; color: var(--muted); font-size: .8rem; }
+.bm-card.on { border-color: var(--scene); background: color-mix(in srgb, var(--scene) 16%, var(--surface)); transform: translateY(-3px); }
+.bm-card.done { opacity: .45; }
+@container stage (max-width: 40rem) { .bm-card b { font-size: 1.2rem; } .bm-card small { font-size: .7rem; } }

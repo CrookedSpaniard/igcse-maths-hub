@@ -1,0 +1,47 @@
+/* ---- Algebra kit: stage layout, worked lines, graphs and typed algebra ---- */
+.sim { display: grid; gap: .8rem; min-width: 0; }
+.kit-main { display: grid; gap: .8rem; min-width: 0; }
+.kit.duo .kit-main { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+@container stage (max-width: 46rem) { .kit.duo .kit-main { grid-template-columns: minmax(0, 1fr); } }
+.kit-vis { display: grid; justify-items: center; gap: .4rem; min-width: 0; }
+.kit-vis > svg { width: 100%; height: auto; max-height: 22rem; display: block; }
+.kit-side { display: grid; gap: .5rem; min-width: 0; align-content: start; }
+.kit-side .mbig:empty { display: none; }
+.eq-work { min-height: 2rem; min-width: 0; }
+.kit-try { max-width: 40rem; width: 100%; justify-self: center; }
+.kit-try .chk-btns { justify-content: center; }
+.kit .work { justify-items: stretch; }
+.alg-prev { min-height: 1.6rem; margin: .2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+.alg-in { width: 14rem; }
+.g-lbl { font-size: 13px; font-weight: 750; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.g-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+.g-fill { fill: color-mix(in srgb, var(--scene) 22%, transparent); stroke: none; }
+.pt.c2 { fill: var(--c2); }
+.pt.hot { fill: var(--yellow, #F6C94C); stroke: var(--ink); }
+.seg-row { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
+/* ---- end of kit ---- */
+
+/* Linear equations: balance scales and a triangle for forming equations */
+.le-hero .le-st { fill: rgb(255 255 255 / .35); }
+.le-hero .le-beam { stroke: #fff; stroke-width: 6; stroke-linecap: round; }
+.le-hero .le-x { fill: #F6C94C; }
+.le-hero .le-1 { fill: rgb(255 255 255 / .75); }
+.le-hero .le-lbl { fill: #fff; font-size: 17px; font-weight: 800; text-anchor: middle; }
+
+.bal-host { width: 100%; display: grid; justify-items: center; }
+.bal { width: 100%; max-width: 34rem; height: auto; max-height: 20rem; }
+.bal-arm, .bal-arm g { transition: transform .7s cubic-bezier(.3, 1.4, .5, 1); }
+.bal-st { fill: var(--surface-2); stroke: var(--line); }
+.bal-beam { stroke: var(--ink); stroke-width: 8; stroke-linecap: round; }
+.bal-pin { fill: var(--scene); }
+.bal-pan { fill: color-mix(in srgb, var(--scene) 30%, var(--surface)); stroke: var(--ink); stroke-width: 2; }
+.bal-str { stroke: var(--muted); stroke-width: 1.5; }
+.bal-x rect { fill: var(--yellow, #F6C94C); stroke: #8a6d12; stroke-width: 1.5; }
+.bal-x text { fill: #202D4A; font-size: 17px; font-weight: 800; font-style: italic; text-anchor: middle; }
+.bal-1 { fill: color-mix(in srgb, var(--scene) 70%, var(--surface)); stroke: var(--ink); stroke-width: 1; }
+.ab-ask { margin: 0; text-align: center; font-weight: 700; }
+
+.fm-tri { width: 100%; max-width: 22rem; height: auto; }
+.fm-poly { fill: color-mix(in srgb, var(--scene) 14%, var(--surface)); stroke: var(--scene); stroke-width: 3; stroke-linejoin: round; }
+.fm-tri .g-lbl { font-size: 17px; font-style: italic; }
+.fm-tri .fm-hl { fill: var(--scene); }

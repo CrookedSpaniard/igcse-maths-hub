@@ -1,0 +1,53 @@
+/* Decimals: place value chart, hundred square, 0–1 number line, digit tapes */
+.dc-hero .dc-on { fill: #F6C94C; }
+.dc-hero .dc-off { fill: rgb(255 255 255 / .12); }
+.dc-hero .dc-l { fill: #fff; font-size: 34px; font-weight: 800; text-anchor: middle; }
+.dc-hero .dc-s { fill: #fff; font-size: 13px; text-anchor: middle; opacity: .85; }
+.dc-hero .dc-scan { fill: #fff; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 15rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+/* place value chart */
+.pv { max-width: 34rem; margin-inline: auto; width: 100%; }
+.pv-head, .pv-row { position: relative; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.pv-head span { text-align: center; font-weight: 800; font-size: .85rem; color: var(--muted); padding: .3rem 0; border-bottom: 2px solid var(--line); }
+.pv-head span.dec { color: var(--scene); }
+.pv-row { height: 4rem; border: 2px solid var(--line); border-top: 0; border-radius: 0 0 12px 12px; background: repeating-linear-gradient(90deg, transparent 0 calc(100% / 7 - 1px), var(--line) calc(100% / 7 - 1px) calc(100% / 7)); }
+.pv-d { position: absolute; top: .55rem; width: calc(100% / 7); text-align: center; font-size: 2rem; font-weight: 800; color: var(--ink); transition: left .9s cubic-bezier(.5, 0, .3, 1), opacity .4s; }
+.pv-d.ph { color: var(--c8); animation: pvIn .5s .8s both; }
+@keyframes pvIn { from { opacity: 0; } to { opacity: 1; } }
+.pv-pt { position: absolute; left: calc(400% / 7 - .3rem); bottom: .9rem; width: .6rem; height: .6rem; border-radius: 50%; background: var(--scene); }
+
+/* hundred square */
+.hs-c { fill: var(--surface); stroke: var(--line); stroke-width: 1; transition: fill .35s; }
+.hs-c.on { fill: color-mix(in srgb, var(--scene) 70%, var(--surface)); }
+.hs-c.col { fill: color-mix(in srgb, var(--c4) 25%, var(--surface)); }
+.hs-c.row { fill: color-mix(in srgb, var(--yellow, #F6C94C) 40%, var(--surface)); }
+.hs-frame { fill: none; stroke: var(--ink); stroke-width: 2; }
+.hs-l { font-size: 16px; font-weight: 700; fill: var(--ink); }
+
+/* 0–1 number line */
+.zl-ax { stroke: var(--ink); stroke-width: 2; }
+.zl-t { font-size: 14px; fill: var(--muted); text-anchor: middle; font-weight: 600; }
+.zl-m { fill: var(--scene); }
+.zl-up { font-size: 17px; font-weight: 800; fill: var(--scene); text-anchor: middle; }
+.zl-dn { font-size: 15px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+
+/* digit tape for recurring decimals */
+.tp { display: grid; gap: .35rem; justify-items: center; font-family: ui-monospace, Menlo, monospace; }
+.tp-row { display: flex; align-items: center; gap: .1rem; font-size: 1.6rem; font-weight: 700; white-space: nowrap; }
+.tp-row .lb { font-family: inherit; min-width: 4.5rem; text-align: right; margin-right: .5rem; color: var(--muted); font-size: 1.1rem; }
+.tp-row i { font-style: normal; display: inline-block; min-width: 1ch; text-align: center; border-radius: 4px; transition: background .4s; }
+.tp-row i.cy { background: color-mix(in srgb, var(--scene) 22%, transparent); }
+.tp-row i.c2 { background: color-mix(in srgb, var(--c8) 30%, transparent); }
+.tp-row i.gone { text-decoration: line-through; opacity: .45; }
+@container stage (max-width: 40rem) { .tp-row { font-size: 1.2rem; } .pv-d { font-size: 1.5rem; } }

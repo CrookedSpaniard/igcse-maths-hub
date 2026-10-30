@@ -1,0 +1,48 @@
+/* ---- Algebra kit: stage layout, worked lines, graphs and typed algebra ---- */
+.sim { display: grid; gap: .8rem; min-width: 0; }
+.kit-main { display: grid; gap: .8rem; min-width: 0; }
+.kit.duo .kit-main { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+@container stage (max-width: 46rem) { .kit.duo .kit-main { grid-template-columns: minmax(0, 1fr); } }
+.kit-vis { display: grid; justify-items: center; gap: .4rem; min-width: 0; }
+.kit-vis > svg { width: 100%; height: auto; max-height: 22rem; display: block; }
+.kit-side { display: grid; gap: .5rem; min-width: 0; align-content: start; }
+.kit-side .mbig:empty { display: none; }
+.eq-work { min-height: 2rem; min-width: 0; }
+.kit-try { max-width: 40rem; width: 100%; justify-self: center; }
+.kit-try .chk-btns { justify-content: center; }
+.kit .work { justify-items: stretch; }
+.alg-prev { min-height: 1.6rem; margin: .2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+.alg-in { width: 14rem; }
+.g-lbl { font-size: 13px; font-weight: 750; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.g-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+.g-fill { fill: color-mix(in srgb, var(--scene) 22%, transparent); stroke: none; }
+.pt.c2 { fill: var(--c2); }
+.pt.hot { fill: var(--yellow, #F6C94C); stroke: var(--ink); }
+.seg-row { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
+/* ---- end of kit ---- */
+
+/* Expanding and factorising: the grid method and factor-pair tables */
+.ef-hero rect { stroke: #fff; stroke-width: 2; }
+.ef-hero .ef-a { fill: #F6C94C; }
+.ef-hero .ef-b { fill: rgb(246 201 76 / .45); }
+.ef-hero .ef-c { fill: rgb(255 255 255 / .25); }
+.ef-hero text { fill: #fff; font-size: 17px; font-weight: 800; text-anchor: middle; font-style: italic; }
+.ef-hero text.in { fill: #202D4A; }
+.ef-hero .ef-c + text, .ef-hero text:last-of-type { fill: #fff; }
+
+.gm-host { width: 100%; display: grid; justify-items: center; min-height: 4rem; }
+.gm { display: grid; gap: 4px; width: 100%; max-width: 30rem; }
+.gm > span { display: grid; place-items: center; min-height: 3rem; min-width: 0; border-radius: 8px; font-size: 1.15rem; }
+.gm-x { color: var(--muted); font-weight: 800; }
+.gm-h { background: var(--surface-2); font-weight: 700; }
+.gm-c { border: 2px dashed var(--line); background: var(--surface); transition: all .35s; }
+.gm-c.on { border-style: solid; border-color: color-mix(in srgb, var(--scene) 55%, var(--line)); background: color-mix(in srgb, var(--scene) 12%, var(--surface)); }
+.gm-c.hl { border-color: var(--scene); box-shadow: 0 0 0 3px color-mix(in srgb, var(--scene) 25%, transparent); }
+.ab-ask { margin: 0; text-align: center; font-weight: 700; }
+
+.qf-pairs { display: grid; gap: .25rem; width: 100%; max-width: 20rem; }
+.qf-h, .qf-r { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: .5rem; padding: .25rem .7rem; border-radius: 9px; }
+.qf-h { font-size: .85rem; font-weight: 700; color: var(--muted); }
+.qf-r { border: 1px solid var(--line); background: var(--surface); animation: qfIn .35s ease-out both; }
+.qf-r.hit { border-color: var(--good); background: color-mix(in srgb, var(--good) 14%, var(--surface)); font-weight: 800; }
+@keyframes qfIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }

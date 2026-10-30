@@ -1,0 +1,44 @@
+/* Factors, multiples and primes: dot rectangles, factor trees, Venn diagrams of primes, timelines */
+.fp-hero .fp-e { stroke: rgb(255 255 255 / .6); stroke-width: 2.5; fill: none; }
+.fp-hero .fp-n circle { fill: rgb(255 255 255 / .12); stroke: #fff; stroke-width: 2; }
+.fp-hero .fp-p circle { fill: #F6C94C; stroke: #F6C94C; }
+.fp-hero text { fill: #fff; font-size: 17px; font-weight: 800; text-anchor: middle; }
+.fp-hero .fp-p text { fill: #202D4A; }
+.fp-hero .fp-t { font-size: 18px; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 16rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+
+.dr-d { fill: color-mix(in srgb, var(--scene) 80%, var(--surface)); transition: all .4s; }
+.dr-d.sq { fill: var(--c8); }
+.dr-l { font-size: 17px; font-weight: 700; fill: var(--ink); text-anchor: middle; }
+
+.ft-e { stroke: var(--muted); stroke-width: 2; }
+.ft-n circle { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
+.ft-n.prime circle { fill: color-mix(in srgb, var(--scene) 30%, var(--surface)); stroke: var(--scene); stroke-width: 3; }
+.ft-n text { font-size: 16px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.ft-n.new { animation: ftIn .5s ease-out both; }
+@keyframes ftIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+
+.vn-c { fill-opacity: .14; stroke-width: 2.5; }
+.vn-a { fill: var(--c4); stroke: var(--c4); }
+.vn-b { fill: var(--c6); stroke: var(--c6); }
+.vn-lbl { font-size: 18px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.vn-p { font-size: 20px; font-weight: 700; fill: var(--ink); text-anchor: middle; }
+.vn-p.hi { fill: var(--good); font-weight: 900; }
+.vn-mid { fill: transparent; transition: fill .4s; }
+.vn-mid.on { fill: var(--good); fill-opacity: .18; }
+
+.tl-ax { stroke: var(--ink); stroke-width: 2; }
+.tl-tk { font-size: 13px; fill: var(--muted); text-anchor: middle; }
+.tl-row { font-size: 15px; font-weight: 800; text-anchor: start; }
+.tl-a { fill: var(--c4); }
+.tl-b { fill: var(--c6); }
+.tl-hit { stroke: var(--good); stroke-width: 3; stroke-dasharray: 6 4; }
+.tl-hl { font-size: 15px; font-weight: 800; fill: var(--good); text-anchor: middle; }

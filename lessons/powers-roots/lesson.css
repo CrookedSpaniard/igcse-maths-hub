@@ -1,0 +1,55 @@
+/* Powers and roots: squares and cubes, factor chips, halving bars, root-then-power pipeline */
+.pw-hero .pw-sq { fill: #F6C94C; }
+.pw-hero .pw-l { fill: #fff; font-size: 14px; font-weight: 800; text-anchor: middle; }
+.pw-hero .pw-big { fill: #fff; font-size: 40px; font-weight: 800; text-anchor: middle; font-style: italic; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 15rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.btn.sel { background: var(--scene); color: #fff; border-color: var(--scene); }
+
+/* squares and cubes */
+.sc-c { fill: color-mix(in srgb, var(--scene) 55%, var(--surface)); stroke: var(--surface); stroke-width: 1.5; }
+.sc-f1 { fill: color-mix(in srgb, var(--scene) 70%, var(--surface)); }
+.sc-f2 { fill: color-mix(in srgb, var(--scene) 45%, var(--surface)); }
+.sc-f3 { fill: color-mix(in srgb, var(--scene) 25%, var(--surface)); }
+.sc-g { stroke: var(--surface); stroke-width: 1.2; fill: none; }
+.sc-e { stroke: var(--ink); stroke-width: 2; fill: none; }
+.sc-l { font-size: 17px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+
+/* factor chips */
+.ch-box { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .35rem; min-height: 4.2rem; padding: .3rem; }
+.ch { display: inline-grid; place-items: center; min-width: 2.6rem; height: 2.6rem; padding: 0 .4rem; border-radius: 10px; font-weight: 800; font-size: 1.25rem; background: color-mix(in srgb, var(--c4) 22%, var(--surface)); border: 2px solid var(--c4); color: var(--ink); transition: all .45s; }
+.ch.g2 { background: color-mix(in srgb, var(--c6) 20%, var(--surface)); border-color: var(--c6); }
+.ch.g3 { background: color-mix(in srgb, var(--c7) 20%, var(--surface)); border-color: var(--c7); }
+.ch.out { opacity: .25; text-decoration: line-through; transform: translateY(6px); }
+.ch.in { animation: chIn .4s ease-out both; }
+.ch-op { font-weight: 800; font-size: 1.3rem; color: var(--muted); }
+.ch-br { font-weight: 300; font-size: 2.4rem; color: var(--muted); line-height: 1; }
+.ch-frac { display: grid; gap: .4rem; justify-items: center; }
+.ch-frac > div { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem; }
+.ch-frac > div + div { border-top: 3px solid var(--ink); padding-top: .4rem; min-width: min(12rem, 100%); }
+@keyframes chIn { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+@container stage (max-width: 40rem) { .ch { min-width: 2.1rem; height: 2.1rem; font-size: 1rem; } }
+
+/* halving bars */
+.hb-b { fill: color-mix(in srgb, var(--scene) 65%, var(--surface)); transition: all .4s; }
+.hb-b.neg { fill: color-mix(in srgb, var(--c6) 60%, var(--surface)); }
+.hb-b.zero { fill: var(--c8); }
+.hb-t { font-size: 15px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.hb-v { font-size: 14px; font-weight: 700; fill: var(--muted); text-anchor: middle; }
+.hb-ax { stroke: var(--line); stroke-width: 2; }
+
+/* pipeline: base → root → power → answer */
+.pp { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .4rem; min-height: 4.5rem; }
+.pp-box { min-width: 4rem; padding: .5rem .7rem; border-radius: 12px; border: 2px solid var(--line); background: var(--surface); text-align: center; font-weight: 800; font-size: 1.3rem; transition: all .4s; }
+.pp-box.op { border-style: dashed; color: var(--scene); font-size: 1.05rem; }
+.pp-box.on { border-color: var(--scene); background: color-mix(in srgb, var(--scene) 15%, var(--surface)); }
+.pp-ar { color: var(--muted); font-size: 1.3rem; }
