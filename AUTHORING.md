@@ -27,6 +27,13 @@ In the ANIMACIONES folder, Bash cannot write files. Use Write/Edit, or run node 
 - **`intro`**: the HTML text on the Start page.
 - **`hero`**: an optional animated SVG on the Start page. Use `class="st-net"`, white or yellow on navy.
 
+**Covering the whole specification (compulsory).** `js/spec.js` lists all 242 statements of the 4MA1 specification. Each one has an id (e.g. `F1.2A` = Foundation content, `H1.4B` = extra Higher content) and the lesson that must teach it.
+- Run `node tools/coverage.mjs <id>` to see your lesson's statements.
+- Every section declares the statements it really teaches: `covers: ['F1.2A', …]`.
+- Every statement assigned to your lesson must be **taught** (scene steps), **practised** (practice or check) and **tested** (test question).
+- `H…` statements must be in a section or part tagged `tier: 'H'`.
+- The lesson is not finished until `node tools/coverage.mjs <id>` says "✓ Full coverage".
+
 Use 2–3 parts and 3–6 sections per lesson. Follow the spec, and put the Higher-only content (marked H in the spec) in sections or parts tagged `tier: 'H'`.
 
 ## Section file pattern (see `lessons/fractions/scenes/equivalent.js`)

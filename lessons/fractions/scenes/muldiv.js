@@ -84,7 +84,7 @@ FD.add({
     },
     {
       title: 'Dividing: keep, change, flip',
-      text: '<p>To divide by a fraction, <b>multiply by its reciprocal</b>:</p><p><b>Keep</b> the first fraction, <b>change</b> ÷ to ×, <b>flip</b> the second fraction.</p>',
+      text: '<p>To divide by a fraction, <b>multiply by its reciprocal</b>:</p><p><b>Keep</b> the first fraction, <b>change</b> ÷ to ×, <b>flip</b> the second fraction.</p><p>It works for whole numbers too: dividing by 5 is the same as multiplying by the <b>unit fraction</b> \\(\\frac{1}{5}\\), so \\(3 \\div 5 = 3 \\times \\frac{1}{5} = \\frac{3}{5}\\).</p>',
       tip: 'Check it makes sense: \\(\\frac{3}{4} \\div \\frac{1}{8}\\) asks “how many eighths fit in three quarters?” The answer is 6.',
       async on(a, ctx) {
         a.tryMode(false); a.draw(3, 4, 1, 2, 0);
@@ -117,6 +117,7 @@ FD.check({
     { type: 'num', q: 'Work out \\(\\frac{2}{5} \\times \\frac{3}{7}\\).', a: 6 / 35, form: 'simplest', show: '\\(\\tfrac{6}{35}\\)', why: '\\(\\frac{2 \\times 3}{5 \\times 7} = \\frac{6}{35}\\).' },
     { type: 'num', q: 'Work out \\(\\frac{5}{6} \\div \\frac{10}{9}\\).', a: 3 / 4, form: 'simplest', show: '\\(\\tfrac{3}{4}\\)', why: '\\(\\frac{5}{6} \\times \\frac{9}{10} = \\frac{45}{60} = \\frac{3}{4}\\).' },
     { type: 'mcq', q: 'What is the reciprocal of \\(\\frac{4}{7}\\)?', opts: ['\\(\\frac{7}{4}\\)', '\\(\\frac{4}{7}\\)', '\\(-\\frac{4}{7}\\)', '\\(\\frac{3}{7}\\)'], why: 'Turn the fraction upside down.' },
+    { type: 'mcq', q: 'Which calculation gives the same answer as \\(7 \\div 4\\)?', opts: ['\\(7 \\times \\frac{1}{4}\\)', '\\(4 \\times \\frac{1}{7}\\)', '\\(7 \\times 4\\)', '\\(\\frac{1}{7} \\times \\frac{1}{4}\\)'], why: 'Dividing by 4 is the same as multiplying by its reciprocal, the unit fraction \\(\\frac{1}{4}\\).' },
     { type: 'num', q: 'Work out \\(1\\tfrac{1}{2} \\times 2\\tfrac{2}{3}\\).', a: 4, why: '\\(\\frac{3}{2} \\times \\frac{8}{3} = \\frac{24}{6} = 4\\).' },
   ],
 });

@@ -10,11 +10,11 @@ window.LESSON = {
     B: { name: 'Calculating with fractions' },
   },
   sections: [
-    { id: 'equivalent', part: 'A', name: 'Equivalent fractions and simplifying', short: 'Equivalent', icon: 'frac', color: '--c4', line: 'Same amount, different numbers. Simplest form using the HCF.' },
-    { id: 'mixed', part: 'A', name: 'Mixed numbers and improper fractions', short: 'Mixed numbers', icon: 'frac', color: '--c3', line: 'Converting both ways, and ordering fractions.' },
-    { id: 'addsub', part: 'B', name: 'Adding and subtracting fractions', short: 'Add & subtract', icon: 'frac', color: '--c1', line: 'Make the denominators the same first.' },
-    { id: 'muldiv', part: 'B', name: 'Multiplying and dividing fractions', short: 'Multiply & divide', icon: 'frac', color: '--c6', line: 'Multiply straight across; to divide, flip and multiply.' },
-    { id: 'amounts', part: 'B', name: 'Fractions of amounts', short: 'Of amounts', icon: 'frac', color: '--c8', line: 'Divide by the denominator, multiply by the numerator.' },
+    { id: 'equivalent', part: 'A', name: 'Equivalent fractions and simplifying', short: 'Equivalent', icon: 'frac', color: '--c4', line: 'Same amount, different numbers. Simplest form using the HCF.', covers: ['F1.2A'] },
+    { id: 'mixed', part: 'A', name: 'Mixed numbers and improper fractions', short: 'Mixed numbers', icon: 'frac', color: '--c3', line: 'Converting both ways, and ordering fractions.', covers: ['F1.2B', 'F1.2C', 'F1.2D'] },
+    { id: 'addsub', part: 'B', name: 'Adding and subtracting fractions', short: 'Add & subtract', icon: 'frac', color: '--c1', line: 'Make the denominators the same first.', covers: ['F1.2C', 'F1.2F'] },
+    { id: 'muldiv', part: 'B', name: 'Multiplying and dividing fractions', short: 'Multiply & divide', icon: 'frac', color: '--c6', line: 'Multiply straight across; to divide, flip and multiply.', covers: ['F1.2H', 'F1.2I'] },
+    { id: 'amounts', part: 'B', name: 'Fractions of amounts', short: 'Of amounts', icon: 'frac', color: '--c8', line: 'Divide by the denominator, multiply by the numerator.', covers: ['F1.2D', 'F1.2E'] },
   ],
   scenes: ['equivalent', 'mixed', 'testA', 'addsub', 'muldiv', 'amounts', 'testB'],
 };
