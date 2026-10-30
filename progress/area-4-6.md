@@ -16,3 +16,5 @@ Notes for resuming: the "lesson kit" (FD.stage, FD.G, FD.dragIn, FD.tn) is the t
 2026-10-30 19:32 · started  · constructions (lesson.js exists; scenes next)
 2026-10-30 19:39 · done     · constructions · audit ✓ · coverage ✓
 2026-10-30 19:39 · started  · circle-theorems
+2026-10-30 21:01 · done     · circle-theorems · coverage ✓ · audit running
+2026-10-30 21:01 · started  · geometric-proof
