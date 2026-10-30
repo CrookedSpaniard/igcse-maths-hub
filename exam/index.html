@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Exam zone · IGCSE Maths Hub</title>
+  <meta name="description" content="Exam zone for Pearson Edexcel International GCSE Mathematics A (4MA1): the papers at a glance, the Foundation and Higher formulae sheets, formulae you must learn, exam notation, past papers and exam technique.">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../hub.css">
+  <link rel="stylesheet" href="exam.css">
+</head>
+<body>
+  <header class="hero ex-hero">
+    <div class="hero-inner">
+      <div class="school">
+        <a class="logo" href="../index.html" aria-label="Back to the IGCSE Maths Hub"></a>
+        <span class="school-name">British School<br>Alzira · Xàtiva · Gandia</span>
+      </div>
+      <div class="hero-tools">
+        <a class="chip-btn ex-back" href="../index.html">⌂ All lessons</a>
+        <div class="tier-switch" id="tier" role="group" aria-label="Your tier">
+          <button data-t="F" aria-pressed="false">Foundation</button>
+          <button data-t="H" aria-pressed="false">Higher</button>
+        </div>
+      </div>
+      <div class="hero-text">
+        <p class="kicker">Pearson Edexcel International GCSE Mathematics A (4MA1)</p>
+        <h1>Exam zone</h1>
+        <p class="lead">Everything you need on the day</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="unitbar" aria-label="Sections">
+    <div class="unitbar-inner"><div class="unit-links">
+      <a href="#papers" class="tone-a1"><b>1</b> The papers</a>
+      <a href="#sheet" class="tone-a2"><b>2</b> Formulae sheet</a>
+      <a href="#learn" class="tone-a3"><b>3</b> Learn by heart</a>
+      <a href="#notation" class="tone-a4"><b>4</b> Notation</a>
+      <a href="#past" class="tone-a5"><b>5</b> Past papers</a>
+      <a href="#tips" class="tone-a6"><b>6</b> Exam technique</a>
+    </div></div>
+  </nav>
+
+  <main class="ex">
+    <section id="papers" class="ex-sec tone-a1">
+      <h2><span>1</span> The papers at a glance</h2>
+      <p class="ex-lead">You sit <b>two papers</b> in the same tier. Both papers cover the <b>whole</b> specification, and you may use a <b>calculator in both</b>.</p>
+      <div class="ex-tiers">
+        <article class="ex-card" data-tier="F">
+          <h3>Foundation tier</h3>
+          <ul class="ex-facts">
+            <li><b>Papers</b> 1F and 2F</li>
+            <li><b>Time</b> 2 hours each</li>
+            <li><b>Marks</b> 100 each (50% of the grade each)</li>
+            <li><b>Grades</b> 5 to 1</li>
+            <li><b>Calculator</b> allowed in both</li>
+          </ul>
+        </article>
+        <article class="ex-card" data-tier="H">
+          <h3>Higher tier</h3>
+          <ul class="ex-facts">
+            <li><b>Papers</b> 1H and 2H</li>
+            <li><b>Time</b> 2 hours each</li>
+            <li><b>Marks</b> 100 each (50% of the grade each)</li>
+            <li><b>Grades</b> 9 to 4 (a grade 3 is allowed if you only just miss a 4)</li>
+            <li><b>Calculator</b> allowed in both</li>
+          </ul>
+        </article>
+      </div>
+      <p class="small muted">Roughly 1 mark per minute: a 4-mark question deserves about 4 minutes. A formulae sheet is printed inside every paper (see section 2).</p>
+    </section>
+
+    <section id="sheet" class="ex-sec tone-a2">
+      <h2><span>2</span> The formulae sheet</h2>
+      <p class="ex-lead">These formulae are <b>given to you</b> on the inside cover of the paper. You do not need to memorise them, but you must know <b>when</b> to use each one.</p>
+      <div class="ex-grid">
+        <article class="fx"><h3>Area of a trapezium</h3><p>\[A = \tfrac12 (a + b)h\]</p><svg viewBox="0 0 160 80" aria-hidden="true"><path class="sh" d="M45 12H115L148 70H12Z"/><path class="dim" d="M45 12V70"/><text x="80" y="9">a</text><text x="80" y="79">b</text><text x="38" y="45">h</text></svg></article>
+        <article class="fx"><h3>Volume of a prism</h3><p>\[V = A \times l\]<span class="small muted">\(A\) = area of the cross section, \(l\) = length</span></p><svg viewBox="0 0 160 80" aria-hidden="true"><path class="sh2" d="M55 70L145 58L125 13L35 25Z"/><path class="sh2" d="M55 70L145 58"/><path class="sh" d="M15 70H55L35 25Z"/><path class="dim" d="M15 70L105 58L145 58M105 58L125 13"/><text x="35" y="60">A</text><text x="100" y="78">l</text></svg></article>
+        <article class="fx"><h3>Cylinder</h3><p>\[V = \pi r^2 h\]\[\text{Curved surface area} = 2\pi r h\]</p><svg viewBox="0 0 160 80" aria-hidden="true"><ellipse class="sh" cx="80" cy="14" rx="34" ry="9"/><path class="sh2" d="M46 14V64A34 9 0 0 0 114 64V14"/><path class="dim" d="M80 14H114"/><text x="96" y="10">r</text><text x="122" y="44">h</text></svg></article>
+        <article class="fx h-only"><h3>Arithmetic series <i class="hbadge">H</i></h3><p>\[S_n = \tfrac{n}{2}\,[\,2a + (n - 1)d\,]\]</p></article>
+        <article class="fx h-only"><h3>Quadratic formula <i class="hbadge">H</i></h3><p>The solutions of \(ax^2 + bx + c = 0\), where \(a \ne 0\):\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</p></article>
+        <article class="fx h-only"><h3>Trigonometry in any triangle <i class="hbadge">H</i></h3><p>\[\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}\]\[a^2 = b^2 + c^2 - 2bc\cos A\]\[\text{Area} = \tfrac12 ab\sin C\]</p><svg viewBox="0 0 160 80" aria-hidden="true"><path class="sh" d="M12 70H148L60 10Z"/><text x="5" y="76">A</text><text x="150" y="76">B</text><text x="56" y="8">C</text><text x="80" y="79">c</text><text x="108" y="38">a</text><text x="28" y="38">b</text></svg></article>
+        <article class="fx h-only"><h3>Cone <i class="hbadge">H</i></h3><p>\[V = \tfrac13 \pi r^2 h\]\[\text{Curved surface area} = \pi r l\]</p><svg viewBox="0 0 160 80" aria-hidden="true"><path class="sh2" d="M80 6L46 66A34 8 0 0 0 114 66Z"/><path class="dim" d="M80 6V66H114"/><text x="70" y="44">h</text><text x="96" y="78">r</text><text x="102" y="36">l</text></svg></article>
+        <article class="fx h-only"><h3>Sphere <i class="hbadge">H</i></h3><p>\[V = \tfrac43 \pi r^3\]\[\text{Surface area} = 4\pi r^2\]</p><svg viewBox="0 0 160 80" aria-hidden="true"><circle class="sh2" cx="80" cy="40" r="34"/><ellipse class="dim" cx="80" cy="40" rx="34" ry="9"/><path class="dim" d="M80 40H114"/><text x="96" y="36">r</text></svg></article>
+      </div>
+      <p class="small muted" data-tier-note></p>
+    </section>
+
+    <section id="learn" class="ex-sec tone-a3">
+      <h2><span>3</span> Formulae you must learn by heart</h2>
+      <p class="ex-lead">These are <b>not</b> on the formulae sheet, but they come up in almost every paper.</p>
+      <div class="ex-grid learn">
+        <article class="fx"><h3>Circles</h3><p>\[C = \pi d = 2\pi r\]\[A = \pi r^2\]</p></article>
+        <article class="fx"><h3>Pythagoras' theorem</h3><p>\[a^2 + b^2 = c^2\]<span class="small muted">c is the hypotenuse, opposite the right angle.</span></p></article>
+        <article class="fx"><h3>Right-angled trigonometry</h3><p>\[\sin\theta = \frac{O}{H}\qquad \cos\theta = \frac{A}{H}\]\[\tan\theta = \frac{O}{A}\]</p></article>
+        <article class="fx"><h3>Compound measures</h3><p>\[\text{speed} = \frac{\text{distance}}{\text{time}}\]\[\text{density} = \frac{\text{mass}}{\text{volume}}\]\[\text{pressure} = \frac{\text{force}}{\text{area}}\]</p></article>
+        <article class="fx"><h3>Area of shapes</h3><p>\[\text{rectangle} = lw\]\[\text{triangle} = \tfrac12 bh\]\[\text{parallelogram} = bh\]</p></article>
+        <article class="fx"><h3>Angles in polygons</h3><p><span class="small muted">Sum of the interior angles:</span>\[(n - 2) \times 180^\circ\]<span class="small muted">Each exterior angle of a regular polygon:</span>\[\frac{360^\circ}{n}\]</p></article>
+        <article class="fx"><h3>Straight lines</h3><p>\[y = mx + c\]\[m = \frac{y_2 - y_1}{x_2 - x_1}\]</p></article>
+        <article class="fx"><h3>Percentages</h3><p><span class="small muted">Percentage change:</span>\[\frac{\text{change}}{\text{original}} \times 100\]<span class="small muted">Compound growth after n years:</span>\[P\left(1 + \frac{r}{100}\right)^n\]</p></article>
+        <article class="fx"><h3>Probability</h3><p>\[P(\text{not } A) = 1 - P(A)\]<span class="small muted">Expected frequency:</span>\[P(A) \times \text{trials}\]</p></article>
+        <article class="fx h-only"><h3>Arcs and sectors <i class="hbadge">H</i></h3><p>\[\text{arc} = \frac{\theta}{360} \times 2\pi r\]\[\text{sector} = \frac{\theta}{360} \times \pi r^2\]</p></article>
+        <article class="fx h-only"><h3>Differentiation <i class="hbadge">H</i></h3><p>\[y = ax^n \;\Rightarrow\; \frac{dy}{dx} = nax^{n-1}\]<span class="small muted">Stationary points where \(\frac{dy}{dx} = 0\).</span></p></article>
+        <article class="fx h-only"><h3>Similar shapes <i class="hbadge">H</i></h3><p><span class="small muted">Scale factor k:</span>\[\text{lengths} \times k\]\[\text{areas} \times k^2\]\[\text{volumes} \times k^3\]</p></article>
+      </div>
+    </section>
+
+    <section id="notation" class="ex-sec tone-a4">
+      <h2><span>4</span> Notation used in the exam</h2>
+      <p class="ex-lead">Sets and functions are written with these symbols.</p>
+      <table class="ex-tbl">
+        <tbody>
+          <tr><td>\(\{\;\}\)</td><td>the set of</td><td>\(n(A)\)</td><td>the number of elements in set \(A\)</td></tr>
+          <tr><td>\(\{x : \;\}\)</td><td>the set of all \(x\) such that</td><td>\(\in\), \(\notin\)</td><td>is / is not an element of</td></tr>
+          <tr><td>\(\varnothing\)</td><td>the empty set</td><td>\(\mathscr{E}\)</td><td>the universal set</td></tr>
+          <tr><td>\(A \cup B\)</td><td>union (in \(A\) or \(B\) or both)</td><td>\(A \cap B\)</td><td>intersection (in both)</td></tr>
+          <tr><td>\(A \subset B\)</td><td>\(A\) is a subset of \(B\)</td><td>\(A'\)</td><td>the complement of \(A\)</td></tr>
+          <tr class="h-row"><td>\(f(x)\)</td><td>the image of \(x\) under \(f\) <i class="hbadge">H</i></td><td>\(f^{-1}\)</td><td>the inverse function <i class="hbadge">H</i></td></tr>
+          <tr class="h-row"><td>\(fg(x)\)</td><td>do \(g\) first, then \(f\) <i class="hbadge">H</i></td><td>\(f : x \mapsto y\)</td><td>\(f\) maps \(x\) to \(y\) <i class="hbadge">H</i></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="past" class="ex-sec tone-a5">
+      <h2><span>5</span> Past papers</h2>
+      <p class="ex-lead">Real past papers and their mark schemes are published by Pearson. Practise with them under timed conditions, then mark your answers with the mark scheme.</p>
+      <div class="ex-card ex-link">
+        <div>
+          <h3>Pearson Edexcel International GCSE Mathematics A (2016)</h3>
+          <p class="small muted">On Pearson's page, open <b>Course materials</b> and then <b>Exam materials</b>. Choose the papers for your tier: <b>1F/2F</b> or <b>1H/2H</b>.</p>
+        </div>
+        <a class="hbtn primary" href="https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-mathematics-a-2016.html" target="_blank" rel="noopener">Open Pearson's website ↗</a>
+      </div>
+      <ol class="ex-steps">
+        <li><b>Learn the topic first</b> with the lesson, its practice and its check.</li>
+        <li><b>Do a whole paper in 2 hours</b>, with a calculator and nothing else.</li>
+        <li><b>Mark it</b> with the mark scheme. M marks are for method, A marks for accuracy, B marks stand alone.</li>
+        <li><b>Go back to the lessons</b> for every question where you lost marks, then try that question again a week later.</li>
+      </ol>
+    </section>
+
+    <section id="tips" class="ex-sec tone-a6">
+      <h2><span>6</span> Exam technique</h2>
+      <div class="ex-grid tips">
+        <article class="fx"><h3>✍️ Show your working</h3><p>Most marks are for the method. A correct method with a slip at the end still earns most of the marks. A wrong answer with no working earns nothing.</p></article>
+        <article class="fx"><h3>🎯 Read the question twice</h3><p>Underline what it asks for: the units, “give your answer to 3 significant figures”, “in its simplest form”, “show that”.</p></article>
+        <article class="fx"><h3>🧮 Use your calculator well</h3><p>Write the full calculator value first, then round. Keep exact values (fractions, \(\pi\), surds) until the last step.</p></article>
+        <article class="fx"><h3>⏱️ About 1 mark a minute</h3><p>If you are stuck, move on and come back later. Leave time at the end to check your answers.</p></article>
+        <article class="fx"><h3>📏 Bring the right kit</h3><p>Black pen, pencil, ruler, protractor, compasses, eraser and a scientific calculator.</p></article>
+        <article class="fx"><h3>🔍 Check it makes sense</h3><p>Estimate first. Is the answer a sensible size? A probability must be between 0 and 1, and a length cannot be negative.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Formulae and notation follow the Pearson Edexcel International GCSE Mathematics A (4MA1) specification. <span class="hbadge">H</span> = Higher tier only.</p>
+    <p class="foot-school">British School Alzira · Xàtiva · Gandia</p>
+  </footer>
+
+  <script>
+    (() => {
+      'use strict';
+      let tier = 'H';
+      try { tier = localStorage.getItem('mh-tier') === 'F' ? 'F' : 'H'; } catch (e) { /* storage blocked */ }
+      document.body.dataset.tier = tier;
+      document.querySelectorAll('#tier button').forEach((b) => {
+        const on = b.dataset.t === tier;
+        b.classList.toggle('on', on);
+        b.setAttribute('aria-pressed', String(on));
+        b.addEventListener('click', () => { try { localStorage.setItem('mh-tier', b.dataset.t); } catch (e) { /* storage blocked */ } location.reload(); });
+      });
+      const note = document.querySelector('[data-tier-note]');
+      note.textContent = tier === 'F' ? 'You are on the Foundation tier: only the Foundation formulae sheet is shown. Switch to Higher at the top to see the full Higher sheet.' : 'Higher tier: the Higher formulae sheet includes everything on the Foundation sheet, plus the parts marked H.';
+      document.querySelectorAll('.ex-card[data-tier]').forEach((c) => c.classList.toggle('mine', c.dataset.tier === tier));
+      renderMathInElement(document.body, { delimiters: [{ left: '\\[', right: '\\]', display: true }, { left: '\\(', right: '\\)', display: false }], throwOnError: false });
+    })();
+  </script>
+</body>
+</html>
