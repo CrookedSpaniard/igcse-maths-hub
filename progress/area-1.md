@@ -21,3 +21,7 @@
 2026-10-30 18:00 · done     · percentages · audit ✓ · coverage ✓
 2026-10-30 18:00 · written  · accuracy-bounds · coverage ✓ · QA ✓ (audit of growth-decay fix, ratio, accuracy-bounds running)
 2026-10-30 18:00 · started  · standard-form
+2026-10-30 19:40 · done     · ratio · audit ✓ · coverage ✓
+2026-10-30 19:40 · fixed    · growth-decay + accuracy-bounds try panels at 1024 px; all lessons: .sim grid column minmax(0, 1fr)
+2026-10-30 19:40 · written  · standard-form · coverage ✓ · QA ✓ (audit of growth-decay, accuracy-bounds, standard-form running)
+2026-10-30 19:40 · started  · applying-number

@@ -17,6 +17,7 @@ FD.board = (el, cls, pic, tryHtml, onTry) => {
   };
   return api;
 };
+FD.dec = (x) => +x.toFixed(10);
 // Standard form parts of x: [A, n] with 1 ≤ A < 10. FD.sfp(34500) → [3.45, 4].
 FD.sfp = (x) => { let n = Math.floor(Math.log10(Math.abs(x))), A = +(x / 10 ** n).toPrecision(12); if (Math.abs(A) >= 10) { A = +(A / 10).toPrecision(12); n++; } return [A, n]; };
 FD.sfTex = (x) => { const [A, n] = FD.sfp(x); return `${A} \\times 10^{${n}}`; };
@@ -36,13 +37,13 @@ FD.shifter = (host) => {
       n = p0 - (f + 1);
       row.innerHTML = [...ds].map((d, i) => `<span class="sh-d ${i >= f && i <= last ? 'sig' : ''}">${d}</span>`).join('') + '<i class="sh-pt start"></i><i class="sh-pt"></i>';
       const pts = row.querySelectorAll('.sh-pt');
-      pts.forEach((p) => { p.style.left = `calc(${p0} * 100% / ${ds.length})`; });
+      pts.forEach((p) => { p.style.left = `calc(.4rem + ${p0} * (100% - .8rem) / ${ds.length})`; });
       pt = pts[1]; W = ds.length; note.textContent = 'Start';
       return n;
     },
     go(k) {
       const step = Math.min(Math.abs(k), Math.abs(n)), pos = p0 - Math.sign(n) * step;
-      pt.style.left = `calc(${pos} * 100% / ${W})`;
+      pt.style.left = `calc(.4rem + ${pos} * (100% - .8rem) / ${W})`;
       note.textContent = step ? `The point moved ${step} place${step > 1 ? 's' : ''} ${n > 0 ? 'left' : 'right'}` : 'Start';
     },
     get n() { return n; },

@@ -14,14 +14,14 @@ FD.add({
   ],
   mount(el) {
     const a = FD.board(el, 'bc-s', '<div class="mbig" id="tab"></div>', `
-      <label class="ctrl">Distance (m, nearest 10) <input type="range" id="rd" min="100" max="900" step="10" value="400"><output id="od">400</output></label>
-      <label class="ctrl">Time (s, nearest second) <input type="range" id="rt" min="20" max="120" value="50"><output id="ot">50</output></label>`, () => sync());
+      <label class="ctrl">Distance (m) <input type="range" id="rd" min="100" max="900" step="10" value="400"><output id="od">400</output></label>
+      <label class="ctrl">Time (s) <input type="range" id="rt" min="20" max="120" value="50"><output id="ot">50</output></label>`, () => sync());
     const sync = () => {
       const d = +a.$('#rd').value, t = +a.$('#rt').value; a.$('#od').textContent = d; a.$('#ot').textContent = t;
       const up = (d + 5) / (t - 0.5), lo = (d - 5) / (t + 0.5);
       a.$('#tab').innerHTML = FD.tex(`d: ${d - 5} \\le d < ${d + 5} \\qquad t: ${t - 0.5} \\le t < ${t + 0.5}`, true);
       a.big(`\\text{UB of speed} = \\frac{${d + 5}}{${t - 0.5}} = ${up.toFixed(3)} \\qquad \\text{LB} = \\frac{${d - 5}}{${t + 0.5}} = ${lo.toFixed(3)}`);
-      a.msg('Biggest speed: biggest distance ÷ smallest time. Smallest speed: smallest distance ÷ biggest time.');
+      a.msg('Distance to the nearest 10 m, time to the nearest second. Biggest speed: biggest distance ÷ smallest time. Smallest speed: smallest distance ÷ biggest time.');
     };
     ['#rd', '#rt'].forEach((s) => a.$(s).addEventListener('input', sync));
     a.tab = (t) => { a.$('#tab').innerHTML = FD.tex(t, true); };

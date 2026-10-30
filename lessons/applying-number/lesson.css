@@ -1,0 +1,48 @@
+/* Applying number: receipts, timelines, unit ladders and a calculator */
+.an-hero .an-body { fill: rgb(255 255 255 / .1); stroke: #fff; stroke-width: 2; }
+.an-hero .an-scr { fill: #F6C94C; }
+.an-hero .an-d { fill: #202D4A; font-size: 18px; font-weight: 800; text-anchor: end; }
+.an-hero .an-k { fill: #fff; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; grid-template-columns: minmax(0, 1fr); gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 13rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+/* receipt */
+.rc { max-width: 24rem; margin-inline: auto; background: var(--surface); border: 2px dashed var(--line); border-radius: 10px; padding: .6rem .9rem; font-variant-numeric: tabular-nums; }
+.rc-l { display: flex; justify-content: space-between; gap: .8rem; padding: .15rem 0; opacity: .3; transition: opacity .4s; min-width: 0; }
+.rc-l.on { opacity: 1; }
+.rc-l.tot { border-top: 2px solid var(--ink); margin-top: .3rem; padding-top: .3rem; font-weight: 800; }
+
+/* timeline */
+.tl-ax { stroke: var(--ink); stroke-width: 2; }
+.tl-t { font-size: 14px; fill: var(--muted); text-anchor: middle; font-weight: 600; }
+.tl-bar { fill: color-mix(in srgb, var(--scene) 45%, var(--surface)); transition: all .5s; }
+.tl-seg { font-size: 14px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.tl-end { font-size: 15px; font-weight: 800; fill: var(--scene); text-anchor: middle; }
+
+/* unit ladder */
+.ul-box { fill: var(--surface); stroke: var(--line); stroke-width: 2; transition: all .4s; }
+.ul-box.on { stroke: var(--scene); fill: color-mix(in srgb, var(--scene) 15%, var(--surface)); }
+.ul-t { font-size: 18px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.ul-a { font-size: 13px; font-weight: 700; fill: var(--muted); text-anchor: middle; }
+
+/* calculator */
+.cx { display: grid; grid-template-columns: minmax(0, 16rem) minmax(0, 1fr); gap: 1rem; align-items: center; max-width: 34rem; margin-inline: auto; }
+.cx-body { background: var(--surface-2); border: 2px solid var(--line); border-radius: 14px; padding: .6rem; display: grid; gap: .5rem; }
+.cx-scr { background: color-mix(in srgb, var(--good) 12%, var(--surface)); border-radius: 8px; padding: .4rem .6rem; text-align: right; font-family: ui-monospace, Menlo, monospace; min-height: 3.6rem; overflow: hidden; }
+.cx-in { font-size: .85rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cx-out { font-size: 1.4rem; font-weight: 800; color: var(--ink); }
+.cx-keys { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .3rem; }
+.cx-k { border: 1px solid var(--line); border-radius: 6px; background: var(--surface); font-size: .8rem; font-weight: 700; padding: .35rem 0; text-align: center; transition: all .2s; min-width: 0; }
+.cx-k.on { background: var(--scene); color: #fff; border-color: var(--scene); }
+.cx-seq { display: flex; flex-wrap: wrap; gap: .3rem; min-width: 0; }
+.cx-seq span { border: 1px solid var(--line); border-radius: 6px; padding: .15rem .45rem; font-weight: 700; background: var(--surface); }
+@container stage (max-width: 40rem) { .cx { grid-template-columns: 1fr; } }

@@ -27,3 +27,7 @@ Notes for resuming: the shared "algebra kit" (FD.mk, FD.walk, FD.graph, FD.poly,
 2026-10-30 15:27 · started  · sequences
 2026-10-30 15:33 · done     · sequences · audit ✓ · coverage ✓
 2026-10-30 15:33 · started  · functions
+2026-10-30 19:32 · done     · functions · audit ✓ · coverage ✓
+2026-10-30 19:32 · started  · straight-lines
+2026-10-30 19:44 · done     · straight-lines · audit ✓ · coverage ✓
+2026-10-30 19:44 · started  · real-life-graphs

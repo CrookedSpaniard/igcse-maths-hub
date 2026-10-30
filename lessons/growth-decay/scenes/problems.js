@@ -22,7 +22,7 @@ FD.add({
       a.$('#op').textContent = P; a.$('#or').textContent = r; a.$('#ot').textContent = T;
       let n = 0; while (P * m ** n >= T && n < 40) n++;
       a.yb(FD.series(P, m, Math.min(Math.max(n, 1), 10)));
-      a.big(`${P} \\times ${m}^{${n - 1}} = ${FD.r2(P * m ** (n - 1))} \\qquad ${P} \\times ${m}^{${n}} = ${FD.r2(P * m ** n)}`);
+      a.big(`${P} \\times ${m}^{${n}} = ${FD.r2(P * m ** n)}`);
       a.msg(`The value first drops below £${T} after <b>${n} year${n === 1 ? '' : 's'}</b>.`);
     };
     ['#rp', '#rr', '#rt'].forEach((s) => a.$(s).addEventListener('input', sync));

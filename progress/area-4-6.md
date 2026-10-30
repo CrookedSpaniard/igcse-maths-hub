@@ -9,3 +9,10 @@ Notes for resuming: the "lesson kit" (FD.stage, FD.G, FD.dragIn, FD.tn) is the t
 2026-10-30 13:30 · done     · measures-bearings · audit ✓ · coverage pending
 2026-10-30 13:40 · started  · constructions (lesson.js only)
 2026-10-30 14:00 · started  · coverage fixes for angles, polygons, symmetry, measures-bearings
+2026-10-30 19:32 · done     · angles · audit ✓ · coverage ✓
+2026-10-30 19:32 · done     · polygons · audit ✓ · coverage ✓ (added congruence section)
+2026-10-30 19:32 · done     · symmetry · audit ✓ · coverage ✓
+2026-10-30 19:32 · done     · measures-bearings · audit ✓ · coverage ✓ (added reading scales/time, pressure, protractor)
+2026-10-30 19:32 · started  · constructions (lesson.js exists; scenes next)
+2026-10-30 19:39 · done     · constructions · audit ✓ · coverage ✓
+2026-10-30 19:39 · started  · circle-theorems

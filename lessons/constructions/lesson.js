@@ -1,7 +1,7 @@
 window.LESSON = {
   id: 'constructions',
-  description: 'Interactive maths lesson on ruler-and-compasses constructions and loci: constructing triangles from three sides, the perpendicular bisector of a line segment, the bisector of an angle, loci of points and shading regions. Animated constructions, random practice, checks and tests. Pearson Edexcel International GCSE Mathematics A (4MA1), specification 4.5.',
-  intro: 'With only a <b>ruler</b> and a pair of <b>compasses</b> you can draw accurate triangles, cut a line exactly in half at right angles, and split an angle into two equal parts. Then you will use these constructions to draw <b>loci</b> and shade <b>regions</b>.',
+  description: 'Interactive maths lesson on accurate drawing and constructions: measuring and drawing lines to the nearest millimetre, constructing triangles with a ruler, protractor and compasses, the perpendicular bisector of a line segment, the bisector of an angle, and solving problems with scale drawings. Animated constructions, random practice, checks and tests. Pearson Edexcel International GCSE Mathematics A (4MA1), specification 4.5.',
+  intro: 'With a <b>ruler</b>, a <b>protractor</b> and a pair of <b>compasses</b> you can draw accurately. In this lesson you will measure lines to the nearest millimetre, <b>construct triangles</b>, cut a line exactly in half at right angles, split an angle into two equal parts, and solve problems with <b>scale drawings</b>.',
   hero: `<svg class="st-net cn-hero" viewBox="0 0 300 200" role="img" aria-label="Compass arcs from two points crossing on the perpendicular bisector">
     <line x1="70" y1="100" x2="230" y2="100" class="cn-l"/>
     <circle cx="70" cy="100" r="5" class="cn-d"/><circle cx="230" cy="100" r="5" class="cn-d"/>
@@ -10,14 +10,14 @@ window.LESSON = {
     <line x1="150" y1="15" x2="150" y2="185" class="cn-b"/>
   </svg>`,
   parts: {
-    A: { name: 'Constructions' },
-    B: { name: 'Loci and regions' },
+    A: { name: 'Accurate drawing' },
+    B: { name: 'Ruler-and-compasses constructions' },
   },
   sections: [
-    { id: 'triangles', part: 'A', name: 'Constructing triangles', short: 'Triangles', icon: 'geometry', color: '--c4', line: 'Three sides: use compasses for the two arcs.' },
-    { id: 'bisectors', part: 'A', name: 'Perpendicular and angle bisectors', short: 'Bisectors', icon: 'geometry', color: '--c2', line: 'Cut a line in half at 90°; cut an angle in half.' },
-    { id: 'loci', part: 'B', name: 'Loci', short: 'Loci', icon: 'target', color: '--c6', line: 'All the points that follow a rule.' },
-    { id: 'regions', part: 'B', name: 'Regions', short: 'Regions', icon: 'shapes', color: '--c8', line: 'Shade the points that satisfy several rules.' },
+    { id: 'lines', part: 'A', name: 'Measuring and drawing lines', short: 'Lines', icon: 'geometry', color: '--c1', line: 'Measure and draw to the nearest millimetre.', covers: ['F4.5A'] },
+    { id: 'triangles', part: 'A', name: 'Constructing triangles', short: 'Triangles', icon: 'shapes', color: '--c4', line: 'Three sides, two sides and an angle, or two angles and a side.', covers: ['F4.5B'] },
+    { id: 'bisectors', part: 'B', name: 'Perpendicular and angle bisectors', short: 'Bisectors', icon: 'geometry', color: '--c2', line: 'Cut a line in half at 90°; cut an angle in half.', covers: ['F4.5D'] },
+    { id: 'scaledraw', part: 'B', name: 'Problems with scale drawings', short: 'Scale drawings', icon: 'target', color: '--c8', line: 'Draw it to scale, then measure to find the answer.', covers: ['F4.5C'] },
   ],
-  scenes: ['triangles', 'bisectors', 'testA', 'loci', 'regions', 'testB'],
+  scenes: ['lines', 'triangles', 'testA', 'bisectors', 'scaledraw', 'testB'],
 };

@@ -4,7 +4,7 @@
 .pw-hero .pw-big { fill: #fff; font-size: 40px; font-weight: 800; text-anchor: middle; font-style: italic; }
 
 /* the board: picture, big formula, worked example, Try it */
-.sim { display: grid; gap: .7rem; }
+.sim { display: grid; grid-template-columns: minmax(0, 1fr); gap: .7rem; }
 .bd-pic { min-width: 0; }
 .bd-pic svg { width: 100%; height: auto; display: block; max-height: 15rem; margin-inline: auto; }
 .bd-work { min-height: 2rem; }
