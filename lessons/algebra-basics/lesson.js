@@ -13,10 +13,11 @@ window.LESSON = {
     B: { name: 'Index laws' },
   },
   sections: [
-    { id: 'notation', part: 'A', name: 'Terms, expressions, equations and formulae', short: 'Notation', icon: 'algebra', color: '--c1', line: 'What letters mean, and the names of the things we write.' },
-    { id: 'like-terms', part: 'A', name: 'Collecting like terms', short: 'Like terms', icon: 'algebra', color: '--c3', line: 'Add and subtract terms with the same letters; multiply and divide terms.' },
-    { id: 'index-laws', part: 'B', name: 'Index laws', short: 'Index laws', icon: 'algebra', color: '--c6', line: 'Multiply: add the powers. Divide: subtract. Power of a power: multiply.' },
-    { id: 'neg-frac', part: 'B', tier: 'H', name: 'Negative and fractional indices', short: 'Negative & fractional', icon: 'algebra', color: '--c8', line: 'A negative power is a reciprocal; a fractional power is a root.' },
+    { id: 'notation', covers: ['F2.1A', 'F2.1B'], part: 'A', name: 'Terms, expressions, equations and formulae', short: 'Notation', icon: 'algebra', color: '--c1', line: 'What letters mean, and the names of the things we write.' },
+    { id: 'like-terms', covers: ['F2.1B'], part: 'A', name: 'Collecting like terms', short: 'Like terms', icon: 'algebra', color: '--c3', line: 'Add and subtract terms with the same letters; multiply and divide terms.' },
+    { id: 'index-laws', covers: ['F2.1C', 'F2.1D'], part: 'B', name: 'Index laws', short: 'Index laws', icon: 'algebra', color: '--c6', line: 'Multiply: add the powers. Divide: subtract. Power of a power: multiply.' },
+    { id: 'neg-frac', covers: ['H2.1A'], part: 'B', tier: 'H', name: 'Negative and fractional indices', short: 'Negative & fractional', icon: 'algebra', color: '--c8', line: 'A negative power is a reciprocal; a fractional power is a root.' },
+    { id: 'proof', covers: ['H2.2E'], part: 'B', tier: 'H', name: 'Algebraic proof', short: 'Proof', icon: 'algebra', color: '--c5', line: 'Use 2n and 2n + 1 to prove facts about every integer.' },
   ],
-  scenes: ['notation', 'like-terms', 'testA', 'index-laws', 'neg-frac', 'testB'],
+  scenes: ['notation', 'like-terms', 'testA', 'index-laws', 'neg-frac', 'proof', 'testB'],
 };

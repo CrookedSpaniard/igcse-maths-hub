@@ -12,10 +12,10 @@ window.LESSON = {
     B: { name: 'Changing the subject' },
   },
   sections: [
-    { id: 'substitution', part: 'A', name: 'Substituting into formulae', short: 'Substitution', icon: 'algebra', color: '--c1', line: 'Replace each letter with its value, then use the order of operations.' },
-    { id: 'writing', part: 'A', name: 'Writing formulae and expressions', short: 'Writing formulae', icon: 'algebra', color: '--c3', line: 'Turn words into algebra.' },
-    { id: 'subject', part: 'B', name: 'Changing the subject', short: 'Change the subject', icon: 'algebra', color: '--c6', line: 'Undo the operations in reverse order, doing the same to both sides.' },
-    { id: 'subject-h', part: 'B', tier: 'H', name: 'Harder rearranging', short: 'Harder rearranging', icon: 'algebra', color: '--c8', line: 'Subject twice: collect and factorise. Powers and roots: undo them.' },
+    { id: 'substitution', covers: ['F2.2A', 'F2.3A', 'F2.3C'], part: 'A', name: 'Substituting into formulae', short: 'Substitution', icon: 'algebra', color: '--c1', line: 'Replace each letter with its value, then use the order of operations.' },
+    { id: 'writing', covers: ['F2.3B', 'F2.3D', 'F2.3E'], part: 'A', name: 'Writing formulae and expressions', short: 'Writing formulae', icon: 'algebra', color: '--c3', line: 'Turn words into algebra.' },
+    { id: 'subject', covers: ['F2.3F'], part: 'B', name: 'Changing the subject', short: 'Change the subject', icon: 'algebra', color: '--c6', line: 'Undo the operations in reverse order, doing the same to both sides.' },
+    { id: 'subject-h', covers: ['H2.3A'], part: 'B', tier: 'H', name: 'Harder rearranging', short: 'Harder rearranging', icon: 'algebra', color: '--c8', line: 'Subject twice: collect and factorise. Powers and roots: undo them.' },
   ],
   scenes: ['substitution', 'writing', 'testA', 'subject', 'subject-h', 'testB'],
 };

@@ -6,6 +6,7 @@ FD.test({
     ['factors', 'Which number is prime?', ['37', '39', '51', '1'], '37 has exactly two factors. \\(39 = 3 \\times 13\\), \\(51 = 3 \\times 17\\), and 1 has only one factor.', 'factors'],
     ['factors', 'How many factors does 20 have?', ['6', '5', '4', '8'], '1, 2, 4, 5, 10, 20.', 'factors'],
     ['factors', 'Which is a cube number?', ['64', '36', '16', '100'], '\\(64 = 4^3\\).', 'factors'],
+    ['factors', 'From 12, 15, 21, 30, which is an <b>odd</b> multiple of 5?', ['15', '30', '21', '12'], '15 = 3 × 5 and ends in 5. 30 is even.', 'factors'],
     ['factors', 'Which number is a multiple of 7 and a square number?', ['49', '14', '21', '25'], '\\(49 = 7 \\times 7 = 7^2\\).', 'factors'],
     ['primefactors', 'Write 72 as a product of its prime factors.', ['\\(2^3 \\times 3^2\\)', '\\(2^2 \\times 3^3\\)', '\\(8 \\times 9\\)', '\\(2 \\times 36\\)'], '\\(72 = 8 \\times 9 = 2^3 \\times 3^2\\).', 'primefactors'],
     ['primefactors', 'What is \\(2^2 \\times 3 \\times 5^2\\)?', ['300', '150', '60', '900'], '\\(4 \\times 3 \\times 25 = 300\\).', 'primefactors'],

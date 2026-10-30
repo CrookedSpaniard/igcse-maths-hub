@@ -14,11 +14,11 @@ window.LESSON = {
     B: { name: 'Order of operations' },
   },
   sections: [
-    { id: 'integers', part: 'A', name: 'Place value and ordering integers', short: 'Ordering', icon: 'number', color: '--c4', line: 'The value of each digit, the number line and the signs < and >.' },
-    { id: 'addsub', part: 'A', name: 'Adding and subtracting negative numbers', short: 'Add & subtract', icon: 'number', color: '--c1', line: 'Jumps on the number line; two minus signs together make a plus.' },
-    { id: 'muldiv', part: 'A', name: 'Multiplying and dividing negative numbers', short: 'Multiply & divide', icon: 'number', color: '--c6', line: 'Same signs give a positive, different signs give a negative.' },
-    { id: 'bidmas', part: 'B', name: 'The order of operations (BIDMAS)', short: 'BIDMAS', icon: 'calc', color: '--c3', line: 'Brackets, Indices, Division and Multiplication, Addition and Subtraction.' },
-    { id: 'brackets', part: 'B', name: 'Brackets, powers and negatives', short: 'Brackets', icon: 'calc', color: '--c8', line: '\\((-3)^2\\) or \\(-3^2\\)? Fraction lines and placing brackets.' },
+    { id: 'integers', part: 'A', name: 'Place value and ordering integers', short: 'Ordering', icon: 'number', color: '--c4', covers: ['F1.1A', 'F1.1B', 'F1.1C', 'F1.1D'], line: 'The value of each digit, the number line and the signs < and >.' },
+    { id: 'addsub', part: 'A', name: 'Adding and subtracting negative numbers', short: 'Add & subtract', icon: 'number', color: '--c1', covers: ['F1.1A', 'F1.1C', 'F1.1E'], line: 'Jumps on the number line; two minus signs together make a plus.' },
+    { id: 'muldiv', part: 'A', name: 'Multiplying and dividing negative numbers', short: 'Multiply & divide', icon: 'number', color: '--c6', covers: ['F1.1E'], line: 'Same signs give a positive, different signs give a negative.' },
+    { id: 'bidmas', part: 'B', name: 'The order of operations (BIDMAS)', short: 'BIDMAS', icon: 'calc', color: '--c3', covers: ['F1.1E', 'F1.1F'], line: 'Brackets, Indices, Division and Multiplication, Addition and Subtraction.' },
+    { id: 'brackets', part: 'B', name: 'Brackets, powers and negatives', short: 'Brackets', icon: 'calc', color: '--c8', covers: ['F1.1F'], line: '\\((-3)^2\\) or \\(-3^2\\)? Fraction lines and placing brackets.' },
   ],
   scenes: ['integers', 'addsub', 'muldiv', 'testA', 'bidmas', 'brackets', 'testB'],
 };

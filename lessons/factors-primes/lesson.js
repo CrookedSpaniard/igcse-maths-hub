@@ -15,10 +15,10 @@ window.LESSON = {
     B: { name: 'HCF and LCM' },
   },
   sections: [
-    { id: 'factors', part: 'A', name: 'Factors, multiples and primes', short: 'Factors', icon: 'number', color: '--c1', line: 'Factor pairs, multiples, primes, square and cube numbers.' },
-    { id: 'primefactors', part: 'A', name: 'Prime factor decomposition', short: 'Prime factors', icon: 'number', color: '--c3', line: 'Factor trees and writing a number with index notation.' },
-    { id: 'hcflcm', part: 'B', name: 'Finding the HCF and LCM', short: 'HCF & LCM', icon: 'number', color: '--c4', line: 'Listing, and the Venn diagram of prime factors.' },
-    { id: 'problems', part: 'B', name: 'HCF and LCM problems', short: 'Problems', icon: 'target', color: '--c6', line: 'Is it HCF or LCM? Sharing, cutting and things that repeat.' },
+    { id: 'factors', part: 'A', name: 'Factors, multiples and primes', short: 'Factors', icon: 'number', color: '--c1', covers: ['F1.1G'], line: 'Factor pairs, multiples, primes, square and cube numbers.' },
+    { id: 'primefactors', part: 'A', name: 'Prime factor decomposition', short: 'Prime factors', icon: 'number', color: '--c3', covers: ['F1.4D', 'F1.1H'], line: 'Factor trees and writing a number with index notation.' },
+    { id: 'hcflcm', part: 'B', name: 'Finding the HCF and LCM', short: 'HCF & LCM', icon: 'number', color: '--c4', covers: ['F1.4E', 'F1.1H'], line: 'Listing, and the Venn diagram of prime factors.' },
+    { id: 'problems', part: 'B', name: 'HCF and LCM problems', short: 'Problems', icon: 'target', color: '--c6', covers: ['F1.4E', 'F1.1H'], line: 'Is it HCF or LCM? Sharing, cutting and things that repeat.' },
   ],
   scenes: ['factors', 'primefactors', 'testA', 'hcflcm', 'problems', 'testB'],
 };

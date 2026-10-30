@@ -46,6 +46,7 @@ FD.add({
   vocab: [
     ['Factor', 'A whole number that divides into another exactly. The factors of 12 are 1, 2, 3, 4, 6 and 12.'],
     ['Multiple', 'A number in the times table of another. The multiples of 5 are 5, 10, 15, 20, …'],
+    ['Even and odd', 'Even numbers are the multiples of 2 (they end in 0, 2, 4, 6 or 8). Odd numbers are not: they end in 1, 3, 5, 7 or 9.'],
     ['Prime number', 'A number with exactly two factors: 1 and itself. 2, 3, 5, 7, 11, 13, …'],
     ['Square number', 'A whole number times itself: \\(1, 4, 9, 16, 25, \\dots\\) (\\(n^2\\)).'],
     ['Cube number', 'A whole number times itself times itself: \\(1, 8, 27, 64, 125, \\dots\\) (\\(n^3\\)).'],
@@ -92,11 +93,11 @@ FD.add({
     },
     {
       title: 'Multiples',
-      text: '<p>The <b>multiples</b> of a number are its times table. They go on for ever.</p><p>Multiples of 6: 6, 12, 18, 24, 30, …</p>',
+      text: '<p>The <b>multiples</b> of a number are its times table. They go on for ever.</p><p>Multiples of 6: 6, 12, 18, 24, 30, …</p><p>The multiples of 2 are the <b>even</b> numbers. Every other whole number is <b>odd</b>.</p>',
       tip: 'Factors fit INTO a number; multiples come OUT of it. 6 is a factor of 30, and 30 is a multiple of 6.',
       async on(a, ctx) {
         a.reset(); a.dots(30, 5);
-        await a.lines([['6 \\times 1 = 6, \\quad 6 \\times 2 = 12, \\quad 6 \\times 3 = 18, \\dots', 'multiples of 6'], ['30 = 6 \\times 5', '30 is a multiple of 6'], ['\\text{so } 6 \\text{ is a factor of } 30', '']], ctx);
+        await a.lines([['6 \\times 1 = 6, \\quad 6 \\times 2 = 12, \\quad 6 \\times 3 = 18, \\dots', 'multiples of 6'], ['30 = 6 \\times 5', '30 is a multiple of 6'], ['\\text{so } 6 \\text{ is a factor of } 30', ''], ['2, 4, 6, 8, \\dots \\text{ even} \\qquad 1, 3, 5, 7, \\dots \\text{ odd}', 'multiples of 2 are even']], ctx);
       },
     },
     {
@@ -135,6 +136,7 @@ FD.practice({
     () => { const n = FD.pick([12, 18, 20, 24, 28, 30, 32, 36, 40, 42, 45, 48, 50, 54, 56, 60, 64, 72, 80, 84, 90, 96, 100]), f = FD.factorsOf(n), pairs = f.filter((x) => x * x <= n); return { type: 'num', q: `How many factors does ${n} have?`, a: f.length, why: `Factor pairs: ${pairs.map((p) => `\\(${p} \\times ${n / p}\\)`).join(', ')}. The factors are ${f.join(', ')}: that is ${f.length} factors.` }; },
     () => { const p = FD.pick([2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]); const comp = FD.shuffle([9, 15, 21, 27, 33, 39, 49, 51, 57, 63, 69, 77, 81, 87, 91, 93, 1]).slice(0, 3); return { type: 'mcq', q: 'Which of these is a <b>prime</b> number?', opts: [String(p), ...comp.map(String)], why: `${p} has exactly two factors, 1 and ${p}. ${comp.map((c) => (c === 1 ? '1 has only one factor' : `${c} = ${FD.factorsOf(c)[1]} \\(\\times\\) ${c / FD.factorsOf(c)[1]}`)).join('; ')}.` }; },
     () => { const k = FD.rnd(3, 12), m = FD.rnd(3, 12), opts = [k * m, k * m + 1, k * m - 1, k * m + 2].filter((x, i) => i === 0 || x % k !== 0); return { type: 'mcq', q: `Which of these is a multiple of ${k}?`, opts: opts.slice(0, 3).map(String), why: `\\(${k} \\times ${m} = ${k * m}\\), so ${k * m} is in the ${k} times table.` }; },
+    () => { const n = FD.rnd(11, 99), odd = n % 2; return { type: 'mcq', q: `Is ${n} odd or even?`, opts: odd ? ['Odd', 'Even'] : ['Even', 'Odd'], why: `${n} ends in ${n % 10}. ${odd ? 'It is not a multiple of 2, so it is odd.' : `It is a multiple of 2 (${n} = 2 × ${n / 2}), so it is even.`}` }; },
     () => { const k = FD.rnd(2, 15), cube = FD.rnd(0, 1) && k <= 6; return { type: 'num', q: cube ? `Work out \\(${k}^3\\).` : `Work out \\(${k}^2\\).`, a: cube ? k ** 3 : k * k, why: cube ? `\\(${k}^3 = ${k} \\times ${k} \\times ${k} = ${k ** 3}\\).` : `\\(${k}^2 = ${k} \\times ${k} = ${k * k}\\).` }; },
   ],
 });
@@ -143,6 +145,7 @@ FD.check({
   section: 'factors',
   items: [
     { type: 'multi', q: 'Choose <b>all</b> the factors of 18.', need: 3, opts: [['3', true], ['6', true], ['9', true], ['4', false], ['36', false]], why: 'The factor pairs of 18 are \\(1 \\times 18\\), \\(2 \\times 9\\) and \\(3 \\times 6\\). 36 is a multiple of 18, not a factor.' },
+    { type: 'mcq', q: 'Which number is <b>odd</b> and a <b>multiple of 7</b>?', opts: ['35', '28', '14', '27'], why: '35 = 7 × 5 ends in 5, so it is odd. 28 and 14 are even; 27 is not a multiple of 7.' },
     { type: 'tf', q: '1 is a prime number.', a: false, why: 'A prime has exactly two factors. 1 has only one factor, so it is not prime.' },
     { type: 'num', q: 'Write down the prime numbers between 20 and 30. How many are there?', a: 2, why: 'They are 23 and 29. 21, 25, 27 are odd but not prime.' },
     { type: 'sort', q: 'Sort each number.', bins: ['Square', 'Cube', 'Prime'], rows: [['49', 0], ['27', 1], ['31', 2], ['125', 1], ['2', 2]], why: '\\(49 = 7^2\\), \\(27 = 3^3\\), \\(125 = 5^3\\), and 31 and 2 are prime.' },

@@ -1,8 +1,8 @@
 // Compound measures: a formula triangle and a car moving along a road.
 FD.add({
   id: 'compound',
-  title: 'Speed and density',
-  tab: 'Speed & density',
+  title: 'Speed, density and pressure',
+  tab: 'Compound measures',
   icon: 'calc',
   color: '--c5',
   section: true,
@@ -11,6 +11,7 @@ FD.add({
     ['Compound measure', 'A measure made from two others, like speed (distance and time) or density (mass and volume).'],
     ['Speed', '\\(\\text{speed} = \\dfrac{\\text{distance}}{\\text{time}}\\), in km/h or m/s.'],
     ['Density', '\\(\\text{density} = \\dfrac{\\text{mass}}{\\text{volume}}\\), in g/cm³ or kg/m³.'],
+    ['Pressure', '\\(\\text{pressure} = \\dfrac{\\text{force}}{\\text{area}}\\), in newtons per square metre (N/m²).'],
   ],
   mount(el) {
     const G = FD.G;
@@ -85,6 +86,16 @@ FD.add({
       },
     },
     {
+      title: 'Pressure',
+      text: '<p><b>Pressure</b> is force per unit of area: \\(P = \\dfrac{F}{A}\\). Force is measured in newtons (N).</p><p>A box pushes down with a force of \\(600\\) N on an area of \\(1.5\\ \\text{m}^2\\).</p>',
+      tip: 'The same force on a smaller area gives a bigger pressure. That is why a knife cuts.',
+      async on(a, ctx) {
+        a.off(); a.scene(['F', 'P', 'A'], 1);
+        if (!(await a.play(ctx, [['P = \\frac{F}{A} = \\frac{600}{1.5}', ''], ['= 400\\ \\text{N/m}^2', 'newtons per square metre']]))) return;
+        a.scene(['F', 'P', 'A'], 0); a.msg('To find a force: \\(F = P \\times A\\).');
+      },
+    },
+    {
       title: 'Try it: the speed triangle',
       text: '<p>Choose what to find, then change the distance and the time. The highlighted part of the triangle is what you are finding.</p>',
       on(a) { a.tryMode(); },
@@ -98,6 +109,7 @@ FD.practice({
     () => { const s = FD.rnd(4, 24) * 5, t = FD.pick([0.5, 1.5, 2, 2.5, 3, 4]); return { type: 'num', q: `A train travels \\(${FD.tn(s * t)}\\) km in \\(${FD.tn(t)}\\) hours. Work out its average speed.`, a: s, unit: 'km/h', why: `\\(S = D \\div T = ${FD.tn(s * t)} \\div ${FD.tn(t)} = ${s}\\) km/h.` }; },
     () => { const s = FD.rnd(3, 20) * 6, m = FD.pick([10, 20, 30, 40, 50, 90]); return { type: 'num', q: `A bus travels at \\(${s}\\) km/h for \\(${m}\\) minutes. How far does it go?`, a: (s * m) / 60, unit: 'km', why: `\\(${m}\\) min \\(= ${m} \\div 60\\) h. \\(D = S \\times T = ${s} \\times \\frac{${m}}{60} = ${FD.tn((s * m) / 60)}\\) km.` }; },
     () => { const d = FD.pick([2.7, 7.8, 8.9, 1.2, 0.8, 11.3, 2.5]), v = FD.rnd(2, 40) * 10; return { type: 'num', q: `A piece of material has density \\(${d}\\ \\text{g/cm}^3\\) and volume \\(${v}\\ \\text{cm}^3\\). Work out its mass.`, a: FD.round(d * v, 2), unit: 'g', why: `\\(M = D \\times V = ${d} \\times ${v} = ${FD.tn(FD.round(d * v, 2))}\\) g.` }; },
+    () => { const p = FD.rnd(2, 30) * 50, A = FD.pick([0.5, 2, 2.5, 4, 5, 0.25]); return { type: 'num', q: `A force of \\(${FD.tn(p * A)}\\) N acts on an area of \\(${A}\\ \\text{m}^2\\). Work out the pressure.`, a: p, unit: 'N/m²', why: `\\(P = F \\div A = ${FD.tn(p * A)} \\div ${A} = ${FD.tn(p)}\\ \\text{N/m}^2\\).` }; },
     () => { const s = FD.pick([36, 54, 72, 90, 108, 18]); return { type: 'num', q: `Change \\(${s}\\) km/h into metres per second (m/s).`, a: s / 3.6, unit: 'm/s', why: `\\(${s}\\) km/h \\(= ${s * 1000}\\) m in \\(3600\\) s. \\(${s * 1000} \\div 3600 = ${s / 3.6}\\) m/s.` }; },
   ],
 });
@@ -108,6 +120,7 @@ FD.check({
     { type: 'num', q: 'A car travels \\(210\\) km in \\(3\\) hours. What is its average speed?', a: 70, unit: 'km/h', why: '\\(210 \\div 3 = 70\\).' },
     { type: 'num', q: 'How long does it take to walk \\(10\\) km at \\(4\\) km/h? Give your answer in hours.', a: 2.5, unit: 'h', why: '\\(T = 10 \\div 4 = 2.5\\) hours (2 h 30 min).' },
     { type: 'mcq', q: '\\(1.25\\) hours is…', opts: ['1 h 15 min', '1 h 25 min', '1 h 2.5 min', '125 min'], why: '\\(0.25 \\times 60 = 15\\) minutes.' },
+    { type: 'num', q: 'A force of \\(240\\) N acts on an area of \\(0.8\\ \\text{m}^2\\). What is the pressure?', a: 300, unit: 'N/m²', why: '\\(240 \\div 0.8 = 300\\ \\text{N/m}^2\\).' },
     { type: 'num', q: 'A stone has mass \\(390\\) g and volume \\(150\\ \\text{cm}^3\\). Work out its density.', a: 2.6, unit: 'g/cm³', why: '\\(390 \\div 150 = 2.6\\).' },
   ],
 });

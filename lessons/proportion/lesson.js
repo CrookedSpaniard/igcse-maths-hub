@@ -13,10 +13,10 @@ window.LESSON = {
     B: { name: 'Inverse proportion and problems' },
   },
   sections: [
-    { id: 'direct', part: 'A', name: 'Direct proportion: y = kx', short: 'y ∝ x', icon: 'graph', color: '--c1', line: 'Find k from one pair of values, then use the formula.' },
-    { id: 'direct-powers', part: 'A', name: 'Proportion to powers and roots', short: 'Powers & roots', icon: 'graph', color: '--c3', line: 'y ∝ x², y ∝ x³ and y ∝ √x.' },
-    { id: 'inverse', part: 'B', name: 'Inverse proportion', short: 'Inverse', icon: 'graph', color: '--c6', line: 'y = k/x and y = k/x²: as one goes up, the other goes down.' },
-    { id: 'prop-problems', part: 'B', name: 'Proportion problems', short: 'Problems', icon: 'target', color: '--c8', line: 'From words to formula; what happens when x is doubled?' },
+    { id: 'direct', covers: ['H2.5A'], part: 'A', name: 'Direct proportion: y = kx', short: 'y ∝ x', icon: 'graph', color: '--c1', line: 'Find k from one pair of values, then use the formula.' },
+    { id: 'direct-powers', covers: ['H2.5A'], part: 'A', name: 'Proportion to powers and roots', short: 'Powers & roots', icon: 'graph', color: '--c3', line: 'y ∝ x², y ∝ x³ and y ∝ √x.' },
+    { id: 'inverse', covers: ['H2.5A'], part: 'B', name: 'Inverse proportion', short: 'Inverse', icon: 'graph', color: '--c6', line: 'y = k/x and y = k/x²: as one goes up, the other goes down.' },
+    { id: 'prop-problems', covers: ['H2.5A'], part: 'B', name: 'Proportion problems', short: 'Problems', icon: 'target', color: '--c8', line: 'From words to formula; what happens when x is doubled?' },
   ],
   scenes: ['direct', 'direct-powers', 'testA', 'inverse', 'prop-problems', 'testB'],
 };

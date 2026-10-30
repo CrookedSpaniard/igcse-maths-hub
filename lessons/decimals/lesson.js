@@ -14,11 +14,11 @@ window.LESSON = {
     C: { name: 'Recurring decimals to fractions', tier: 'H' },
   },
   sections: [
-    { id: 'placevalue', part: 'A', name: 'Decimal place value and powers of 10', short: 'Place value', icon: 'number', color: '--c4', line: 'Tenths, hundredths, thousandths; ordering; × and ÷ by 10, 100, 1000.' },
-    { id: 'calc', part: 'A', name: 'Calculating with decimals', short: 'Calculating', icon: 'calc', color: '--c1', line: 'Line up the points to add; count decimal places to multiply.' },
-    { id: 'convert', part: 'B', name: 'Converting fractions and decimals', short: 'Converting', icon: 'frac', color: '--c3', line: 'Place value one way, division the other.' },
-    { id: 'recurring', part: 'B', name: 'Terminating and recurring decimals', short: 'Recurring', icon: 'frac', color: '--c6', line: 'Dot notation, and which fractions give recurring decimals.' },
-    { id: 'rec2frac', part: 'C', name: 'Recurring decimals to fractions', short: 'To fractions', icon: 'algebra', color: '--c8', line: 'Multiply by 10, 100 or 1000 and subtract to remove the tail.', tier: 'H' },
+    { id: 'placevalue', part: 'A', name: 'Decimal place value and powers of 10', short: 'Place value', icon: 'number', color: '--c4', covers: ['F1.3A', 'F1.3B', 'F1.3C'], line: 'Tenths, hundredths, thousandths; ordering; × and ÷ by 10, 100, 1000.' },
+    { id: 'calc', part: 'A', name: 'Calculating with decimals', short: 'Calculating', icon: 'calc', color: '--c1', covers: ['F1.3A'], line: 'Line up the points to add; count decimal places to multiply.' },
+    { id: 'convert', part: 'B', name: 'Fractions, decimals and percentages', short: 'Converting', icon: 'frac', color: '--c3', covers: ['F1.2G', 'F1.3D', 'F1.3E', 'F1.3C'], line: 'Place value one way, division the other; then × 100 for a percentage.' },
+    { id: 'recurring', part: 'B', name: 'Terminating and recurring decimals', short: 'Recurring', icon: 'frac', color: '--c6', covers: ['F1.2G', 'F1.3E'], line: 'Dot notation, and which fractions give recurring decimals.' },
+    { id: 'rec2frac', part: 'C', name: 'Recurring decimals to fractions', short: 'To fractions', icon: 'algebra', color: '--c8', covers: ['H1.3A'], line: 'Multiply by 10, 100 or 1000 and subtract to remove the tail.', tier: 'H' },
   ],
   scenes: ['placevalue', 'calc', 'testA', 'convert', 'recurring', 'testB', 'rec2frac', 'testC'],
 };

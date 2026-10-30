@@ -75,6 +75,12 @@ FD.add({
       on: FD.walk([['3x^4 \\times 5x^2 = 15x^6', '3 × 5, then add powers'], ['\\frac{12y^7}{4y^3} = 3y^4', '12 ÷ 4, then subtract powers'], ['(2x^3)^4 = 2^4 x^{12} = 16x^{12}', 'both parts to the power 4'], ['a^2b^3 \\times a^4b = a^6b^4', 'each letter on its own']], (a) => { a.show(0, 1, 1, 0); a.big(''); }),
     },
     {
+      title: 'Zero and negative powers',
+      text: '<p>Keep dividing: \\(x^2 \\div x^3 = x^{-1}\\), but it is also \\(\\frac{x \\times x}{x \\times x \\times x} = \\frac{1}{x}\\).</p><p>So \\(x^0 = 1\\), \\(x^{-1} = \\frac{1}{x}\\) and \\(x^{-2} = \\frac{1}{x^2}\\).</p>',
+      tip: 'The index laws work for negative powers too: \\(x^5 \\times x^{-2} = x^3\\).',
+      on: FD.walk([['x^3 \\div x^3 = x^0 = 1', 'anything ÷ itself'], ['x^2 \\div x^3 = x^{-1} = \\frac{1}{x}', 'one x left on the bottom'], ['5^{-2} = \\frac{1}{5^2} = \\frac{1}{25}', ''], ['x^5 \\times x^{-2} = x^{3}', 'add: 5 + (−2)']], (a) => { a.show(1, 2, 2, 2); a.big(''); }),
+    },
+    {
       title: 'Try it: see why the laws work',
       text: '<p>Choose a law and move the sliders. Count the \\(x\\)\'s to check the power.</p>',
       tip: 'For divide, set m = n. What is left?',
@@ -99,6 +105,7 @@ FD.check({
     { type: 'alg', q: 'Simplify \\(\\frac{a^{10}}{a^4}\\)', a: 'a^6', show: '\\(a^6\\)', why: 'Subtract the powers: \\(10 - 4 = 6\\).' },
     { type: 'mcq', q: 'Simplify \\((3p^2)^3\\)', opts: ['\\(27p^6\\)', '\\(3p^6\\)', '\\(9p^5\\)', '\\(27p^5\\)'], why: '\\(3^3 = 27\\) and \\((p^2)^3 = p^6\\).' },
     { type: 'num', q: 'Work out the value of \\(m^0\\) when \\(m = 7\\).', a: 1, why: 'Any non-zero number to the power 0 is 1.' },
+    { type: 'num', q: 'Work out \\(2^{-3}\\).', a: 1 / 8, show: '\\(\\tfrac18\\)', hint: 'Type a fraction like 1/9.', why: '\\(2^{-3} = \\frac{1}{2^3} = \\frac18\\).' },
     { type: 'alg', q: 'Simplify \\(2a^3b \\times 4ab^2\\)', a: '8a^4b^3', show: '\\(8a^4b^3\\)', why: '\\(2 \\times 4 = 8\\), \\(a^3 \\times a = a^4\\), \\(b \\times b^2 = b^3\\).' },
   ],
 });

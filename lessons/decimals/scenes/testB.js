@@ -5,6 +5,8 @@ FD.test({
     ['convert', 'Write 0.35 as a fraction in its simplest form.', ['\\(\\tfrac{7}{20}\\)', '\\(\\tfrac{35}{10}\\)', '\\(\\tfrac{3}{5}\\)', '\\(\\tfrac{7}{2}\\)'], '\\(\\tfrac{35}{100} = \\tfrac{7}{20}\\).', 'convert'],
     ['convert', 'Write \\(\\tfrac{3}{25}\\) as a decimal.', ['0.12', '0.325', '0.3', '1.2'], '\\(\\tfrac{3}{25} = \\tfrac{12}{100}\\).', 'convert'],
     ['convert', 'Write \\(\\tfrac{7}{8}\\) as a decimal.', ['0.875', '0.78', '0.87', '1.14'], '\\(7 \\div 8 = 0.875\\).', 'convert'],
+    ['convert', 'Write 0.085 as a percentage.', ['8.5%', '85%', '0.85%', '0.085%'], '\\(0.085 \\times 100 = 8.5\\).', 'convert'],
+    ['convert', 'Write \\(\\tfrac{9}{25}\\) as a percentage.', ['36%', '9.25%', '25%', '0.36%'], '\\(\\tfrac{9}{25} = \\tfrac{36}{100}\\).', 'convert'],
     ['convert', 'Which is the smallest?', ['\\(\\tfrac{2}{7}\\)', '0.3', '\\(\\tfrac{1}{3}\\)', '0.29'], '\\(\\tfrac27 \\approx 0.286\\).', 'convert'],
     ['recurring', 'Which fraction gives a recurring decimal?', ['\\(\\tfrac{5}{12}\\)', '\\(\\tfrac{5}{16}\\)', '\\(\\tfrac{3}{20}\\)', '\\(\\tfrac{9}{12}\\)'], '\\(12 = 2^2 \\times 3\\). (\\(\\tfrac{9}{12} = \\tfrac34\\) terminates.)', 'recurring'],
     ['recurring', 'Write \\(\\tfrac{2}{9}\\) as a decimal.', ['\\(0.\\dot{2}\\)', '\\(0.\\dot{2}\\dot{9}\\)', '\\(0.29\\)', '\\(0.\\dot{4}\\dot{5}\\)'], '\\(2 \\div 9 = 0.222\\dots\\)', 'recurring'],

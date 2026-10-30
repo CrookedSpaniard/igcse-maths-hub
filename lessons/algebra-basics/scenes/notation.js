@@ -88,6 +88,25 @@ TYPES.alg = (it, body, finish) => {
   });
   return 1;
 };
+// A graph: FD.graph(host, axesOptions) draws the grid once and returns helpers that write SVG for a layer
+// clipped to the plot area: curve(f, cls, a, b), pt(x, y, cls), lbl(x, y, text, cls), line(x1, y1, x2, y2, cls).
+let kitClip = 0;
+FD.graph = (host, o) => {
+  const ax = FD.axes(o), id = 'kclip' + ++kitClip, p = o.pad || 28;
+  host.innerHTML = `<svg class="graph" viewBox="0 0 ${ax.w} ${ax.h}" role="img" aria-label="${o.label || 'Graph'}">${ax.grid()}
+    <clipPath id="${id}"><rect x="${p}" y="${p}" width="${ax.w - 2 * p}" height="${ax.h - 2 * p}"/></clipPath><g clip-path="url(#${id})" class="g-clip"></g><g class="g-top"></g></svg>`;
+  const clip = host.querySelector('.g-clip'), top = host.querySelector('.g-top');
+  const inX = (x) => Math.max(p + 2, Math.min(ax.w - p - 2, x)), inY = (y) => Math.max(p + 12, Math.min(ax.h - p - 4, y));
+  return {
+    ax, svg: host.querySelector('svg'),
+    draw(under, over = '') { clip.innerHTML = under; top.innerHTML = over; },
+    curve: (f, cls = '', a, b) => `<path class="curve ${cls}" d="${ax.path(f, a, b)}"/>`,
+    line: (x1, y1, x2, y2, cls = 'g-line') => `<line class="${cls}" x1="${ax.X(x1)}" y1="${ax.Y(y1)}" x2="${ax.X(x2)}" y2="${ax.Y(y2)}"/>`,
+    pt: (x, y, cls = '') => `<circle class="pt ${cls}" cx="${ax.X(x)}" cy="${ax.Y(y)}" r="6"/>`,
+    // a label next to (x, y): it flips to the left near the right edge and stays inside the plot
+    lbl: (x, y, t, cls = '') => { const X = ax.X(x), right = X > ax.w * .62; return `<text class="g-lbl ${cls}" x="${inX(X + (right ? -10 : 10))}" y="${inY(ax.Y(y) - 10)}" text-anchor="${right ? 'end' : 'start'}">${t}</text>`; },
+  };
+};
 // A polynomial from its coefficients, highest power first: FD.poly([1, -3, 2]) → "x^{2} - 3x + 2".
 // plain = true writes "x^2" so it can be used as a typed-answer key.
 FD.poly = (cs, v = 'x', plain = false) => {

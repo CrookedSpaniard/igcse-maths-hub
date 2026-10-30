@@ -13,11 +13,11 @@ window.LESSON = {
     B: { name: 'Factorising' },
   },
   sections: [
-    { id: 'single', part: 'A', name: 'Expanding single brackets', short: 'Single brackets', icon: 'algebra', color: '--c1', line: 'Multiply every term inside by the term outside.' },
-    { id: 'double', part: 'A', name: 'Expanding double brackets', short: 'Double brackets', icon: 'algebra', color: '--c3', line: 'The grid method: four products, then collect like terms.' },
-    { id: 'common', part: 'B', name: 'Factorising with common factors', short: 'Common factors', icon: 'algebra', color: '--c6', line: 'Take the highest common factor outside the bracket.' },
-    { id: 'quad-fact', part: 'B', name: 'Factorising quadratics', short: 'Quadratics', icon: 'algebra', color: '--c8', line: 'Find two numbers that multiply to c and add to b.' },
-    { id: 'harder', part: 'B', tier: 'H', name: 'Triple brackets and ax² + bx + c', short: 'Harder', icon: 'algebra', color: '--c5', line: 'Expand three brackets; factorise when x² has a coefficient.' },
+    { id: 'single', covers: ['F2.2B', 'F2.2C'], part: 'A', name: 'Expanding single brackets', short: 'Single brackets', icon: 'algebra', color: '--c1', line: 'Multiply every term inside by the term outside.' },
+    { id: 'double', covers: ['F2.2E'], part: 'A', name: 'Expanding double brackets', short: 'Double brackets', icon: 'algebra', color: '--c3', line: 'The grid method: four products, then collect like terms.' },
+    { id: 'common', covers: ['F2.2D'], part: 'B', name: 'Factorising with common factors', short: 'Common factors', icon: 'algebra', color: '--c6', line: 'Take the highest common factor outside the bracket.' },
+    { id: 'quad-fact', covers: ['F2.2F'], part: 'B', name: 'Factorising quadratics', short: 'Quadratics', icon: 'algebra', color: '--c8', line: 'Find two numbers that multiply to c and add to b.' },
+    { id: 'harder', covers: ['H2.2A', 'H2.2B'], part: 'B', tier: 'H', name: 'Triple brackets and ax² + bx + c', short: 'Harder', icon: 'algebra', color: '--c5', line: 'Expand three brackets; factorise when x² has a coefficient.' },
   ],
   scenes: ['single', 'double', 'testA', 'common', 'quad-fact', 'harder', 'testB'],
 };

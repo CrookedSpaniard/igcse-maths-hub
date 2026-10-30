@@ -15,10 +15,10 @@ window.LESSON = {
     B: { name: 'Angles in triangles' },
   },
   sections: [
-    { id: 'facts', part: 'A', name: 'Angle facts', short: 'Angle facts', icon: 'geometry', color: '--c1', line: 'Types of angle; straight lines, points and vertically opposite angles.' },
-    { id: 'parallel', part: 'A', name: 'Angles in parallel lines', short: 'Parallel lines', icon: 'geometry', color: '--c4', line: 'Corresponding, alternate and co-interior angles.' },
-    { id: 'triangles', part: 'B', name: 'Angles in triangles', short: 'Triangles', icon: 'shapes', color: '--c6', line: 'Angle sum 180°, exterior angles, isosceles and equilateral triangles.' },
-    { id: 'problems', part: 'B', name: 'Multi-step angle problems', short: 'Problems', icon: 'target', color: '--c8', line: 'Chains of angle facts with a reason for every step.' },
+    { id: 'facts', part: 'A', name: 'Angle facts', short: 'Angle facts', icon: 'geometry', color: '--c1', line: 'Types of angle; straight lines, points and vertically opposite angles.', covers: ['F4.1A', 'F4.1B'] },
+    { id: 'parallel', part: 'A', name: 'Angles in parallel lines', short: 'Parallel lines', icon: 'geometry', color: '--c4', line: 'Corresponding, alternate and co-interior angles.', covers: ['F4.1B'] },
+    { id: 'triangles', part: 'B', name: 'Angles in triangles', short: 'Triangles', icon: 'shapes', color: '--c6', line: 'Angle sum 180°, exterior angles, isosceles and equilateral triangles.', covers: ['F4.1C', 'F4.1D'] },
+    { id: 'problems', part: 'B', name: 'Multi-step angle problems', short: 'Problems', icon: 'target', color: '--c8', line: 'Chains of angle facts with a reason for every step.', covers: ['F4.1B', 'F4.1C', 'F4.1D'] },
   ],
   scenes: ['facts', 'parallel', 'testA', 'triangles', 'problems', 'testB'],
 };

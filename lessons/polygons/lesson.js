@@ -9,14 +9,15 @@ window.LESSON = {
     <text x="255" y="105" class="pg-l">720°</text>
   </svg>`,
   parts: {
-    A: { name: 'Quadrilaterals' },
+    A: { name: 'Quadrilaterals and congruence' },
     B: { name: 'Angles in polygons' },
   },
   sections: [
-    { id: 'quads', part: 'A', name: 'Properties of quadrilaterals', short: 'Quadrilaterals', icon: 'shapes', color: '--c2', line: 'Squares, rectangles, parallelograms, rhombuses, kites and trapeziums.' },
-    { id: 'quadangles', part: 'A', name: 'Angles in quadrilaterals', short: 'Quad angles', icon: 'geometry', color: '--c5', line: 'The angles add up to 360°; use the properties to find more.' },
-    { id: 'interior', part: 'B', name: 'Interior angles of polygons', short: 'Interior angles', icon: 'shapes', color: '--c7', line: 'Split into triangles: sum = (n − 2) × 180°.' },
-    { id: 'exterior', part: 'B', name: 'Exterior angles and regular polygons', short: 'Exterior angles', icon: 'geometry', color: '--c3', line: 'Exterior angles add up to 360°.' },
+    { id: 'quads', part: 'A', name: 'Properties of quadrilaterals', short: 'Quadrilaterals', icon: 'shapes', color: '--c2', line: 'Squares, rectangles, parallelograms, rhombuses, kites and trapeziums.', covers: ['F4.2C'] },
+    { id: 'quadangles', part: 'A', name: 'Angles in quadrilaterals', short: 'Quad angles', icon: 'geometry', color: '--c5', line: 'The angles add up to 360°; use the properties to find more.', covers: ['F4.2B'] },
+    { id: 'congruence', part: 'A', name: 'Congruent shapes', short: 'Congruence', icon: 'shapes', color: '--c8', line: 'Same shape and same size: one fits exactly on the other.', covers: ['F4.2F', 'F4.2G', 'F4.2A'] },
+    { id: 'interior', part: 'B', name: 'Interior angles of polygons', short: 'Interior angles', icon: 'shapes', color: '--c7', line: 'Split into triangles: sum = (n − 2) × 180°.', covers: ['F4.2A', 'F4.2D', 'F4.2E'] },
+    { id: 'exterior', part: 'B', name: 'Exterior angles and regular polygons', short: 'Exterior angles', icon: 'geometry', color: '--c3', line: 'Exterior angles add up to 360°.', covers: ['F4.2D'] },
   ],
-  scenes: ['quads', 'quadangles', 'testA', 'interior', 'exterior', 'testB'],
+  scenes: ['quads', 'quadangles', 'congruence', 'testA', 'interior', 'exterior', 'testB'],
 };

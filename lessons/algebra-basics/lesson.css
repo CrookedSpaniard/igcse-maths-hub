@@ -55,3 +55,10 @@
 .nf-r.hot { border-color: var(--scene); background: color-mix(in srgb, var(--scene) 16%, var(--surface)); }
 .nf-r b { text-align: center; }
 .nf-r i { font-size: .8rem; color: var(--muted); font-style: normal; }
+
+.pf-dots { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; min-height: 3.6rem; }
+.pf-col { display: grid; gap: 6px; padding: 4px; border-radius: 10px; border: 2px solid var(--line); align-content: start; }
+.pf-col.odd { border-color: var(--bad); border-style: dashed; }
+.pf-col i { width: 18px; height: 18px; border-radius: 50%; animation: ltIn .3s ease-out both; }
+.pf-col i.a { background: var(--c1); }
+.pf-col i.b { background: var(--c6); }

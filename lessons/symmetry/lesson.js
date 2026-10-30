@@ -12,9 +12,9 @@ window.LESSON = {
     B: { name: 'Using symmetry' },
   },
   sections: [
-    { id: 'line', part: 'A', name: 'Line symmetry', short: 'Line symmetry', icon: 'shapes', color: '--c2', line: 'Fold along a mirror line: the halves match exactly.' },
-    { id: 'rotational', part: 'A', name: 'Rotational symmetry', short: 'Rotational', icon: 'shapes', color: '--c6', line: 'Turn the shape: how many times does it fit in one full turn?' },
-    { id: 'complete', part: 'B', name: 'Completing symmetrical patterns', short: 'Patterns', icon: 'target', color: '--c9', line: 'Reflect squares in one or two mirror lines.' },
+    { id: 'line', part: 'A', name: 'Line symmetry', short: 'Line symmetry', icon: 'shapes', color: '--c2', line: 'Fold along a mirror line: the halves match exactly.', covers: ['F4.3A'] },
+    { id: 'rotational', part: 'A', name: 'Rotational symmetry', short: 'Rotational', icon: 'shapes', color: '--c6', line: 'Turn the shape: how many times does it fit in one full turn?', covers: ['F4.3A'] },
+    { id: 'complete', part: 'B', name: 'Completing symmetrical patterns', short: 'Patterns', icon: 'target', color: '--c9', line: 'Reflect squares in one or two mirror lines.', covers: ['F4.3A'] },
   ],
   scenes: ['line', 'rotational', 'testA', 'complete', 'testB'],
 };

@@ -16,10 +16,10 @@ window.LESSON = {
     B: { name: 'Fractions and forming equations' },
   },
   sections: [
-    { id: 'balance', part: 'A', name: 'The balance method', short: 'Balance method', icon: 'algebra', color: '--c1', line: 'Do the same to both sides to keep the scales level.' },
-    { id: 'both-sides', part: 'A', name: 'Unknowns on both sides and brackets', short: 'Both sides', icon: 'algebra', color: '--c3', line: 'Expand brackets, then move the smaller x term.' },
-    { id: 'eq-fractions', part: 'B', name: 'Equations with fractions', short: 'Fractions', icon: 'frac', color: '--c6', line: 'Multiply both sides to clear the fraction.' },
-    { id: 'forming', part: 'B', name: 'Forming and solving equations', short: 'Forming', icon: 'algebra', color: '--c8', line: 'Turn a problem into an equation, solve it, answer the question.' },
+    { id: 'balance', covers: ['F2.4A'], part: 'A', name: 'The balance method', short: 'Balance method', icon: 'algebra', color: '--c1', line: 'Do the same to both sides to keep the scales level.' },
+    { id: 'both-sides', covers: ['F2.4A'], part: 'A', name: 'Unknowns on both sides and brackets', short: 'Both sides', icon: 'algebra', color: '--c3', line: 'Expand brackets, then move the smaller x term.' },
+    { id: 'eq-fractions', covers: ['F2.4A'], part: 'B', name: 'Equations with fractions', short: 'Fractions', icon: 'frac', color: '--c6', line: 'Multiply both sides to clear the fraction.' },
+    { id: 'forming', covers: ['F2.4B'], part: 'B', name: 'Forming and solving equations', short: 'Forming', icon: 'algebra', color: '--c8', line: 'Turn a problem into an equation, solve it, answer the question.' },
   ],
   scenes: ['balance', 'both-sides', 'testA', 'eq-fractions', 'forming', 'testB'],
 };

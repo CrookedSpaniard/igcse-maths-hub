@@ -36,7 +36,8 @@ FD.add({
   vocab: [
     ['Decimal → fraction', 'Use place value: 0.35 is 35 hundredths, \\(\\tfrac{35}{100} = \\tfrac{7}{20}\\).'],
     ['Fraction → decimal', 'Divide the numerator by the denominator: \\(\\tfrac{3}{8} = 3 \\div 8 = 0.375\\).'],
-    ['Terminating decimal', 'A decimal that ends, like 0.375.'],
+    ['Terminating decimal', 'A decimal that ends, like 0.375. Every terminating decimal is a fraction with denominator 10, 100, 1000, …'],
+    ['Percentage', '“Out of 100”. Decimal → percentage: × 100. \\(0.375 = 37.5\\%\\).'],
   ],
   mount(el) {
     const a = FD.board(el, 'cv-s', '<div id="zl"></div>', `
@@ -83,6 +84,15 @@ FD.add({
       },
     },
     {
+      title: 'Fractions, decimals and percentages',
+      text: '<p>Per cent means <b>out of 100</b>. To change a decimal into a percentage, <b>multiply by 100</b>.</p><p>To change a fraction into a percentage, change it into a decimal first.</p>',
+      tip: 'Learn: \\(\\tfrac12 = 0.5 = 50\\%\\), \\(\\tfrac14 = 0.25 = 25\\%\\), \\(\\tfrac{1}{10} = 0.1 = 10\\%\\).',
+      async on(a, ctx) {
+        a.reset(); a.zl(0.375, '3/8', '37.5%');
+        await a.lines([['0.64 = \\frac{64}{100} = 64\\%', 'decimal → percentage: × 100'], ['\\frac{3}{8} = 0.375 = 37.5\\%', 'fraction → decimal → percentage'], ['\\frac{7}{20} = \\frac{35}{100} = 35\\%', 'or make the denominator 100'], ['1.2 = 120\\%', 'more than 1 whole: more than 100%']], ctx, 1400);
+      },
+    },
+    {
       title: 'Ordering fractions and decimals',
       text: '<p>Order \\(\\tfrac{2}{5}\\), 0.42 and \\(\\tfrac{3}{8}\\). Change them <b>all to decimals</b> first.</p>',
       async on(a, ctx) {
@@ -105,6 +115,7 @@ FD.practice({
   gens: [
     () => { const d = FD.pick([2, 4, 5, 8, 10, 20, 25, 40, 50]); let n; do { n = FD.rnd(1, d - 1); } while (FD.gcd(n, d) !== 1); const v = FD.dec(n / d), k = [10, 100, 1000].find((t) => t % d === 0); return { type: 'num', q: `Write \\(\\dfrac{${n}}{${d}}\\) as a decimal.`, a: v, why: `\\(\\dfrac{${n}}{${d}} = \\dfrac{${(n * k) / d}}{${k}} = ${v}\\) (multiply top and bottom by ${k / d}).` }; },
     () => { const d = FD.pick([4, 5, 8, 20, 25, 50, 40]); let n; do { n = FD.rnd(1, d - 1); } while (FD.gcd(n, d) !== 1); const v = FD.dec(n / d), dp = String(v).split('.')[1].length, k = 10 ** dp; return { type: 'num', q: `Write ${v} as a fraction in its simplest form.`, a: n / d, form: 'simplest', show: `\\(\\tfrac{${n}}{${d}}\\)`, hint: 'Type it like 3/8.', why: `\\(${v} = \\dfrac{${FD.dec(v * k)}}{${k}} = \\dfrac{${n}}{${d}}\\) (divide by ${FD.gcd(FD.dec(v * k), k)}).` }; },
+    () => { const d = FD.pick([2, 4, 5, 8, 10, 20, 25, 40, 50]); let n; do { n = FD.rnd(1, d - 1); } while (FD.gcd(n, d) !== 1); const v = FD.dec(n / d), p = FD.dec(v * 100), asFrac = FD.rnd(0, 1); return { type: 'num', q: asFrac ? `Write \\(\\dfrac{${n}}{${d}}\\) as a percentage.` : `Write ${v} as a percentage.`, a: p, unit: '%', why: `${asFrac ? `\\(\\dfrac{${n}}{${d}} = ${v}\\). ` : ''}Multiply by 100: \\(${v} \\times 100 = ${p}\\%\\).` }; },
     () => { const fr = FD.shuffle([[1, 4], [2, 5], [3, 8], [3, 5], [7, 20], [9, 25], [1, 8], [3, 4]]).slice(0, 2), dec = FD.dec(FD.rnd(11, 89) / 100); const items = [...fr.map(([n, d]) => ({ t: `\\tfrac{${n}}{${d}}`, v: n / d })), { t: String(dec), v: dec }]; if (new Set(items.map((i) => i.v)).size < 3) items[2].v += 0.001; const up = [...items].sort((x, y) => x.v - y.v); const ord = (l) => `\\(${l.map((i) => i.t).join(',\\ ')}\\)`; return { type: 'mcq', q: `Which list is in order, smallest first?`, opts: [...new Set([ord(up), ord([...up].reverse()), ord([up[1], up[0], up[2]]), ord([up[0], up[2], up[1]])])], why: `As decimals: ${up.map((i) => `${i.t.startsWith('\\') ? `\\(${i.t}\\) = ` : ''}${FD.dec(i.v)}`).join(', ')}.` }; },
   ],
 });
@@ -115,6 +126,7 @@ FD.check({
     { type: 'num', q: 'Write \\(\\tfrac{9}{20}\\) as a decimal.', a: 0.45, why: '\\(\\tfrac{9}{20} = \\tfrac{45}{100} = 0.45\\).' },
     { type: 'num', q: 'Write 0.64 as a fraction in its simplest form.', a: 16 / 25, form: 'simplest', show: '\\(\\tfrac{16}{25}\\)', hint: 'Type it like 3/8.', why: '\\(\\tfrac{64}{100} = \\tfrac{16}{25}\\).' },
     { type: 'num', q: 'Write \\(\\tfrac{5}{8}\\) as a decimal.', a: 0.625, why: '\\(5 \\div 8 = 0.625\\).' },
+    { type: 'num', q: 'Write \\(\\tfrac{3}{40}\\) as a percentage.', a: 7.5, unit: '%', why: '\\(3 \\div 40 = 0.075\\), and \\(0.075 \\times 100 = 7.5\\%\\).' },
     { type: 'mcq', q: 'Which is the largest?', opts: ['\\(\\tfrac{3}{5}\\)', '0.58', '\\(\\tfrac{4}{7}\\)', '0.507'], why: '\\(\\tfrac35 = 0.6\\), \\(\\tfrac47 \\approx 0.571\\).' },
   ],
 });

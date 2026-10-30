@@ -9,6 +9,7 @@ FD.test({
     ['bearings', 'Due west is the bearing…', ['270°', '090°', '180°', '360°'], 'Clockwise from north: N 000°, E 090°, S 180°, W 270°.', 'bearings'],
     ['bearings', 'The bearing of B from A is \\(035^\\circ\\). The bearing of A from B is…', ['215°', '145°', '325°', '035°'], '\\(35 + 180\\).', 'bearings'],
     ['bearings', 'The bearing of D from C is \\(300^\\circ\\). The bearing of C from D is…', ['120°', '060°', '480°', '240°'], '\\(300 - 180\\).', 'bearings'],
+    ['bearings', 'A protractor reads 64° and 116° on its two scales. The angle is acute. It is…', ['64°', '116°', '180°', '52°'], 'Acute: less than 90°.', 'bearings'],
     ['bearings', 'Which bearing is written correctly?', ['045°', '45°', '4.5°', 'N45°'], 'Three figures.', 'bearings'],
   ],
   LONG: [

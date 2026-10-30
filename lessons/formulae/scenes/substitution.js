@@ -88,6 +88,25 @@ TYPES.alg = (it, body, finish) => {
   });
   return 1;
 };
+// A graph: FD.graph(host, axesOptions) draws the grid once and returns helpers that write SVG for a layer
+// clipped to the plot area: curve(f, cls, a, b), pt(x, y, cls), lbl(x, y, text, cls), line(x1, y1, x2, y2, cls).
+let kitClip = 0;
+FD.graph = (host, o) => {
+  const ax = FD.axes(o), id = 'kclip' + ++kitClip, p = o.pad || 28;
+  host.innerHTML = `<svg class="graph" viewBox="0 0 ${ax.w} ${ax.h}" role="img" aria-label="${o.label || 'Graph'}">${ax.grid()}
+    <clipPath id="${id}"><rect x="${p}" y="${p}" width="${ax.w - 2 * p}" height="${ax.h - 2 * p}"/></clipPath><g clip-path="url(#${id})" class="g-clip"></g><g class="g-top"></g></svg>`;
+  const clip = host.querySelector('.g-clip'), top = host.querySelector('.g-top');
+  const inX = (x) => Math.max(p + 2, Math.min(ax.w - p - 2, x)), inY = (y) => Math.max(p + 12, Math.min(ax.h - p - 4, y));
+  return {
+    ax, svg: host.querySelector('svg'),
+    draw(under, over = '') { clip.innerHTML = under; top.innerHTML = over; },
+    curve: (f, cls = '', a, b) => `<path class="curve ${cls}" d="${ax.path(f, a, b)}"/>`,
+    line: (x1, y1, x2, y2, cls = 'g-line') => `<line class="${cls}" x1="${ax.X(x1)}" y1="${ax.Y(y1)}" x2="${ax.X(x2)}" y2="${ax.Y(y2)}"/>`,
+    pt: (x, y, cls = '') => `<circle class="pt ${cls}" cx="${ax.X(x)}" cy="${ax.Y(y)}" r="6"/>`,
+    // a label next to (x, y): it flips to the left near the right edge and stays inside the plot
+    lbl: (x, y, t, cls = '') => { const X = ax.X(x), right = X > ax.w * .62; return `<text class="g-lbl ${cls}" x="${inX(X + (right ? -10 : 10))}" y="${inY(ax.Y(y) - 10)}" text-anchor="${right ? 'end' : 'start'}">${t}</text>`; },
+  };
+};
 // A polynomial from its coefficients, highest power first: FD.poly([1, -3, 2]) → "x^{2} - 3x + 2".
 // plain = true writes "x^2" so it can be used as a typed-answer key.
 FD.poly = (cs, v = 'x', plain = false) => {
@@ -174,6 +193,7 @@ FD.add({
 FD.practice({
   section: 'substitution',
   gens: [
+    () => { const l = FD.pick([1.5, 2.5, 3.2, 4.5, 0.8, 6.4]), w = FD.pick([0.5, 0.25, 0.75, 1.5]); return { type: 'num', q: `\\(A = lw + 2l\\). Find \\(A\\) when \\(l = ${l}\\) and \\(w = ${w === 0.5 ? '\\frac12' : w === 0.25 ? '\\frac14' : w === 0.75 ? '\\frac34' : '1.5'}\\).`, a: FD.round(l * w + 2 * l, 4), tol: 0.001, why: `\\(A = ${l} \\times ${w} + 2 \\times ${l} = ${FD.round(l * w, 4)} + ${FD.round(2 * l, 4)} = ${FD.round(l * w + 2 * l, 4)}\\).` }; },
     () => { const p = FD.rnd(2, 6), q = FD.rnd(2, 9), x = FD.rndNZ(-6, 6), y = FD.rndNZ(-6, 6), v = p * x * x - q * y, br = (n) => (n < 0 ? `(${n})` : n); return { type: 'num', q: `\\(W = ${p}x^2 - ${q}y\\). Find \\(W\\) when \\(x = ${x}\\) and \\(y = ${y}\\).`, a: v, why: `\\(W = ${p} \\times ${br(x)}^2 - ${q} \\times ${br(y)} = ${p * x * x} ${FD.sg(-q * y)} = ${v}\\).` }; },
     () => { let a, b, c; do { a = FD.rnd(-9, 12); b = FD.rnd(-5, 12); c = FD.rnd(1, 5); } while ((a + b) % (2 * c)); return { type: 'num', q: `\\(T = \\dfrac{a + b}{2c}\\). Find \\(T\\) when \\(a = ${a}\\), \\(b = ${b}\\) and \\(c = ${c}\\).`, a: (a + b) / (2 * c), why: `Top: \\(${a} + ${b < 0 ? `(${b})` : b} = ${a + b}\\). Bottom: \\(2 \\times ${c} = ${2 * c}\\). \\(T = ${a + b} \\div ${2 * c} = ${(a + b) / (2 * c)}\\).` }; },
     () => { const u = FD.rnd(0, 15), ac = FD.rnd(-4, 6), t = FD.rnd(1, 10); return { type: 'num', q: `\\(v = u + at\\). Work out \\(v\\) when \\(u = ${u}\\), \\(a = ${ac}\\) and \\(t = ${t}\\).`, a: u + ac * t, why: `\\(v = ${u} + ${ac < 0 ? `(${ac})` : ac} \\times ${t} = ${u} ${FD.sg(ac * t)} = ${u + ac * t}\\).` }; },
@@ -186,6 +206,7 @@ FD.check({
     { type: 'num', q: '\\(A = \\frac12 bh\\). Find \\(A\\) when \\(b = 9\\) and \\(h = 4\\).', a: 18, why: '\\(\\frac12 \\times 9 \\times 4 = 18\\).' },
     { type: 'num', q: '\\(y = 5 - x^2\\). Find \\(y\\) when \\(x = -3\\).', a: -4, why: '\\(5 - (-3)^2 = 5 - 9 = -4\\).' },
     { type: 'num', q: '\\(s = ut + \\frac12 at^2\\). Find \\(s\\) when \\(u = 4\\), \\(a = 10\\), \\(t = 3\\).', a: 57, why: '\\(4 \\times 3 + \\frac12 \\times 10 \\times 9 = 12 + 45 = 57\\).' },
+    { type: 'num', q: '\\(P = 4x - 2y\\). Find \\(P\\) when \\(x = 2.5\\) and \\(y = \\frac34\\).', a: 8.5, why: '\\(4 \\times 2.5 - 2 \\times \\frac34 = 10 - 1.5 = 8.5\\).' },
     { type: 'mcq', q: 'What is \\(2a^2\\) when \\(a = -5\\)?', opts: ['50', '−50', '100', '−100'], why: '\\(2 \\times (-5)^2 = 2 \\times 25 = 50\\).' },
   ],
 });

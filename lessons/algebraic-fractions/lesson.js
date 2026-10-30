@@ -16,10 +16,10 @@ window.LESSON = {
     B: { name: 'Adding, subtracting and solving' },
   },
   sections: [
-    { id: 'af-simplify', part: 'A', name: 'Simplifying algebraic fractions', short: 'Simplifying', icon: 'frac', color: '--c1', line: 'Factorise top and bottom, then cancel common factors.' },
-    { id: 'af-muldiv', part: 'A', name: 'Multiplying and dividing', short: 'Multiply & divide', icon: 'frac', color: '--c3', line: 'Factorise, cancel, multiply; to divide, flip the second fraction.' },
-    { id: 'af-addsub', part: 'B', name: 'Adding and subtracting', short: 'Add & subtract', icon: 'frac', color: '--c6', line: 'Use a common denominator, then combine the numerators.' },
-    { id: 'af-equations', part: 'B', name: 'Equations with algebraic fractions', short: 'Equations', icon: 'frac', color: '--c8', line: 'Multiply every term by the common denominator.' },
+    { id: 'af-simplify', covers: ['H2.2C'], part: 'A', name: 'Simplifying algebraic fractions', short: 'Simplifying', icon: 'frac', color: '--c1', line: 'Factorise top and bottom, then cancel common factors.' },
+    { id: 'af-muldiv', covers: ['H2.2C'], part: 'A', name: 'Multiplying and dividing', short: 'Multiply & divide', icon: 'frac', color: '--c3', line: 'Factorise, cancel, multiply; to divide, flip the second fraction.' },
+    { id: 'af-addsub', covers: ['H2.2C'], part: 'B', name: 'Adding and subtracting', short: 'Add & subtract', icon: 'frac', color: '--c6', line: 'Use a common denominator, then combine the numerators.' },
+    { id: 'af-equations', covers: ['H2.2C'], part: 'B', name: 'Equations with algebraic fractions', short: 'Equations', icon: 'frac', color: '--c8', line: 'Multiply every term by the common denominator.' },
   ],
   scenes: ['af-simplify', 'af-muldiv', 'testA', 'af-addsub', 'af-equations', 'testB'],
 };

@@ -37,6 +37,15 @@ FD.add({
       a.big(`\\text{bearing of B from A} = ${fig(t).replace('°', '^\\circ')}`);
       a.msg(bk.checked ? `Bearing of A from B: \\(${t} ${t < 180 ? '+' : '-'} 180 = ${fig((t + 180) % 360).replace('°', '^\\circ')}\\)` : '');
     });
+    // A protractor on a baseline with an angle of t degrees (measured from the right-hand zero).
+    a.protractor = (t, sweep = t) => {
+      const C = [210, 225], R = 150;
+      let s = `<path class="g-fill2" opacity=".6" d="M${C[0] - R} ${C[1]}A${R} ${R} 0 0 1 ${C[0] + R} ${C[1]}Z"/>`;
+      for (let i = 0; i <= 180; i++) { const big = i % 10 === 0, mid = i % 5 === 0; s += G.line(G.polar(C, R - (big ? 16 : mid ? 10 : 5), i), G.polar(C, R, i), big ? 'g-ln' : 'g-thin'); }
+      for (let i = 0; i <= 180; i += 30) s += G.t(G.polar(C, R - 28, i), i, 's') + G.t(G.polar(C, R - 48, i), 180 - i, 's');
+      s += G.sector(C, 40, 0, sweep, 'g-arc', sweep >= t ? t + '°' : '', 60) + G.line([C[0] - R - 10, C[1]], [C[0] + R + 10, C[1]]) + G.line(C, G.polar(C, R + 8, sweep), 'g-hl') + G.dot(C, 'g-dot k', 5);
+      a.draw(s);
+    };
     a.live = (on) => { live = on; };
     a.show(65);
     return a;
@@ -64,6 +73,12 @@ FD.add({
       async on(a, ctx) { a.off(); a.live(false); a.show(65); if (!(await ctx.sleep(900))) return; a.show(65, true); await a.play(ctx, [['65 + 180 = 245^\\circ', 'bearing of A from B']]); },
     },
     {
+      title: 'Measuring an angle with a protractor',
+      text: '<p>Put the centre of the protractor on the <b>vertex</b> and line up \\(0^\\circ\\) with one arm. Count round from that zero to the other arm.</p><p>Protractors have two scales. Use the one that starts at \\(0^\\circ\\) on your arm: here \\(57^\\circ\\), not \\(123^\\circ\\).</p>',
+      tip: 'Check: an acute angle must be less than 90°. Measure to the nearest degree.',
+      async on(a, ctx) { a.off(); a.live(false); for (let t = 0; t <= 57; t += 3) { a.protractor(57, t); if (!(await ctx.sleep(40))) return; } a.protractor(57); a.big('57^\\circ'); },
+    },
+    {
       title: 'Try it: drag B',
       text: '<p>Drag B around A and read the bearing. Tick the box to see the back bearing from B.</p>',
       on(a) { a.live(true); a.tryMode(); },
@@ -76,6 +91,7 @@ FD.practice({
   gens: [
     () => { const t = FD.rnd(5, 355); return { type: 'num', q: `The bearing of Q from P is \\(${String(t).padStart(3, '0')}^\\circ\\). Work out the bearing of P from Q.`, a: (t + 180) % 360, unit: '°', why: `${t < 180 ? `Less than 180°, so add 180: \\(${t} + 180 = ${t + 180}^\\circ\\)` : `More than 180°, so subtract 180: \\(${t} - 180 = ${t - 180}^\\circ\\)`}.` }; },
     () => { const [d, t] = FD.pick([['east', 90], ['south', 180], ['west', 270], ['north-east', 45], ['south-east', 135], ['south-west', 225], ['north-west', 315]]); return { type: 'num', q: `What is the bearing of a ship sailing due <b>${d}</b>?`, a: t, unit: '°', why: `Clockwise from north: ${d} is \\(${String(t).padStart(3, '0')}^\\circ\\).` }; },
+    () => { const t = FD.rnd(5, 175); return { type: 'num', q: `A protractor is placed on an angle. One scale reads \\(${t}^\\circ\\) and the other reads \\(${180 - t}^\\circ\\). The angle is ${t < 90 ? 'acute' : t > 90 ? 'obtuse' : 'a right angle'}. What is its size?`, a: t, unit: '°', why: `The two scales always add up to 180°. ${t < 90 ? 'An acute angle is less than 90°' : t > 90 ? 'An obtuse angle is more than 90°' : 'It is 90°'}, so the angle is \\(${t}^\\circ\\).` }; },
     () => { const x = FD.rnd(10, 80); return { type: 'num', q: `B is \\(${x}^\\circ\\) <b>anticlockwise</b> from north, seen from A. Work out the bearing of B from A.`, a: 360 - x, unit: '°', why: `Bearings go clockwise: \\(360 - ${x} = ${360 - x}^\\circ\\).` }; },
   ],
 });
@@ -86,6 +102,7 @@ FD.check({
     { type: 'mcq', q: 'How is a bearing of \\(7^\\circ\\) written?', opts: ['007°', '7°', '070°', '700°'], why: 'Three figures: 007°.' },
     { type: 'num', q: 'The bearing of B from A is \\(120^\\circ\\). Find the bearing of A from B.', a: 300, unit: '°', why: '\\(120 + 180 = 300^\\circ\\).' },
     { type: 'num', q: 'The bearing of X from Y is \\(250^\\circ\\). Find the bearing of Y from X.', a: 70, unit: '°', why: '\\(250 - 180 = 070^\\circ\\).' },
+    { type: 'mcq', q: 'A protractor shows \\(38^\\circ\\) on one scale and \\(142^\\circ\\) on the other. The angle is obtuse. Its size is…', opts: ['\\(142^\\circ\\)', '\\(38^\\circ\\)', '\\(180^\\circ\\)', '\\(104^\\circ\\)'], why: 'Obtuse means more than 90°, so use the 142° scale.' },
     { type: 'tf', q: 'Bearings are measured anticlockwise from north.', a: false, why: 'Clockwise from north.' },
   ],
 });
