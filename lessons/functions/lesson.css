@@ -1,0 +1,47 @@
+/* ---- Algebra kit: stage layout, worked lines, graphs and typed algebra ---- */
+.sim { display: grid; gap: .8rem; min-width: 0; }
+.kit-main { display: grid; gap: .8rem; min-width: 0; }
+.kit.duo .kit-main { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+@container stage (max-width: 46rem) { .kit.duo .kit-main { grid-template-columns: minmax(0, 1fr); } }
+.kit-vis { display: grid; justify-items: center; gap: .4rem; min-width: 0; }
+.kit-vis > svg { width: 100%; height: auto; max-height: 22rem; display: block; }
+.kit-side { display: grid; gap: .5rem; min-width: 0; align-content: start; }
+.kit-side .mbig:empty { display: none; }
+.eq-work { min-height: 2rem; min-width: 0; }
+.kit-try { max-width: 40rem; width: 100%; justify-self: center; }
+.kit-try .chk-btns { justify-content: center; }
+.kit .work { justify-items: stretch; }
+.alg-prev { min-height: 1.6rem; margin: .2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+.alg-in { width: 14rem; }
+.g-lbl { font-size: 13px; font-weight: 750; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.g-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+.g-fill { fill: color-mix(in srgb, var(--scene) 22%, transparent); stroke: none; }
+.pt.c2 { fill: var(--c2); }
+.pt.hot { fill: var(--yellow, #F6C94C); stroke: var(--ink); }
+.seg-row { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
+/* ---- end of kit ---- */
+
+/* Functions: mapping diagrams, machines in a row, domain/range bars */
+.fn-hero .fn-set { fill: rgb(255 255 255 / .1); stroke: rgb(255 255 255 / .6); stroke-width: 2; }
+.fn-hero .fn-t { fill: #fff; font-size: 17px; font-weight: 800; text-anchor: middle; }
+.fn-hero .fn-a { stroke: #F6C94C; stroke-width: 3; }
+
+[data-k="g"] { width: 100%; }
+.ab-ask { margin: 0; text-align: center; font-weight: 700; }
+.map-host { width: 100%; display: grid; justify-items: center; }
+.map { width: 100%; max-width: 26rem; height: auto; }
+.map-set { fill: color-mix(in srgb, var(--scene) 8%, var(--surface)); stroke: var(--line); stroke-width: 2; }
+.map-h { font-size: 13px; fill: var(--muted); text-anchor: middle; font-weight: 700; dominant-baseline: hanging; }
+.map-t { font-size: 17px; fill: var(--ink); text-anchor: middle; font-weight: 800; }
+.map-a { stroke: var(--scene); stroke-width: 2.5; animation: mapIn .45s ease-out both; }
+.map-arr { fill: var(--scene); }
+@keyframes mapIn { from { opacity: 0; } to { opacity: 1; } }
+.fn-dom { stroke: var(--c6); stroke-width: 7; stroke-linecap: round; opacity: .75; }
+.fn-rng { stroke: var(--c8); stroke-width: 7; stroke-linecap: round; opacity: .75; }
+.curve.c3 { opacity: .25; }
+.fc-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .4rem; min-height: 3.2rem; }
+.fc-v { min-width: 3rem; text-align: center; padding: .35rem .7rem; border-radius: 10px; border: 2px dashed var(--line); font-size: 1.2rem; color: var(--muted); }
+.fc-v.on { border-style: solid; border-color: var(--scene); color: var(--ink); }
+.fc-m { padding: .45rem .9rem; border-radius: 10px; font-weight: 800; font-style: italic; background: var(--surface-2); border: 2px solid var(--line); }
+.fc-m.on { background: color-mix(in srgb, var(--scene) 22%, var(--surface)); border-color: var(--scene); }
+.fm-arr { color: var(--muted); font-weight: 800; }

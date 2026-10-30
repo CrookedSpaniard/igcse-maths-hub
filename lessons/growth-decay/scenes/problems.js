@@ -13,9 +13,9 @@ FD.add({
   ],
   mount(el) {
     const a = FD.board(el, 'pb-s', '<div id="yb"></div>', `
-      <label class="ctrl">Car value now (£) <input type="range" id="rp" min="10000" max="40000" step="1000" value="20000"><output id="op">20000</output></label>
-      <label class="ctrl">Depreciation (% per year) <input type="range" id="rr" min="5" max="30" value="15"><output id="or">15</output></label>
-      <label class="ctrl">Target: below (£) <input type="range" id="rt" min="2000" max="20000" step="1000" value="10000"><output id="ot">10000</output></label>`, () => sync());
+      <label class="ctrl">Value (£) <input type="range" id="rp" min="10000" max="40000" step="1000" value="20000"><output id="op">20000</output></label>
+      <label class="ctrl">Loss a year (%) <input type="range" id="rr" min="5" max="30" value="15"><output id="or">15</output></label>
+      <label class="ctrl">Target (£) <input type="range" id="rt" min="2000" max="20000" step="1000" value="10000"><output id="ot">10000</output></label>`, () => sync());
     a.yb = FD.ybars(a.$('#yb'));
     const sync = () => {
       const P = +a.$('#rp').value, r = +a.$('#rr').value, T = Math.min(+a.$('#rt').value, P - 1000), m = FD.dec(1 - r / 100);

@@ -18,3 +18,6 @@
 2026-10-30 17:10 · done     · sets · audit ✓ · coverage ✓
 2026-10-30 17:30 · written  · ratio · coverage ✓ · QA ✓ (audit queued)
 2026-10-30 17:30 · started  · accuracy-bounds
+2026-10-30 18:00 · done     · percentages · audit ✓ · coverage ✓
+2026-10-30 18:00 · written  · accuracy-bounds · coverage ✓ · QA ✓ (audit of growth-decay fix, ratio, accuracy-bounds running)
+2026-10-30 18:00 · started  · standard-form

@@ -1,0 +1,23 @@
+/* Standard form: the moving decimal point */
+.sf-hero .sf-n { fill: #fff; font-size: 30px; font-weight: 800; text-anchor: middle; }
+.sf-hero .sf-b { fill: #F6C94C; font-size: 34px; font-weight: 800; text-anchor: middle; }
+.sf-hero .sf-a { fill: none; stroke: rgb(255 255 255 / .6); stroke-width: 2.5; stroke-dasharray: 6 5; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+.sh { display: grid; justify-items: center; gap: .4rem; padding: .4rem 0; }
+.sh-row { position: relative; display: flex; }
+.sh-d { width: 2.3rem; height: 3rem; display: grid; place-items: center; font-size: 1.8rem; font-weight: 800; border-bottom: 3px solid var(--line); color: var(--ink); }
+.sh-d.sig { color: var(--scene); }
+.sh-pt { position: absolute; bottom: .35rem; width: .7rem; height: .7rem; margin-left: -.35rem; border-radius: 50%; background: var(--c8); transition: left .45s ease; }
+.sh-pt.start { background: var(--muted); opacity: .45; transition: none; }
+.sh-n { font-weight: 800; color: var(--muted); }
+@container stage (max-width: 40rem) { .sh-d { width: 1.7rem; font-size: 1.3rem; } }
