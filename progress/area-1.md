@@ -31,3 +31,5 @@
 2026-10-31 00:30 · done     · applying-number · audit ✓ · coverage ✓
 2026-10-31 00:30 · AREA 1 COMPLETE (12/12). Next: Area 6 lessons (charts, histograms-cf, averages, quartiles, probability, combined-probability)
 2026-10-31 00:30 · started  · charts
+2026-10-31 01:30 · written  · charts · coverage ✓ · QA ✓ (audit running)
+2026-10-31 01:30 · started  · averages

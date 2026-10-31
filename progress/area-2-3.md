@@ -37,3 +37,5 @@ Notes for resuming: the shared "algebra kit" (FD.mk, FD.walk, FD.graph, FD.poly,
 2026-10-30 21:33 · started  · calculus
 2026-10-31 06:24 · done     · curves · audit ✓ · coverage ✓
 2026-10-31 06:24 · done     · graphical-solutions · audit ✓ · coverage ✓
+2026-10-31 09:00 · done     · calculus · audit ✓ · coverage ✓
+All 16 lessons of Areas 2–3 are done. Newest kit copy: lessons/calculus/scenes/gradient-curve.js and lessons/calculus/lesson.css.

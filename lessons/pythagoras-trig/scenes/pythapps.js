@@ -51,7 +51,7 @@ FD.add({
       title: 'A ladder against a wall',
       text: '<p>A 5 m ladder leans against a wall with its foot 1.4 m from the wall. How high up the wall does it reach?</p><p>The ladder is the <b>hypotenuse</b>, so subtract.</p>',
       tip: 'Always sketch the triangle and mark the hypotenuse first.',
-      async on(a, ctx) { a.off(); a.live(false); a.draw(FD.G.line([60, 280], [380, 280]) + FD.G.line([300, 280], [300, 20], 'g-ln') + FD.G.line([255, 280], [300, 30], 'g-hl') + FD.G.right([300, 280], [255, 280], [300, 30], 12) + FD.G.t([250, 150], '5 m', 'l') + FD.G.t([277, 296], '1.4 m', 's') + FD.G.t([325, 160], 'h', 'l2')); await a.play(ctx, [['h^2 = 5^2 - 1.4^2 = 25 - 1.96 = 23.04', ''], ['h = \\sqrt{23.04} = 4.8\\ \\text{m}', '']]); },
+      async on(a, ctx) { a.off(); a.live(false); a.draw(FD.G.line([60, 280], [380, 280]) + FD.G.line([300, 280], [300, 20], 'g-ln') + FD.G.line([255, 280], [300, 30], 'g-hl') + FD.G.right([300, 280], [255, 280], [300, 30], 12) + FD.G.t([250, 150], '5 m', 'l') + FD.G.t([262, 266], '1.4 m', 's en') + FD.G.t([325, 160], 'h', 'l2')); await a.play(ctx, [['h^2 = 5^2 - 1.4^2 = 25 - 1.96 = 23.04', ''], ['h = \\sqrt{23.04} = 4.8\\ \\text{m}', '']]); },
     },
     {
       title: 'Isosceles triangles and rectangles',
