@@ -18,3 +18,7 @@ Notes for resuming: the "lesson kit" (FD.stage, FD.G, FD.dragIn, FD.tn) is the t
 2026-10-30 19:39 · started  · circle-theorems
 2026-10-30 21:01 · done     · circle-theorems · coverage ✓ · audit running
 2026-10-30 21:01 · started  · geometric-proof
+2026-10-30 21:28 · done     · circle-theorems · audit ✓ · coverage ✓
+2026-10-30 21:28 · done     · geometric-proof · coverage ✓ · audit running
+2026-10-30 21:28 · started  · pythagoras-trig
+2026-10-30 21:32 · done     · geometric-proof · audit ✓ · coverage ✓
