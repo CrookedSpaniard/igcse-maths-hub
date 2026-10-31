@@ -22,3 +22,6 @@ Notes for resuming: the "lesson kit" (FD.stage, FD.G, FD.dragIn, FD.tn) is the t
 2026-10-30 21:28 · done     · geometric-proof · coverage ✓ · audit running
 2026-10-30 21:28 · started  · pythagoras-trig
 2026-10-30 21:32 · done     · geometric-proof · audit ✓ · coverage ✓
+2026-10-31 06:57 · done     · pythagoras-trig · coverage ✓ · audit running
+2026-10-31 06:57 · note     · plan change: Area 6 lessons moved to the Area 1 session; my list is Area 4 + Area 5 only
+2026-10-31 06:57 · started  · further-trig

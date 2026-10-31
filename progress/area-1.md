@@ -25,3 +25,9 @@
 2026-10-30 19:40 · fixed    · growth-decay + accuracy-bounds try panels at 1024 px; all lessons: .sim grid column minmax(0, 1fr)
 2026-10-30 19:40 · written  · standard-form · coverage ✓ · QA ✓ (audit of growth-decay, accuracy-bounds, standard-form running)
 2026-10-30 19:40 · started  · applying-number
+2026-10-31 00:30 · done     · growth-decay · audit ✓ · coverage ✓
+2026-10-31 00:30 · done     · accuracy-bounds · audit ✓ · coverage ✓
+2026-10-31 00:30 · done     · standard-form · audit ✓ · coverage ✓
+2026-10-31 00:30 · done     · applying-number · audit ✓ · coverage ✓
+2026-10-31 00:30 · AREA 1 COMPLETE (12/12). Next: Area 6 lessons (charts, histograms-cf, averages, quartiles, probability, combined-probability)
+2026-10-31 00:30 · started  · charts

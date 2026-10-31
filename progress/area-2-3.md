@@ -35,3 +35,5 @@ Notes for resuming: the shared "algebra kit" (FD.mk, FD.walk, FD.graph, FD.poly,
 2026-10-30 21:07 · started  · curves
 2026-10-30 21:33 · started  · graphical-solutions (audit running; curves audit running)
 2026-10-30 21:33 · started  · calculus
+2026-10-31 06:24 · done     · curves · audit ✓ · coverage ✓
+2026-10-31 06:24 · done     · graphical-solutions · audit ✓ · coverage ✓
