@@ -3,96 +3,183 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>IGCSE Maths Hub</title>
-  <meta name="description" content="Interactive maths lessons for the Pearson Edexcel International GCSE Mathematics A (4MA1): number, algebra, graphs, geometry and trigonometry, vectors and transformations, statistics and probability. Animated worked examples, random practice, checks, tests and saved progress, for Foundation and Higher tiers. British School Alzira · Xàtiva · Gandia.">
+  <title>IGCSE Maths Hub · Interactive maths lessons</title>
+  <meta name="description" content="Every topic of the Pearson Edexcel International GCSE Mathematics A (4MA1) in 49 interactive lessons: animated worked examples, things to try yourself, endless practice with full methods, checks, exam-style tests and saved progress. Foundation and Higher tiers. British School Alzira · Xàtiva · Gandia.">
   <link rel="icon" type="image/png" href="logo.png">
-  <link rel="stylesheet" href="hub.css">
+  <link rel="stylesheet" href="landing/landing.css">
 </head>
 <body>
-  <header class="hero">
-    <svg class="circuit" viewBox="0 0 600 320" aria-hidden="true" focusable="false">
-      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M30 290 H580 M50 300 V20" opacity=".6"/>
-        <path class="trace" d="M50 280 C150 280 200 40 300 40 S450 280 560 280"/>
-        <path class="trace" d="M50 250 L560 60"/>
-        <path d="M380 150 l70 0 l0 -70 z"/>
-        <circle cx="160" cy="120" r="46"/>
-        <path d="M160 120 L206 120 A46 46 0 0 0 160 74 Z" opacity=".7"/>
-      </g>
-      <g fill="currentColor">
-        <circle class="node" cx="300" cy="40" r="5"/><circle class="node" cx="138" cy="219" r="5"/>
-        <circle class="node" cx="462" cy="96" r="5"/><circle class="node" cx="50" cy="280" r="5"/>
-        <circle class="node" cx="560" cy="280" r="5"/>
-      </g>
-    </svg>
-
-    <div class="hero-inner">
-      <div class="school">
-        <span class="logo" role="img" aria-label="British School Alzira · Xàtiva · Gandia logo"></span>
-        <span class="school-name">British School<br>Alzira · Xàtiva · Gandia</span>
-      </div>
-      <div class="hero-tools">
-        <div class="tier-switch" id="tier" role="group" aria-label="Your tier">
-          <button data-t="F" aria-pressed="false" title="Foundation tier: hides the Higher-only parts">Foundation</button>
-          <button data-t="H" aria-pressed="false" title="Higher tier: shows everything">Higher</button>
-        </div>
-        <button class="chip-btn" id="btnProjector" aria-pressed="false" title="Bigger text for the classroom projector (P)">Projector mode</button>
-      </div>
-
-      <div class="hero-text">
-        <p class="kicker">Pearson Edexcel International GCSE Mathematics A (4MA1)</p>
-        <h1>IGCSE Maths</h1>
-        <p class="lead">Interactive lessons</p>
-        <ul class="facts" aria-label="At a glance">
-          <li><b>6</b> areas</li>
-          <li><b id="lessonCount">0</b> lessons</li>
-          <li>Worked examples, practice and tests</li>
-        </ul>
-      </div>
-    </div>
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="#top" aria-label="IGCSE Maths Hub, back to the top">
+      <span class="logo" role="img" aria-label="British School Alzira · Xàtiva · Gandia"></span>
+      <span class="nav-name">IGCSE Maths Hub</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#inside">What's inside</a>
+      <a href="#features">Features</a>
+      <a href="#teachers">For teachers</a>
+    </nav>
+    <a class="btn btn-yellow nav-cta" href="hub/">Open the lessons →</a>
   </header>
 
-  <section class="me" aria-label="My maths">
-    <div class="me-card">
-      <p class="me-kick">My maths</p>
-      <div class="me-row"><span class="big-pct" id="allPct">0<small>%</small></span><span id="meLine" class="me-msg">Open a lesson to start. Your progress is saved on this device.</span></div>
-      <div class="mastery" id="mastery"></div>
-      <div class="me-row"><span id="cont"></span><a class="hbtn" href="exam/">📝 Exam zone: formulae, papers and tips</a></div>
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <span style="--x:8%;--y:22%;--d:0s">π</span><span style="--x:22%;--y:78%;--d:1.2s">√</span>
+      <span style="--x:46%;--y:12%;--d:2.4s">∑</span><span style="--x:63%;--y:86%;--d:.6s">÷</span>
+      <span style="--x:88%;--y:18%;--d:1.8s">θ</span><span style="--x:93%;--y:64%;--d:3s">x²</span>
+      <span style="--x:34%;--y:52%;--d:2.1s">∞</span><span style="--x:75%;--y:44%;--d:.9s">%</span>
     </div>
-    <div class="me-card">
-      <p class="me-kick">Changing device?</p>
-      <h2>Your progress code</h2>
-      <p class="me-msg">One code carries <b>all</b> your maths lessons. Copy it, email it to yourself, then paste it here on the other device.</p>
-      <div class="me-row"><button class="hbtn" id="cCopy">Copy my progress code</button></div>
-      <textarea class="code-in" id="cIn" rows="2" placeholder="Paste a progress code (MH1Z.…)" aria-label="Paste a progress code"></textarea>
-      <div class="me-row"><button class="hbtn" id="cLoad">Load this code</button></div>
-      <p class="me-msg" id="cMsg"></p>
+    <div class="hero-inner">
+      <div class="hero-copy reveal">
+        <p class="kicker">Pearson Edexcel International GCSE Mathematics A · 4MA1</p>
+        <h1>Every topic of IGCSE Maths, <span class="hl">explained step by step</span>.</h1>
+        <p class="lead">49 interactive lessons that show you <b>how</b> the maths works, let you <b>try it yourself</b>, and give you <b>endless practice</b> with the full method. For the Foundation and Higher tiers.</p>
+        <div class="hero-cta">
+          <a class="btn btn-yellow btn-lg" href="hub/">▶ Start learning</a>
+          <a class="btn btn-ghost btn-lg" href="#inside">See what's inside</a>
+        </div>
+        <ul class="stats" aria-label="At a glance">
+          <li><b data-count="49">49</b><span>lessons</span></li>
+          <li><b data-count="6">6</b><span>areas</span></li>
+          <li><b data-count="242">242</b><span>specification points</span></li>
+          <li><b>F + H</b><span>both tiers</span></li>
+        </ul>
+      </div>
+      <div class="hero-shot reveal">
+        <figure class="frame tilt">
+          <div class="frame-bar"><i></i><i></i><i></i><span>igcse-maths-hub.vercel.app</span></div>
+          <img src="landing/img/graph.jpg" alt="A lesson on quadratic equations: a parabola and a straight line on a grid, crossing at two points, with sliders to move the line." width="1920" height="1200">
+        </figure>
+        <div class="float f1"><span class="tick">✓</span><div><b>Correct!</b><small>5 in a row 🔥</small></div></div>
+        <div class="float f2"><span class="ring" style="--v:72"><b>72%</b></span><div><b>Linear equations</b><small>progress saved</small></div></div>
+      </div>
     </div>
   </section>
 
-  <nav class="unitbar" aria-label="Areas">
-    <div class="unitbar-inner">
-      <div class="unit-links" id="unitLinks"></div>
-      <label class="search">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
-        <input type="search" id="search" placeholder="Search a topic…" autocomplete="off" aria-label="Search a topic">
-      </label>
+  <section class="band" id="inside">
+    <div class="wrap">
+      <p class="kicker dark reveal">The whole specification</p>
+      <h2 class="reveal">Six areas. Every point of the syllabus.</h2>
+      <p class="sub reveal">Each lesson is mapped to the official 4MA1 specification, so nothing is left out. Parts marked <span class="hbadge">H</span> are for the Higher tier only, and Foundation students can hide them with one click.</p>
+      <div class="areas">
+        <a class="area reveal" style="--a:#2D6687" href="hub/#area-1"><span class="area-n">1</span><h3>Number</h3><p>Fractions, percentages, ratio, indices, surds, standard form, bounds…</p><small>13 lessons</small></a>
+        <a class="area reveal" style="--a:#6741d9" href="hub/#area-2"><span class="area-n">2</span><h3>Algebra</h3><p>Expanding, factorising, equations, simultaneous equations, quadratics, inequalities…</p><small>9 lessons</small></a>
+        <a class="area reveal" style="--a:#0c8f7e" href="hub/#area-3"><span class="area-n">3</span><h3>Graphs</h3><p>Sequences, functions, straight lines, curves, real-life graphs, differentiation…</p><small>7 lessons</small></a>
+        <a class="area reveal" style="--a:#d9480f" href="hub/#area-4"><span class="area-n">4</span><h3>Geometry</h3><p>Angles, circle theorems, Pythagoras, trigonometry, area, volume, similarity…</p><small>12 lessons</small></a>
+        <a class="area reveal" style="--a:#c2255c" href="hub/#area-5"><span class="area-n">5</span><h3>Vectors</h3><p>Vectors and proofs, translations, reflections, rotations, enlargements…</p><small>2 lessons</small></a>
+        <a class="area reveal" style="--a:#2f9e44" href="hub/#area-6"><span class="area-n">6</span><h3>Statistics</h3><p>Charts, averages, histograms, cumulative frequency, probability, tree diagrams…</p><small>6 lessons</small></a>
+      </div>
     </div>
-  </nav>
+  </section>
 
-  <main id="units"></main>
-  <p class="empty" id="empty" hidden>No lessons match “<span id="emptyQ"></span>”. Try another word.</p>
+  <section class="features" id="features">
+    <div class="wrap">
+      <p class="kicker dark reveal">How every lesson works</p>
+      <h2 class="reveal">Watch it. Try it. Practise it. Prove it.</h2>
+
+      <article class="feat reveal">
+        <div class="feat-copy">
+          <span class="feat-ic">▶</span>
+          <h3>Animated worked examples</h3>
+          <p>Every method is built up line by line, at your speed. Press <b>Next</b> to go step by step, or <b>Play</b> to watch it like a video. Fraction bars, area models, number lines and graphs move to show <i>why</i> the method works, not just what to write.</p>
+          <ul class="ticks"><li>Clear narration beside every step</li><li>Key words explained as you go</li><li>Projector mode for the classroom</li></ul>
+        </div>
+        <figure class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Fractions · multiply and divide</span></div><img src="landing/img/fractions.jpg" alt="The fractions lesson: an area model shows two thirds times three quarters, with the working written step by step." loading="lazy" width="1920" height="1200"></figure>
+      </article>
+
+      <article class="feat flip reveal">
+        <div class="feat-copy">
+          <span class="feat-ic">✋</span>
+          <h3>Try it yourself</h3>
+          <p>Drag points round a circle and watch the angles obey the theorem. Move a line until it touches a curve. Change a slider and see the graph react. Every section ends with a hands-on scene, and the <b>Try it yourself</b> button takes you straight there.</p>
+          <ul class="ticks"><li>Draggable geometry</li><li>Live graphs with sliders</li><li>Simulations: dice, coins, tree diagrams</li></ul>
+        </div>
+        <figure class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Circle theorems · angle at the centre</span></div><img src="landing/img/circle.jpg" alt="The circle theorems lesson: a point is dragged round a circle and the angle at the centre stays twice the angle at the circumference." loading="lazy" width="1920" height="1200"></figure>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat-copy">
+          <span class="feat-ic">∞</span>
+          <h3>Endless practice, with the full method</h3>
+          <p>Practice questions are generated with new numbers every time, so you never run out. Type your answer as a whole number, a decimal or a fraction, and you get instant feedback and the complete method, just like a mark scheme.</p>
+          <ul class="ticks"><li>New numbers on every question</li><li>Fractions, mixed numbers and decimals accepted</li><li>A short check at the end of every section</li></ul>
+        </div>
+        <figure class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Practice · adding and subtracting fractions</span></div><img src="landing/img/practice.jpg" alt="A practice question on subtracting fractions, with the correct answer and the full method shown after the student answers." loading="lazy" width="1920" height="1200"></figure>
+      </article>
+
+      <article class="feat flip reveal">
+        <div class="feat-copy">
+          <span class="feat-ic">✎</span>
+          <h3>Exam-style tests and a full exam zone</h3>
+          <p>Each part of a lesson finishes with a test: multiple-choice questions plus exam-style questions with Pearson-style mark schemes (M1, A1, B1). The exam zone has the formulae sheets, the formulae you must learn, the notation and tips for the day.</p>
+          <ul class="ticks"><li>Tests you can finish another day</li><li>Foundation and Higher formulae sheets</li><li>Links to Pearson's real past papers</li></ul>
+        </div>
+        <figure class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Exam zone · formulae sheet</span></div><img src="landing/img/exam.jpg" alt="The exam zone: the formulae sheet with the area of a trapezium, prisms, cylinders, the quadratic formula, the sine and cosine rules, cones and spheres." loading="lazy" width="1920" height="1200"></figure>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat-copy">
+          <span class="feat-ic">📊</span>
+          <h3>Progress that follows you</h3>
+          <p>Everything you do is saved automatically. The hub shows how far you are in each area, and <b>My progress</b> gives you a report to send to your teacher. Changing device? One progress code carries all your maths lessons.</p>
+          <ul class="ticks"><li>Saved automatically, nothing to sign up for</li><li>Copy your results for your teacher</li><li>No data leaves your device</li></ul>
+        </div>
+        <figure class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>The hub · my maths</span></div><img src="landing/img/hub.jpg" alt="The hub page: overall progress, progress per area and a button to continue the last lesson." loading="lazy" width="1920" height="1200"></figure>
+      </article>
+    </div>
+  </section>
+
+  <section class="gallery" aria-label="More screenshots">
+    <div class="wrap">
+      <h2 class="reveal">A look inside</h2>
+      <div class="shots">
+        <figure class="frame reveal"><img src="landing/img/tree.jpg" alt="A tree diagram for rain on two days, with the probabilities multiplied along each branch." loading="lazy" width="1920" height="1200"><figcaption>Tree diagrams that build themselves</figcaption></figure>
+        <figure class="frame reveal"><img src="landing/img/progress.jpg" alt="The My progress window, with the result of every section and buttons to copy the report or the progress code." loading="lazy" width="1920" height="1200"><figcaption>My progress: a report in one click</figcaption></figure>
+        <figure class="frame reveal"><img src="landing/img/graph.jpg" alt="A straight line and a parabola meeting at two points." loading="lazy" width="1920" height="1200"><figcaption>Graphs you can move</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="teachers" id="teachers">
+    <div class="wrap two">
+      <div class="reveal">
+        <p class="kicker">For students</p>
+        <h2>Learn on your own, at your pace</h2>
+        <ol class="steps">
+          <li><b>Pick your tier.</b> Foundation or Higher, on the hub.</li>
+          <li><b>Open a lesson.</b> Watch the examples, then try it yourself.</li>
+          <li><b>Practise until it clicks.</b> Then do the check and the test.</li>
+          <li><b>Send your results.</b> Copy your progress for your teacher.</li>
+        </ol>
+      </div>
+      <div class="reveal">
+        <p class="kicker">For teachers</p>
+        <h2>Made for the classroom</h2>
+        <ul class="tlist">
+          <li><span>🖥️</span><div><b>Projector mode</b> enlarges everything for the board. Step through an example together, pausing to ask questions.</div></li>
+          <li><span>📋</span><div><b>Results you can collect</b>: students copy their progress or test results and paste them into Google Classroom or an email.</div></li>
+          <li><span>🎯</span><div><b>Mapped to the specification</b>: every one of the 242 4MA1 statements is taught, practised and tested.</div></li>
+          <li><span>📱</span><div><b>Works on laptops and iPads</b>, in any modern browser, with nothing to install and no accounts.</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap reveal">
+      <h2>Ready when you are.</h2>
+      <p>Choose a topic and start with the first example. It takes less than a minute.</p>
+      <a class="btn btn-yellow btn-lg" href="hub/">Open the lessons →</a>
+      <a class="btn btn-ghost btn-lg" href="exam/">Go to the exam zone</a>
+    </div>
+  </section>
 
   <footer class="foot">
-    <p>Content follows the Pearson Edexcel International GCSE Mathematics A (4MA1) specification. <span class="hbadge">H</span> = Higher tier only.</p>
-    <p>Real past papers and mark schemes: <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-mathematics-a-2016.html" target="_blank" rel="noopener">Pearson qualifications website</a>. Exam-style questions in the lessons are written for practice.</p>
-    <p>Progress is saved in this browser only. Nothing is sent to the internet.</p>
-    <p class="foot-school">British School Alzira · Xàtiva · Gandia</p>
+    <span class="logo sm" role="img" aria-label="British School Alzira · Xàtiva · Gandia"></span>
+    <p><b>British School Alzira · Xàtiva · Gandia</b></p>
+    <p>Content follows the Pearson Edexcel International GCSE Mathematics A (4MA1) specification. Exam-style questions are written for practice; real past papers are on <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-mathematics-a-2016.html" target="_blank" rel="noopener">Pearson's website</a>.</p>
   </footer>
 
-  <script src="js/syllabus.js"></script>
-  <script src="js/ready.js"></script>
-  <script src="engine/code.js"></script>
-  <script src="js/hub.js"></script>
+  <script src="landing/landing.js"></script>
 </body>
 </html>

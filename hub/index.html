@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>IGCSE Maths Hub</title>
+  <meta name="description" content="Interactive maths lessons for the Pearson Edexcel International GCSE Mathematics A (4MA1): number, algebra, graphs, geometry and trigonometry, vectors and transformations, statistics and probability. Animated worked examples, random practice, checks, tests and saved progress, for Foundation and Higher tiers. British School Alzira · Xàtiva · Gandia.">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="stylesheet" href="../hub.css">
+</head>
+<body>
+  <header class="hero">
+    <svg class="circuit" viewBox="0 0 600 320" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 290 H580 M50 300 V20" opacity=".6"/>
+        <path class="trace" d="M50 280 C150 280 200 40 300 40 S450 280 560 280"/>
+        <path class="trace" d="M50 250 L560 60"/>
+        <path d="M380 150 l70 0 l0 -70 z"/>
+        <circle cx="160" cy="120" r="46"/>
+        <path d="M160 120 L206 120 A46 46 0 0 0 160 74 Z" opacity=".7"/>
+      </g>
+      <g fill="currentColor">
+        <circle class="node" cx="300" cy="40" r="5"/><circle class="node" cx="138" cy="219" r="5"/>
+        <circle class="node" cx="462" cy="96" r="5"/><circle class="node" cx="50" cy="280" r="5"/>
+        <circle class="node" cx="560" cy="280" r="5"/>
+      </g>
+    </svg>
+
+    <div class="hero-inner">
+      <div class="school">
+        <span class="logo" role="img" aria-label="British School Alzira · Xàtiva · Gandia logo"></span>
+        <span class="school-name">British School<br>Alzira · Xàtiva · Gandia</span>
+      </div>
+      <div class="hero-tools">
+        <div class="tier-switch" id="tier" role="group" aria-label="Your tier">
+          <button data-t="F" aria-pressed="false" title="Foundation tier: hides the Higher-only parts">Foundation</button>
+          <button data-t="H" aria-pressed="false" title="Higher tier: shows everything">Higher</button>
+        </div>
+        <button class="chip-btn" id="btnProjector" aria-pressed="false" title="Bigger text for the classroom projector (P)">Projector mode</button>
+      </div>
+
+      <div class="hero-text">
+        <p class="kicker">Pearson Edexcel International GCSE Mathematics A (4MA1)</p>
+        <h1>IGCSE Maths</h1>
+        <p class="lead">Interactive lessons</p>
+        <ul class="facts" aria-label="At a glance">
+          <li><b>6</b> areas</li>
+          <li><b id="lessonCount">0</b> lessons</li>
+          <li>Worked examples, practice and tests</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section class="me" aria-label="My maths">
+    <div class="me-card">
+      <p class="me-kick">My maths</p>
+      <div class="me-row"><span class="big-pct" id="allPct">0<small>%</small></span><span id="meLine" class="me-msg">Open a lesson to start. Your progress is saved on this device.</span></div>
+      <div class="mastery" id="mastery"></div>
+      <div class="me-row"><span id="cont"></span><a class="hbtn" href="../exam/">📝 Exam zone: formulae, papers and tips</a></div>
+    </div>
+    <div class="me-card">
+      <p class="me-kick">Changing device?</p>
+      <h2>Your progress code</h2>
+      <p class="me-msg">One code carries <b>all</b> your maths lessons. Copy it, email it to yourself, then paste it here on the other device.</p>
+      <div class="me-row"><button class="hbtn" id="cCopy">Copy my progress code</button></div>
+      <textarea class="code-in" id="cIn" rows="2" placeholder="Paste a progress code (MH1Z.…)" aria-label="Paste a progress code"></textarea>
+      <div class="me-row"><button class="hbtn" id="cLoad">Load this code</button></div>
+      <p class="me-msg" id="cMsg"></p>
+    </div>
+  </section>
+
+  <nav class="unitbar" aria-label="Areas">
+    <div class="unitbar-inner">
+      <div class="unit-links" id="unitLinks"></div>
+      <label class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        <input type="search" id="search" placeholder="Search a topic…" autocomplete="off" aria-label="Search a topic">
+      </label>
+    </div>
+  </nav>
+
+  <main id="units"></main>
+  <p class="empty" id="empty" hidden>No lessons match “<span id="emptyQ"></span>”. Try another word.</p>
+
+  <footer class="foot">
+    <p>Content follows the Pearson Edexcel International GCSE Mathematics A (4MA1) specification. <span class="hbadge">H</span> = Higher tier only.</p>
+    <p>Real past papers and mark schemes: <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-mathematics-a-2016.html" target="_blank" rel="noopener">Pearson qualifications website</a>. Exam-style questions in the lessons are written for practice.</p>
+    <p>Progress is saved in this browser only. Nothing is sent to the internet.</p>
+    <p><a href="../">About the IGCSE Maths Hub</a></p>
+    <p class="foot-school">British School Alzira · Xàtiva · Gandia</p>
+  </footer>
+
+  <script src="../js/syllabus.js"></script>
+  <script src="../js/ready.js"></script>
+  <script src="../engine/code.js"></script>
+  <script src="../js/hub.js"></script>
+</body>
+</html>

@@ -9,7 +9,7 @@
 .tabs button .hbadge { margin-left: .15rem; }
 
 /* "Try it yourself" button in the scene header, and the glow on the controls */
-.try[role="button"] { cursor: pointer; border: 1px solid color-mix(in srgb, var(--scene) 45%, transparent); text-transform: none; letter-spacing: 0; font-size: .85rem; padding: .3rem .8rem; transition: background .2s, transform .15s; }
+.try[role="button"] { flex: 0 0 auto; width: auto; max-width: max-content; white-space: nowrap; cursor: pointer; border: 1px solid color-mix(in srgb, var(--scene) 45%, transparent); text-transform: none; letter-spacing: 0; font-size: .85rem; padding: .3rem .8rem; transition: background .2s, transform .15s; }
 .try[role="button"]:hover, .try[role="button"]:focus-visible { background: color-mix(in srgb, var(--scene) 24%, var(--surface)); outline: none; transform: translateY(-1px); }
 .try[role="button"]:not(.here) { animation: tryNudge 2.4s ease-in-out 1.2s 2; }
 .try.here { background: var(--scene); color: #fff; border-color: var(--scene); }

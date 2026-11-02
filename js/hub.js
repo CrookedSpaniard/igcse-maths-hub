@@ -42,7 +42,7 @@
       </div>
       <div class="grid">
         ${a.lessons.map((l) => `
-          <a class="lcard soon ${inTier(l) ? '' : 'off-tier'}" href="lessons/${l.id}/" data-id="${l.id}" style="--i:${i++}"
+          <a class="lcard soon ${inTier(l) ? '' : 'off-tier'}" href="../lessons/${l.id}/" data-id="${l.id}" style="--i:${i++}"
              data-search="${esc((l.spec + ' ' + l.title + ' ' + l.line + ' area ' + a.n + ' ' + a.title).toLowerCase())}">
             <span class="lcard-top">
               <span class="lcard-ic">${svg(a.icon)}</span>
@@ -93,7 +93,7 @@
       ? `${prof.name ? `Hi ${esc(prof.name.split(' ')[0])}! ` : ''}Average across the ${lessons.length} lessons in your tier (${tier === 'F' ? 'Foundation' : 'Higher'}).`
       : 'Open a lesson to start. Your progress is saved on this device.';
     const next = recent.length ? MH.find(recent[0][0]) : MH.lessons.find((l) => ready.has(l.id) && inTier(l));
-    $('#cont').innerHTML = next ? `<a class="hbtn primary" href="lessons/${next.id}/">▶ ${recent.length ? 'Continue' : 'Start'}: ${esc(next.title)}</a>` : '';
+    $('#cont').innerHTML = next ? `<a class="hbtn primary" href="../lessons/${next.id}/">▶ ${recent.length ? 'Continue' : 'Start'}: ${esc(next.title)}</a>` : '';
   }
 
   // ---------- tier ----------
