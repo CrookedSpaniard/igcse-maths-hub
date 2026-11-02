@@ -142,10 +142,48 @@
       sleep: async (ms) => { await FD.wait(ms); return id === run; },
     };
     demo = true;
+    setTryBadge(sc);
     try { await (st.on && st.on(api, ctx)); } catch (e) { console.error(e); }
     if (id !== run) return;
     demo = false;
+    if (sc.interactive && step === tryIndex(sc)) revealControls(id);
     if (playing) timer = setTimeout(() => { if (id === run) next(); }, FD.dur(readTime(st)));
+  }
+
+  // ---------- "Try it yourself": jump to the interactive step from any step ----------
+  // The interactive step is the last one titled "Try it…", or the last step.
+  const tryIndex = (sc) => {
+    for (let k = sc.steps.length - 1; k >= 0; k--) if (/^try it/i.test(sc.steps[k].title)) return k;
+    return sc.steps.length - 1;
+  };
+  const tryBadge = $('#tryBadge');
+  tryBadge.setAttribute('role', 'button');
+  tryBadge.tabIndex = 0;
+  const goTry = () => { const sc = S[cur]; if (sc.interactive && step !== tryIndex(sc)) { pause(); showStep(tryIndex(sc)); } else revealControls(run); };
+  tryBadge.addEventListener('click', goTry);
+  tryBadge.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goTry(); } });
+  function setTryBadge(sc) {
+    if (!sc.interactive) return;
+    const here = step === tryIndex(sc);
+    tryBadge.classList.toggle('here', here);
+    tryBadge.textContent = here ? '👇 Your turn: use the controls' : '▶ Try it yourself';
+    tryBadge.title = here ? 'Show the controls' : 'Go to the interactive part of this scene';
+  }
+  // Bring the first control of the stage into view and make it glow for a moment.
+  function revealControls(id) {
+    requestAnimationFrame(() => {
+      if (id !== run) return;
+      const vis = (e) => e.getClientRects().length && !e.closest('[hidden]');
+      const ctl = [...stageEl.querySelectorAll('input, select, button, textarea, [draggable="true"], [data-drag], .drag, .handle')].find(vis);
+      if (!ctl) return;
+      const zone = ctl.closest('.ctrls, .card, .mbox, .ctrl') || ctl.parentElement;
+      const r = zone.getBoundingClientRect(), foot = ($('#controls') || {}).offsetHeight || 0;
+      if (r.top < 70 || r.bottom > innerHeight - foot - 8) zone.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      zone.classList.remove('try-glow');
+      void zone.offsetWidth;
+      zone.classList.add('try-glow');
+      setTimeout(() => zone.classList.remove('try-glow'), 2600);
+    });
   }
 
   function readTime(st) {
