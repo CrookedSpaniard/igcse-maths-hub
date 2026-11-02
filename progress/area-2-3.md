@@ -39,3 +39,11 @@ Notes for resuming: the shared "algebra kit" (FD.mk, FD.walk, FD.graph, FD.poly,
 2026-10-31 06:24 · done     · graphical-solutions · audit ✓ · coverage ✓
 2026-10-31 09:00 · done     · calculus · audit ✓ · coverage ✓
 All 16 lessons of Areas 2–3 are done. Newest kit copy: lessons/calculus/scenes/gradient-curve.js and lessons/calculus/lesson.css.
+
+## Area 5 (added 02/11/2026): vectors, transformations
+2026-11-02 10:00 · started  · vectors
+2026-11-02 11:30 · vectors · built, coverage ✓ (7/7); audit re-run in progress after fixing proof#5 overflow (check scratchpad audit-ve.txt or re-run tools/audit.mjs vectors)
+2026-11-02 11:40 · done     · vectors · audit ✓ · coverage ✓
+2026-11-02 11:30 · started  · transformations
+   On disk: lesson.js, scenes/translations.js (helpers FD.tf*, FD.cv), reflections.js, rotations.js, testA.js, enlargement.js, enlarge-more.js.
+   Still to do: scenes/describe.js (F5.2M, F5.2I: full descriptions, combined transformations, practice with random transformations), scenes/testB.js (FD.tierTest, enlarge-more items last, LONG h last), lesson.css (tf-obj, tf-img, tf-ghost, tf-name, tf-arrow, tf-mirror, tf-hero classes), then prepend the algebra kit to translations.js + lesson.css, node tools/new-lesson.mjs transformations, generator selftest, audit and coverage.

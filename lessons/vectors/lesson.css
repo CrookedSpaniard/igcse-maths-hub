@@ -1,0 +1,43 @@
+/* ---- Algebra kit: stage layout, worked lines, graphs and typed algebra ---- */
+.sim { display: grid; gap: .8rem; min-width: 0; }
+.kit-main { display: grid; gap: .8rem; min-width: 0; }
+.kit.duo .kit-main { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+@container stage (max-width: 46rem) { .kit.duo .kit-main { grid-template-columns: minmax(0, 1fr); } }
+.kit-vis { display: grid; justify-items: center; gap: .4rem; min-width: 0; }
+.kit-vis > svg { width: 100%; height: auto; max-height: 22rem; display: block; }
+.kit-side { display: grid; gap: .5rem; min-width: 0; align-content: start; }
+.kit-side .mbig:empty { display: none; }
+.eq-work { min-height: 2rem; min-width: 0; }
+.kit-try { max-width: 40rem; width: 100%; justify-self: center; }
+.kit-try .chk-btns { justify-content: center; }
+.kit .work { justify-items: stretch; }
+.alg-prev { min-height: 1.6rem; margin: .2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+.alg-in { width: 14rem; }
+.g-lbl { font-size: 13px; font-weight: 750; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.g-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+.g-fill { fill: color-mix(in srgb, var(--scene) 22%, transparent); stroke: none; }
+.pt.c2 { fill: var(--c2); }
+.pt.hot { fill: var(--yellow, #F6C94C); stroke: var(--ink); }
+.seg-row { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
+/* ---- end of kit ---- */
+
+/* Vectors: arrows on a square grid, a triangle diagram for proofs */
+.ve-hero line { stroke-width: 5; stroke-linecap: round; }
+.ve-hero .ve-h-a line, .ve-hero .ve-h-b line { stroke: #fff; }
+.ve-hero .ve-h-a polygon, .ve-hero .ve-h-b polygon { fill: #fff; }
+.ve-hero .ve-h-r line { stroke: #F6C94C; stroke-dasharray: 10 6; }
+.ve-hero .ve-h-t { fill: #fff; font-size: 18px; font-weight: 800; text-anchor: middle; }
+
+[data-k="g"] { width: 100%; min-width: 0; }
+.vg .ax-axes { display: none; }
+.vec { color: var(--c1); }
+.vec line { stroke: currentColor; stroke-width: 3.5; stroke-linecap: round; }
+.vec polygon { fill: currentColor; }
+.vec text { fill: currentColor; font-size: 17px; font-weight: 800; text-anchor: middle; paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.vec.v1 { color: var(--c1); }
+.vec.v2 { color: var(--c6); }
+.vec.v3 { color: var(--c8); }
+.vec.vr { color: var(--c2); }
+.ve-fig { width: 100%; height: auto; max-height: 22rem; display: block; }
+.ve-tri { fill: color-mix(in srgb, var(--scene) 10%, transparent); stroke: var(--line); stroke-width: 2; }
+.ve-fig .g-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; }

@@ -29,3 +29,5 @@
 .dt th, .dt td { border: 2px solid var(--line); padding: .3rem .8rem; text-align: center; }
 .dt th { background: var(--surface-2); }
 .dt td.hi { background: color-mix(in srgb, var(--scene) 20%, var(--surface)); font-weight: 800; }
+.dt tr.tot td { font-weight: 800; border-top-width: 3px; }
+.ft-sl { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: .2rem 1rem; }

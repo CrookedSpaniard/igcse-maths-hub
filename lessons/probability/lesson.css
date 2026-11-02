@@ -1,0 +1,48 @@
+/* Probability: the scale, bags of counters, a dice simulator */
+.pb-hero .pb-ax { stroke: #fff; stroke-width: 3; }
+.pb-hero .pb-t { fill: #fff; font-size: 18px; font-weight: 800; text-anchor: middle; }
+.pb-hero .pb-d { fill: #F6C94C; }
+.pb-hero .pb-die { fill: #fff; }
+.pb-hero .pb-pip { fill: #202D4A; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; grid-template-columns: minmax(0, 1fr); gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 15rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.hc-sl { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .2rem 1rem; }
+
+/* probability scale */
+.ps-ax { stroke: var(--ink); stroke-width: 3; }
+.ps-t { font-size: 15px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.ps-w { font-size: 13px; font-weight: 600; fill: var(--muted); text-anchor: middle; }
+.ps-m { fill: var(--scene); transition: all .5s; }
+.ps-l { font-size: 13px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.ps-st { stroke: var(--scene); stroke-width: 2; }
+
+/* counters */
+.ct { stroke: var(--surface); stroke-width: 2; transition: all .4s; }
+.ct.r { fill: #e05a47; } .ct.b { fill: #3b82f6; } .ct.g { fill: #22a06b; } .ct.y { fill: #f6c94c; }
+.ct.dim { opacity: .2; }
+.bag { fill: var(--surface-2); stroke: var(--line); stroke-width: 3; }
+
+/* charts */
+.cg-ax { stroke: var(--ink); stroke-width: 2; }
+.cg-grid { stroke: var(--line); stroke-width: 1; }
+.cg-t { font-size: 13px; fill: var(--muted); text-anchor: middle; font-weight: 600; }
+.cg-ty { text-anchor: end; }
+.cg-name { font-size: 13px; font-weight: 800; fill: var(--ink); }
+.cg-bar { fill: color-mix(in srgb, var(--scene) 60%, var(--surface)); transition: all .3s; }
+.cg-v { font-size: 12px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.rf-line { fill: none; stroke: var(--scene); stroke-width: 2.5; }
+.rf-p { stroke: var(--c8); stroke-width: 2.5; stroke-dasharray: 7 5; }
+.rf-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .6rem; }
+@container stage (max-width: 44rem) { .rf-pair { grid-template-columns: minmax(0, 1fr); } }
+.dice-row { display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem; min-height: 2.4rem; }
+.dice-row span { width: 2.2rem; height: 2.2rem; display: grid; place-items: center; border-radius: 8px; border: 2px solid var(--line); background: var(--surface); font-weight: 800; font-size: 1.1rem; }
+.dice-row span.six { background: var(--scene); color: #fff; border-color: var(--scene); }

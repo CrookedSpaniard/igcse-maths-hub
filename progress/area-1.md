@@ -33,3 +33,17 @@
 2026-10-31 00:30 · started  · charts
 2026-10-31 01:30 · written  · charts · coverage ✓ · QA ✓ (audit running)
 2026-10-31 01:30 · started  · averages
+2026-11-02 · done     · charts · audit ✓ · coverage ✓
+2026-11-02 · resumed  · averages
+2026-11-02 · written  · averages · coverage ✓ · QA ✓ (audit running)
+2026-11-02 · started  · histograms-cf
+2026-11-02 · done     · averages · audit ✓ · coverage ✓
+2026-11-02 · written  · histograms-cf · coverage ✓ · QA ✓ (audit running)
+2026-11-02 · started  · quartiles
+2026-11-02 · written  · quartiles · coverage ✓ · QA ✓ (audit queued)
+2026-11-02 · started  · probability
+2026-11-02 · paused   · probability · written: lesson.js, lesson.css, scenes/scale.js, scenes/theory.js · TODO: relfreq.js (dice/coin simulator), expected.js, testA.js, testB.js, then new-lesson + QA + coverage + audit
+2026-11-02 · note     · histograms-cf audit passed 1440/1280/1024 (check projector line); quartiles audit was queued in background — re-run both to confirm before logging done
+2026-11-02 · todo     · combined-probability (F6.3D-F, F6.3I, H6.3A-D) not started
+2026-11-02 · done     · histograms-cf · audit ✓ · coverage ✓
+2026-11-02 · done     · quartiles · audit ✓ · coverage ✓

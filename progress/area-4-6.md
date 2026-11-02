@@ -25,3 +25,9 @@ Notes for resuming: the "lesson kit" (FD.stage, FD.G, FD.dragIn, FD.tn) is the t
 2026-10-31 06:57 · done     · pythagoras-trig · coverage ✓ · audit running
 2026-10-31 06:57 · note     · plan change: Area 6 lessons moved to the Area 1 session; my list is Area 4 + Area 5 only
 2026-10-31 06:57 · started  · further-trig
+2026-11-02 13:16 · done     · pythagoras-trig · audit ✓ · coverage ✓
+2026-11-02 13:16 · started  · area-perimeter
+2026-11-02 13:17 · done     · further-trig · audit ✓ · coverage ✓
+2026-11-02 13:24 · started  · volume-surface (area-perimeter coverage ✓, audit running)
+2026-11-02 13:26 · done     · area-perimeter · audit ✓ · coverage ✓ (re-audit after 2 small drawing tweaks in areas.js/compound.js still to run)
+2026-11-02 13:26 · note     · volume-surface in progress: lesson.js + scenes/solids.js written; still to write surface, testA, prisms, volunits, testB, conesphere, testC, css/volume-surface.css; then build, gentest, coverage, audit

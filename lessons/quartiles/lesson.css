@@ -1,0 +1,36 @@
+/* Quartiles: sorted chips, cumulative frequency graphs, box plots */
+.qu-hero .qu-l { stroke: #fff; stroke-width: 3; }
+.qu-hero .qu-b { fill: rgb(255 255 255 / .15); stroke: #fff; stroke-width: 3; }
+.qu-hero .qu-m { stroke: #F6C94C; stroke-width: 5; }
+.qu-hero .qu-t { fill: #fff; font-size: 20px; font-weight: 800; text-anchor: middle; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; grid-template-columns: minmax(0, 1fr); gap: .7rem; }
+.bd-pic { min-width: 0; display: grid; gap: .5rem; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 15rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem; min-height: 2.6rem; }
+.chips span { min-width: 2.3rem; padding: .3rem .45rem; text-align: center; border-radius: 9px; border: 2px solid var(--line); background: var(--surface); font-weight: 800; transition: all .35s; }
+.chips span.mid { background: var(--scene); color: #fff; border-color: var(--scene); }
+.chips span.q { border-color: var(--c8); background: color-mix(in srgb, var(--c8) 30%, var(--surface)); }
+.chips span.end { border-color: var(--c6); border-style: dashed; }
+.chips b { align-self: center; margin-right: .3rem; color: var(--muted); }
+
+/* graphs */
+.cg-ax { stroke: var(--ink); stroke-width: 2; }
+.cg-grid { stroke: var(--line); stroke-width: 1; }
+.cg-t { font-size: 13px; fill: var(--muted); text-anchor: middle; font-weight: 600; }
+.cg-ty { text-anchor: end; }
+.cg-name { font-size: 13px; font-weight: 800; fill: var(--ink); }
+.cf-pt { fill: var(--scene); stroke: var(--surface); stroke-width: 1.5; }
+.cf-curve { fill: none; stroke: var(--scene); stroke-width: 3; }
+.cf-read { stroke: var(--c8); stroke-width: 2.5; stroke-dasharray: 7 5; fill: none; }
+.bx-box { fill: color-mix(in srgb, var(--scene) 30%, var(--surface)); stroke: var(--ink); stroke-width: 2; transition: all .4s; }
+.bx-l { stroke: var(--ink); stroke-width: 2; }
+.bx-m { stroke: var(--c8); stroke-width: 4; }
+.bx-n { font-size: 14px; font-weight: 800; fill: var(--ink); }

@@ -1,0 +1,39 @@
+/* Histograms and cumulative frequency */
+.hc-hero .hc-ax { stroke: #fff; stroke-width: 2; }
+.hc-hero .hc-b { fill: #F6C94C; stroke: #202D4A; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; grid-template-columns: minmax(0, 1fr); gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 15rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 40rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+
+/* table beside the graph */
+.hc-pair { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .8rem; align-items: center; }
+@container stage (max-width: 44rem) { .hc-pair { grid-template-columns: minmax(0, 1fr); } }
+.hc-sl { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .2rem 1rem; }
+
+/* data tables */
+.dt { border-collapse: collapse; margin-inline: auto; font-size: 1rem; }
+.dt th, .dt td { border: 2px solid var(--line); padding: .25rem .6rem; text-align: center; }
+.dt th { background: var(--surface-2); }
+.dt td.hi { background: color-mix(in srgb, var(--scene) 20%, var(--surface)); font-weight: 800; }
+
+/* graphs */
+.cg-ax { stroke: var(--ink); stroke-width: 2; }
+.cg-grid { stroke: var(--line); stroke-width: 1; }
+.cg-t { font-size: 13px; fill: var(--muted); text-anchor: middle; font-weight: 600; }
+.cg-ty { text-anchor: end; }
+.cg-name { font-size: 13px; font-weight: 800; fill: var(--ink); }
+.cg-bar { fill: color-mix(in srgb, var(--scene) 55%, var(--surface)); stroke: var(--ink); stroke-width: 1.5; transition: all .5s; }
+.cg-bar.wrong { fill: color-mix(in srgb, var(--bad, #c0392b) 35%, var(--surface)); }
+.cg-bar.hi { fill: var(--c8); }
+.cg-v { font-size: 13px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.hs-sh { fill: var(--c8); opacity: .75; }
+.cf-pt { fill: var(--scene); stroke: var(--surface); stroke-width: 1.5; }
+.cf-curve { fill: none; stroke: var(--scene); stroke-width: 3; }
+.cf-read { stroke: var(--c8); stroke-width: 2.5; stroke-dasharray: 7 5; fill: none; }
