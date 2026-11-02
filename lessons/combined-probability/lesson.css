@@ -1,0 +1,53 @@
+/* Combined events: sample spaces, Venn diagrams, tree diagrams */
+.cp-hero .cp-n { fill: #F6C94C; }
+.cp-hero .cp-b { stroke: #fff; stroke-width: 3; }
+.cp-hero .cp-b2 { stroke: #F6C94C; }
+
+/* the board: picture, big formula, worked example, Try it */
+.sim { display: grid; grid-template-columns: minmax(0, 1fr); gap: .7rem; }
+.bd-pic { min-width: 0; }
+.bd-pic svg { width: 100%; height: auto; display: block; max-height: 16rem; margin-inline: auto; }
+.bd-work { min-height: 2rem; }
+.bd-try { max-width: 38rem; width: 100%; justify-self: center; }
+.sim .verdict:empty { display: none; }
+.bd-btns { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bd-try select { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); padding: .35rem .5rem; font: inherit; max-width: 100%; }
+.bd-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.cp-sl { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .2rem 1rem; }
+
+/* outcome lists and the sample space grid */
+.ol { display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem; }
+.ol span { border: 2px solid var(--line); border-radius: 8px; padding: .2rem .5rem; font-weight: 800; background: var(--surface); }
+.ol span.hi { background: var(--scene); color: #fff; border-color: var(--scene); }
+.ss { border-collapse: collapse; margin-inline: auto; font-size: .95rem; }
+.ss th, .ss td { border: 2px solid var(--line); width: 2.3rem; height: 1.9rem; text-align: center; padding: 0; }
+.ss th { background: var(--surface-2); }
+.ss td.hi { background: var(--scene); color: #fff; font-weight: 800; }
+.ss caption { caption-side: top; font-weight: 700; color: var(--muted); padding-bottom: .2rem; }
+
+/* probability bar */
+.pbar-s { stroke: var(--surface); stroke-width: 2; transition: all .4s; }
+.pbar-s.k0 { fill: #e05a47; } .pbar-s.k1 { fill: #3b82f6; } .pbar-s.k2 { fill: #22a06b; } .pbar-s.k3 { fill: #f6c94c; }
+.pbar-s.dim { opacity: .25; }
+.pbar-t { font-size: 14px; font-weight: 800; fill: #fff; text-anchor: middle; }
+.pbar-t.k3 { fill: #202D4A; }
+.dt { border-collapse: collapse; margin-inline: auto; font-size: 1rem; }
+.dt th, .dt td { border: 2px solid var(--line); padding: .25rem .7rem; text-align: center; }
+.dt th { background: var(--surface-2); }
+.dt td.hi { background: color-mix(in srgb, var(--scene) 25%, var(--surface)); font-weight: 800; }
+
+/* Venn diagram */
+.vn-u { fill: none; stroke: var(--ink); stroke-width: 2; }
+.vn-c { fill: none; stroke: var(--ink); stroke-width: 2.5; }
+.vn-sh { fill: var(--scene); opacity: .45; }
+.vn-n { font-size: 22px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.vn-l { font-size: 17px; font-weight: 800; fill: var(--ink); }
+
+/* tree diagram */
+.tr-b { stroke: var(--line); stroke-width: 2.5; transition: all .4s; }
+.tr-b.hi { stroke: var(--scene); stroke-width: 4; }
+.tr-p { font-size: 14px; font-weight: 800; fill: var(--c8); text-anchor: middle; }
+.tr-n { font-size: 15px; font-weight: 800; fill: var(--ink); text-anchor: middle; }
+.tr-o { font-size: 14px; font-weight: 700; fill: var(--muted); }
+.tr-o.hi { fill: var(--ink); font-weight: 800; }
+.tr-h { font-size: 13px; font-weight: 800; fill: var(--muted); text-anchor: middle; }

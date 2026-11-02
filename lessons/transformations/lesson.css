@@ -1,0 +1,36 @@
+/* ---- Algebra kit: stage layout, worked lines, graphs and typed algebra ---- */
+.sim { display: grid; gap: .8rem; min-width: 0; }
+.kit-main { display: grid; gap: .8rem; min-width: 0; }
+.kit.duo .kit-main { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+@container stage (max-width: 46rem) { .kit.duo .kit-main { grid-template-columns: minmax(0, 1fr); } }
+.kit-vis { display: grid; justify-items: center; gap: .4rem; min-width: 0; }
+.kit-vis > svg { width: 100%; height: auto; max-height: 22rem; display: block; }
+.kit-side { display: grid; gap: .5rem; min-width: 0; align-content: start; }
+.kit-side .mbig:empty { display: none; }
+.eq-work { min-height: 2rem; min-width: 0; }
+.kit-try { max-width: 40rem; width: 100%; justify-self: center; }
+.kit-try .chk-btns { justify-content: center; }
+.kit .work { justify-items: stretch; }
+.alg-prev { min-height: 1.6rem; margin: .2rem 0 0; color: var(--muted); font-size: 1.05rem; }
+.alg-in { width: 14rem; }
+.g-lbl { font-size: 13px; font-weight: 750; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+.g-line { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+.g-fill { fill: color-mix(in srgb, var(--scene) 22%, transparent); stroke: none; }
+.pt.c2 { fill: var(--c2); }
+.pt.hot { fill: var(--yellow, #F6C94C); stroke: var(--ink); }
+.seg-row { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
+/* ---- end of kit ---- */
+
+/* Transformations: object and image on a coordinate grid, mirror lines and centres */
+.tf-hero .tf-h-ax { stroke: rgb(255 255 255 / .55); stroke-width: 2; }
+.tf-hero .tf-h-o { fill: none; stroke: rgb(255 255 255 / .7); stroke-width: 3; stroke-dasharray: 6 5; }
+.tf-hero .tf-h-i { fill: rgb(246 201 76 / .35); stroke: #F6C94C; stroke-width: 4; stroke-linejoin: round; }
+.tf-hero .tf-h-c { fill: #fff; }
+
+[data-k="g"] { width: 100%; min-width: 0; }
+.tf-obj { fill: color-mix(in srgb, var(--c1) 30%, transparent); stroke: var(--c1); stroke-width: 2.5; stroke-linejoin: round; }
+.tf-img { fill: color-mix(in srgb, var(--c6) 30%, transparent); stroke: var(--c6); stroke-width: 2.5; stroke-linejoin: round; }
+.tf-ghost { fill: none; stroke: var(--muted); stroke-width: 2; stroke-dasharray: 5 4; }
+.tf-name { fill: var(--ink); font-size: 14px; font-weight: 800; text-anchor: middle; paint-order: stroke; stroke: var(--surface); stroke-width: 3px; }
+.tf-arrow { stroke: var(--c2); stroke-width: 3; stroke-dasharray: 7 4; stroke-linecap: round; }
+.tf-mirror { stroke: var(--c8); stroke-width: 3; }

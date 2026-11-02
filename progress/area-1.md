@@ -47,3 +47,9 @@
 2026-11-02 · todo     · combined-probability (F6.3D-F, F6.3I, H6.3A-D) not started
 2026-11-02 · done     · histograms-cf · audit ✓ · coverage ✓
 2026-11-02 · done     · quartiles · audit ✓ · coverage ✓
+2026-11-02 · written  · probability · coverage ✓ · QA ✓ (audit running)
+2026-11-02 · started  · combined-probability
+2026-11-02 · done     · probability · audit ✓ · coverage ✓
+2026-11-02 · written  · combined-probability · coverage ✓ · QA ✓ (audit running)
+2026-11-02 · done     · combined-probability · audit ✓ · coverage ✓
+2026-11-02 · AREA 6 COMPLETE (6/6): charts, averages, histograms-cf, quartiles, probability, combined-probability

@@ -29,8 +29,8 @@ FD.add({
       const k = +a.$('[data-k="k"]').value;
       a.$('[data-k="ok"]').textContent = FD.mn(k);
       a.grow(k, [0, 0], EM_T);
-      a.big(`\\text{scale factor } ${k}, \\text{ centre } (0, 0)`);
-      a.msg(k === 0 ? 'Scale factor 0 squashes everything onto the centre: it is not used.' : k < 0 ? `Through the centre and upside down, ${Math.abs(k)} times as long.` : k < 1 ? 'Smaller: each length is multiplied by a number less than 1.' : `Same side of the centre, ${k} times as long.`);
+      a.big(`\\text{scale factor } ${k}`);
+      a.msg('Centre \\((0, 0)\\). ' + k === 0 ? 'Scale factor 0 squashes everything onto the centre: it is not used.' : k < 0 ? `Through the centre and upside down, ${Math.abs(k)} times as long.` : k < 1 ? 'Smaller: each length is multiplied by a number less than 1.' : `Same side of the centre, ${k} times as long.`);
     };
     a.$('[data-k="k"]').addEventListener('input', sync);
     a.onTry = sync;
@@ -41,7 +41,7 @@ FD.add({
     {
       title: 'Scale factor ½',
       text: '<p>A scale factor between 0 and 1 makes the shape <b>smaller</b>. With scale factor \\(\\tfrac12\\), every point moves halfway towards the centre and every length halves.</p>',
-      async on(a, ctx) { a.tryMode(false); a.big('\\text{scale factor } \\tfrac12, \\text{ centre } (-5, -5)'); a.msg(''); a.grow(1, [-5, -5], EM_BIG); if (!(await ctx.sleep(500))) return; await a.anim(ctx, 0.5, [-5, -5], EM_BIG); },
+      async on(a, ctx) { a.tryMode(false); a.big('\\text{scale factor } \\tfrac12'); a.msg('Centre \\((-5, -5)\\).'); a.grow(1, [-5, -5], EM_BIG); if (!(await ctx.sleep(500))) return; await a.anim(ctx, 0.5, [-5, -5], EM_BIG); },
     },
     {
       title: 'Working out a fractional enlargement',

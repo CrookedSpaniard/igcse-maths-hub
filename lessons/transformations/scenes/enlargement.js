@@ -32,8 +32,8 @@ FD.add({
       const k = +a.$('[data-k="k"]').value;
       a.$('[data-k="ok"]').textContent = k;
       a.grow(k);
-      a.big(`\\text{scale factor } ${k}: \\; \\text{base } 2 \\to ${FD.num(2 * k)}`);
-      a.msg(k === 1 ? 'Scale factor 1: the image is the same as the object.' : `Every length is ${k} times as long; every angle is unchanged.`);
+      a.big(`\\text{base } 2 \\to ${FD.num(2 * k)}`);
+      a.msg(k === 1 ? 'Scale factor 1: the image is the same as the object.' : `Scale factor ${k}. Every length is ${k} times as long; every angle is unchanged.`);
     };
     a.$('[data-k="k"]').addEventListener('input', sync);
     a.onTry = sync;
@@ -44,7 +44,7 @@ FD.add({
     {
       title: 'A centre and a scale factor',
       text: '<p>An <b>enlargement</b> changes the size of a shape. You need a <b>centre of enlargement</b> and a <b>scale factor</b>.</p><p>Here: scale factor 3, centre \\((-5, -5)\\).</p>',
-      async on(a, ctx) { a.tryMode(false); a.big('\\text{scale factor } 3, \\text{ centre } (-5, -5)'); a.msg(''); a.grow(1, EN_C, EN_A, false); if (!(await ctx.sleep(500))) return; await a.anim(ctx, 3); },
+      async on(a, ctx) { a.tryMode(false); a.big('\\text{scale factor } 3'); a.msg('Centre of enlargement \\((-5, -5)\\).'); a.grow(1, EN_C, EN_A, false); if (!(await ctx.sleep(500))) return; await a.anim(ctx, 3); },
     },
     {
       title: 'Rays from the centre',
@@ -59,7 +59,7 @@ FD.add({
       title: 'Angles stay, lengths change',
       text: '<p>The base of A is 2 and the base of B is 6: every length is multiplied by the scale factor. The angles do <b>not</b> change.</p><p>So B is <b>similar</b> to A, not congruent.</p>',
       tip: 'Translations, reflections and rotations keep lengths. Enlargement is the only one that changes them.',
-      async on(a) { a.tryMode(false); a.grow(3, EN_C, EN_A, false); a.big('\\text{lengths} \\times 3, \\; \\text{angles the same}'); a.msg(''); },
+      async on(a) { a.tryMode(false); a.grow(3, EN_C, EN_A, false); a.big('\\text{lengths} \\times 3'); a.msg('Every angle stays the same.'); },
     },
     {
       title: 'Finding the scale factor and centre',

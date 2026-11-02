@@ -34,8 +34,8 @@ FD.add({
       const d = +a.$('[data-k="d"]').value, cx = +a.$('[data-k="cx"]').value, cy = +a.$('[data-k="cy"]').value;
       a.$('[data-k="od"]').textContent = FD.mn(d) + '°'; a.$('[data-k="ocx"]').textContent = FD.mn(cx); a.$('[data-k="ocy"]').textContent = FD.mn(cy);
       a.turn(d, cx, cy);
-      a.big(d ? `\\text{rotation } ${FD.mn(d)}^\\circ \\text{ about } (${cx}, ${cy})` : '\\text{no turn}');
-      a.msg(d === 0 ? 'Zero degrees: nothing moves.' : `${roName(d)}${Math.abs(d) === 270 ? ` (the same as ${roName(d > 0 ? -90 : 90)})` : ''}.`);
+      a.big(d ? `${d}^\\circ` : '\\text{no turn}');
+      a.msg(d === 0 ? 'Zero degrees: nothing moves.' : `${roName(d)} about \\((${cx}, ${cy})\\)${Math.abs(d) === 270 ? ` (the same as ${roName(d > 0 ? -90 : 90)})` : ''}.`);
     };
     ['d', 'cx', 'cy'].forEach((k) => a.$(`[data-k="${k}"]`).addEventListener('input', sync));
     a.onTry = sync;
@@ -46,7 +46,7 @@ FD.add({
     {
       title: 'A centre and an angle',
       text: '<p>A <b>rotation</b> turns a shape about a fixed point, the <b>centre of rotation</b>. To describe it you need the centre, the angle and the direction.</p><p>Here: 90° anticlockwise about the origin \\((0, 0)\\).</p>',
-      async on(a, ctx) { a.tryMode(false); a.big('\\text{rotation } 90^\\circ \\text{ anticlockwise about } (0, 0)'); a.msg(''); a.turn(0); if (!(await ctx.sleep(500))) return; await a.spin(ctx, 90); },
+      async on(a, ctx) { a.tryMode(false); a.big('90^\\circ \\text{ anticlockwise}'); a.msg('Centre of rotation \\((0, 0)\\).'); a.turn(0); if (!(await ctx.sleep(500))) return; await a.spin(ctx, 90); },
     },
     {
       title: 'Anticlockwise is positive',
@@ -68,7 +68,7 @@ FD.add({
       title: 'A different centre',
       text: '<p>Rotate triangle A 90° clockwise about \\((-1, 2)\\). The centre stays still; each corner keeps its distance from the centre.</p>',
       tip: 'In an exam, use tracing paper: trace the shape, hold the centre with your pencil and turn the paper.',
-      async on(a, ctx) { a.tryMode(false); a.big('\\text{rotation } -90^\\circ \\text{ about } (-1, 2)'); a.msg('Corner \\((4, 1) \\to (-2, -3)\\).'); a.turn(0, -1, 2); if (!(await ctx.sleep(500))) return; await a.spin(ctx, -90, -1, 2); },
+      async on(a, ctx) { a.tryMode(false); a.big('-90^\\circ \\text{ (clockwise)}'); a.msg('Centre \\((-1, 2)\\). Corner \\((4, 1) \\to (-2, -3)\\).'); a.turn(0, -1, 2); if (!(await ctx.sleep(500))) return; await a.spin(ctx, -90, -1, 2); },
     },
     {
       title: 'Try it: turn the triangle',

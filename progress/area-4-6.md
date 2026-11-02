@@ -31,3 +31,9 @@ Notes for resuming: the "lesson kit" (FD.stage, FD.G, FD.dragIn, FD.tn) is the t
 2026-11-02 13:24 · started  · volume-surface (area-perimeter coverage ✓, audit running)
 2026-11-02 13:26 · done     · area-perimeter · audit ✓ · coverage ✓ (re-audit after 2 small drawing tweaks in areas.js/compound.js still to run)
 2026-11-02 13:26 · note     · volume-surface in progress: lesson.js + scenes/solids.js written; still to write surface, testA, prisms, volunits, testB, conesphere, testC, css/volume-surface.css; then build, gentest, coverage, audit
+2026-11-02 14:38 · done     · volume-surface · coverage ✓ · audit running
+2026-11-02 14:38 · started  · similarity
+2026-11-02 14:52 · done     · area-perimeter · re-audit ✓ after drawing tweaks
+2026-11-02 14:52 · done     · volume-surface · audit ✓ · coverage ✓
+2026-11-02 14:52 · done     · similarity · audit ✓ · coverage ✓
+2026-11-02 14:52 · note     · Area 4 list complete (Area 5 moved to the Areas 2-3 session)

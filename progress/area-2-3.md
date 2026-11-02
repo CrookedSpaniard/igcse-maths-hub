@@ -47,3 +47,5 @@ All 16 lessons of Areas 2–3 are done. Newest kit copy: lessons/calculus/scenes
 2026-11-02 11:30 · started  · transformations
    On disk: lesson.js, scenes/translations.js (helpers FD.tf*, FD.cv), reflections.js, rotations.js, testA.js, enlargement.js, enlarge-more.js.
    Still to do: scenes/describe.js (F5.2M, F5.2I: full descriptions, combined transformations, practice with random transformations), scenes/testB.js (FD.tierTest, enlarge-more items last, LONG h last), lesson.css (tf-obj, tf-img, tf-ghost, tf-name, tf-arrow, tf-mirror, tf-hero classes), then prepend the algebra kit to translations.js + lesson.css, node tools/new-lesson.mjs transformations, generator selftest, audit and coverage.
+2026-11-02 · done     · transformations · audit ✓ · coverage ✓
+Both Area 5 lessons (vectors, transformations) are done: 20 of 20 statements covered.
